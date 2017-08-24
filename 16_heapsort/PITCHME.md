@@ -32,8 +32,8 @@ The _heap property_, for any node in a tree, states:
 
 - A node with no children satisfies the heap property.
 - A node with one or more children satisfies the heap property if and only if: 
-    -  (for a _min-heap_) A subtree rooted at node $$R$$ is a min-heap if each of $$R$$'s child subtrees are min-heaps and the values of each of $$R$$'s direct descendants (if they exist) are greater than or equal to the value at $$R$$. 
-    -  (for a _max-heap_) A subtree rooted at node $$R$$ is a max-heap if each of $$R$$'s child subtrees are max-heaps and the values of each of $$R$$'s direct descendants (if they exist) are less than or equal to the value at $$R$$. 
+    -  (for a _min-heap_) A subtree rooted at node $R$ is a min-heap if each of $R$'s child subtrees are min-heaps and the values of each of $R$'s direct descendants (if they exist) are greater than or equal to the value at $R$. 
+    -  (for a _max-heap_) A subtree rooted at node $R$ is a max-heap if each of $R$'s child subtrees are max-heaps and the values of each of $R$'s direct descendants (if they exist) are less than or equal to the value at $R$. 
 
 
 ----
@@ -60,9 +60,9 @@ The _heap property_, for any node in a tree, states:
 
 It is convention (not strictly a requirement) that heaps "fill in" at the leaf level from left-to-right, as shown in the image below.
 
-+ All leaves are on the tree at level $$h$$ or $$h-1$$ where $$h$$ is the tree height.
++ All leaves are on the tree at level $h$ or $h-1$ where $h$ is the tree height.
 + The tree is balanced.
-+ Leaves are added at level $$h$$ from left-to-right.
++ Leaves are added at level $h$ from left-to-right.
 
 <img src="assets/images/HeapSort/complete_binary_max_heap.png" alt="Complete Binary Max Heap" style="height: 200px;" />
 
@@ -74,9 +74,9 @@ It is convention (not strictly a requirement) that heaps "fill in" at the leaf l
 
 This allows us to make an easy representation of a heap in an array, by applying the following rules:
 
-- The first item in the array (index $$0$$) is the root.
-- An item at any index $$i$$ can find its left-child at index $$2i+1$$ and its right-child at index $$2i+2$$.
-    - By inverse relation, the parent of any node is at index $$(i-1)/2$$ using integer division.
+- The first item in the array (index $0$) is the root.
+- An item at any index $i$ can find its left-child at index $2i+1$ and its right-child at index $2i+2$.
+    - By inverse relation, the parent of any node is at index $(i-1)/2$ using integer division.
 
 
 ---
@@ -165,23 +165,23 @@ If an array can be represented as a tree, then it should be possible to convert 
 
 ## Heapsort Complexity
 
-- _Heapify_ (bottom-up) takes $$O(n)$$ steps.
-    + (top-down) takes $$O(n\lg(n))$$ steps.
+- _Heapify_ (bottom-up) takes $O(n)$ steps.
+    + (top-down) takes $O(n\lg(n))$ steps.
 - Each "pass" yields 1 value in the right place.
-- $$n$$ passes are required to sort all items.
-- _Sift-Down_ takes $$O(\lg(n))$$ steps.
+- $n$ passes are required to sort all items.
+- _Sift-Down_ takes $O(\lg(n))$ steps.
 
 ----
 
 ## Heapsort Complexity
 
-- _Heapify_ (bottom-up) takes $$O(n)$$ steps.
-    + (top-down) takes $$O(n\lg(n))$$ steps.
+- _Heapify_ (bottom-up) takes $O(n)$ steps.
+    + (top-down) takes $O(n\lg(n))$ steps.
         * (done once) 
 - Each "pass" yields 1 value in the right place.
-- $$n$$ passes are required to sort all items.
-- _Sift-Down_ takes $$O(\lg(n))$$ steps. <br /><br />
-- Overall:  $$O(n\lg(n))$$
+- $n$ passes are required to sort all items.
+- _Sift-Down_ takes $O(\lg(n))$ steps. <br /><br />
+- Overall:  $O(n\lg(n))$
 
 
 

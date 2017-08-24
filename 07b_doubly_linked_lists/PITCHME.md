@@ -48,7 +48,7 @@ Additionally, new _traversals_ are possible (traversing the list in reverse, for
 
 * Advantages
     - Reverse traversal is possible
-    - Remove at tail becomes $$O(1)$$
+    - Remove at tail becomes $O(1)$
 * Drawbacks
     - Added complexity of list maintenance code
     - Storage requirements
