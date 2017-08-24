@@ -9,5 +9,5 @@
 | [06_aggregation](?p=06_aggregation) | [15_quicksort](?p=15_quicksort) |
 | [07_linkedlists](?p=07_linkedlists) | [16_heapsort](?p=16_heapsort) |
 | [07b_doubly_linked_lists](?p=07b_doubly_linked_lists) | [easy_rand](?p=easy_rand) |
-| [08_class_template](?p=08_class_template) | [](?p=) |
+| [08_class_template](?p=08_class_template) |  |
 
