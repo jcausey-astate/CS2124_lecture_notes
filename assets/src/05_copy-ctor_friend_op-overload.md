@@ -247,8 +247,8 @@ private:
 
 Now implement the method `Vector2d::operator+`.
 
-* Addition of vectors involves adding the $x$- and $y$- component of the left and right operands together:
-    - $a + b = \langle a_x+b_x, a_y+b_y \rangle$ 
+* Addition of vectors involves adding the $$x$$- and $$y$$- component of the left and right operands together:
+    - $$a + b = \langle a_x+b_x, a_y+b_y \rangle$$ 
 
 ---
 
@@ -276,8 +276,8 @@ public:
 
 Now implement the unary operator method `Vector2d::operator-`.
 
-* Inversion of vectors involves reversing the direction of both the $x$- and $y$- components:
-    - $-a = \langle -a_x, -a_y \rangle$ 
+* Inversion of vectors involves reversing the direction of both the $$x$$- and $$y$$- components:
+    - $$-a = \langle -a_x, -a_y \rangle$$ 
 
 ---
 

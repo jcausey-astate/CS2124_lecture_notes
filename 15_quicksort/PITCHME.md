@@ -8,7 +8,7 @@
 * Bubble Sort
 * Selection Sort
 * Insertion Sort <br /><br /><br />
-* **All are $O(n^2)$** 
+* **All are $$O(n^2)$$** 
 * A better algorithm is needed!
 
 ---
@@ -108,4 +108,4 @@ end function quicksort;
 
 <br />
 
-** Complexity:  $O(n \cdot lg(n))$ (average)   $O(n^2)$ (worst)**
+** Complexity:  $$O(n \cdot lg(n))$$ (average)   $$O(n^2)$$ (worst)**
