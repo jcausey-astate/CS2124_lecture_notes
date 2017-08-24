@@ -1,3 +1,4 @@
 theme: night
 theme-override : assets/css/night_index.css
+mathjax : TeX-MML-AM_HTMLorMML-full
 
