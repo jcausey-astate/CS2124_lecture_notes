@@ -1,0 +1,3 @@
+theme: beige
+theme-override : assets/css/beige_causey.css
+transition : fade
