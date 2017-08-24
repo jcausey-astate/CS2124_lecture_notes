@@ -36,7 +36,7 @@ The _heap property_, for any node in a tree, states:
     -  (for a _max-heap_) A subtree rooted at node $R$ is a max-heap if each of $R$'s child subtrees are max-heaps and the values of each of $R$'s direct descendants (if they exist) are less than or equal to the value at $R$. 
 
 
-----
++++
 
 
 ## Binary Max Heap
@@ -44,7 +44,7 @@ The _heap property_, for any node in a tree, states:
 <img src="assets/images/HeapSort/complete_binary_max_heap.png" alt="Complete Binary Max Heap" style="height: 400px;" title="This is an complete binary max heap." />
 
 
-----
++++
 
 
 ## Binary Min Heap
@@ -116,7 +116,7 @@ If an array can be represented as a tree, then it should be possible to convert 
     + Top-down
     + Bottom-up
 
-----
++++
 
 ## Heapify
 
@@ -127,7 +127,7 @@ If an array can be represented as a tree, then it should be possible to convert 
         * Construct the heap by using the algorithm for insertion into an empty heap. (Can be performed in-place.)
     + Bottom-up
 
-----
++++
 
 ## Heapify
 
@@ -171,7 +171,7 @@ If an array can be represented as a tree, then it should be possible to convert 
 - $n$ passes are required to sort all items.
 - _Sift-Down_ takes $O(\lg(n))$ steps.
 
-----
++++
 
 ## Heapsort Complexity
 

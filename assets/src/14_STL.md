@@ -117,7 +117,7 @@ STL’s `std::vector` is essentially a dynamic array.
 - `vector`s know their own size!
 
 
-----
++++
 
 <!-- .slide: data-transition="linear", data-background="aliceblue" -->
 
@@ -137,7 +137,7 @@ for(int i=0; i < v.size(); i++){   // print values by
 }                                   // vector
 ```
 
-----
++++
 
 <!-- .slide: data-transition="linear", data-background="aliceblue" -->
 
@@ -164,7 +164,7 @@ for(vector<string>::const_iterator it = v.begin(); // iterator
 
 </small>
 
-----
++++
 
 <!-- .slide: data-transition="linear", data-background="aliceblue" -->
 
@@ -184,7 +184,7 @@ for( auto item : v ){                   // each item in v
 }                                                  
 ```
 
-----
++++
 
 <!-- .slide: data-transition="linear", data-background="aliceblue" -->
 
@@ -219,7 +219,7 @@ STL’s `std::deque` (pronounced “deck”) is a _**d**ouble-**e**nded **que**u
 - Also support random access iterators and `[]`.
 - Elements are not guaranteed to be contiguous.
 
-----
++++
 
 <!-- .slide: data-transition="linear", data-background="aliceblue" -->
 
@@ -251,7 +251,7 @@ STL’s `std::list` are sequence containers optimized for constant-time insert a
 - Implemented as a doubly-linked list.
 
 
-----
++++
 
 
 ## `std::list` Example
@@ -275,7 +275,7 @@ std::cout << '\n';
 
 <!-- .slide: data-transition="none", data-background="aliceblue" -->
 
-----
++++
 
 
 ## `std::list` Example (C++11)
@@ -311,7 +311,7 @@ Maps are associative containers that store elements formed by a combination of a
     |Key| =====> |Value|
     -----        -------
 
-----
++++
 
 ## `std::map` Example
 
@@ -344,7 +344,7 @@ Iterators are a generalization of pointers.
     - Output (can be used with output streams)
 
 
-----
++++
 
 
 ## Iterator Example
@@ -365,7 +365,7 @@ for(; it != grade_list.end(); it++){
 }
 ```
 
-----
++++
 
 ## Don't Forget Range-Based Loops!
 

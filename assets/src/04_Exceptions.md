@@ -47,7 +47,7 @@ int totalDays(int days, int weeks){
 }
 ```
 
-----
++++
 
 <!-- .slide: data-transition="none", data-background="aliceblue" -->
 
@@ -150,7 +150,7 @@ class NullPointerException : public exception{
 };
 ```
 
-----
++++
 
 ## Standard Exceptions
 
