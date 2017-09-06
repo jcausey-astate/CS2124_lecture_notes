@@ -83,6 +83,18 @@ When can this be a problem???
 
 ---
 
+## Memberwise Assignment
+
+* Pointers pointing outside the _physical object_ are a problem.
+* System resources (streams, etc.) are a problem.
+
+* The solution has two parts:
+    - Copy Constructor
+    - Overloaded assignment operator
+        + We will re-visit this one later.
+
+---
+
 ## Copy Constructor
 
 The _Copy Constructor_ is called in cases where a copy of an object is being created on-the-fly. 
