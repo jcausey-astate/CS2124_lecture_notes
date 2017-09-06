@@ -22,7 +22,7 @@ class Rectangle {
 
 ---
 
-## Constructor initialization lists
+**Constructor initialization lists**
 
 But... there is another way to do it:
 
