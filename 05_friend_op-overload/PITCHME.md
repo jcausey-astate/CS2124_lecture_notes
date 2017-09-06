@@ -1,5 +1,4 @@
 ## `friend` Functions  
-## Copy Constructors  
 ## Operator Overloading
 
 ---
@@ -23,39 +22,6 @@ If you find yourself needing a `friend` function/class, you could probably _desi
 * Two parts to the solution:
     - Copy Constructor
     - Overloaded assignment operator
-
----
-
-## Copy Constructor
-
-The _Copy Constructor_ is called in cases where a copy of an object is being created on-the-fly. 
-
-``` cpp
-MyClass a;
-MyClass b = a;
-```
-
-* Called in these cases:
-    - When an object is returned by value
-    - When an object is passed (to a function) by value as an argument
-    - When an object is thrown
-    - When an object is caught
-    - When an object is placed in a brace-enclosed initializer list
-
----
-
-## Copy Constructor
-
-* Commonly takes a `const` reference to an object of the same class as a parameter.
-* __Must__ take a reference, but may not always be `const`.
-
-``` cpp
-MyClass{
-    public:
-        MyClass(const MyClass& orig); // copy c-tor
-    [...]
-};
-```
 
 ---
 
