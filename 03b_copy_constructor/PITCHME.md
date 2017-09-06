@@ -43,7 +43,24 @@ This:
 Is the _constructor initialization list_.  It is followed in this case by an _empty_ method body `{}`, which is OK, since there is nothing more for this constructor to do.
 
 * The initialization list takes effect _before_ the body of the c-tor method begins to execute!
-* There is no scope resolution ambiguity in an initialization list.
+* No scope resolution ambiguity in an initialization list!
+
+---
+
+**No scope resolution ambiguity!**
+
+``` cpp
+class Rectangle {
+    public:
+        Rectangle (int length, int width) 
+            : length{length}, width{width} {}
+        int length = 0;
+        int width  = 0;
+};
+```
+
+* Constructor initialization lists can only contain initializations for attributes and constructor delegation to base classes (we will see later).
+    * So, there cannot be ambiguity with respect to attribute versus parameter names.
 
 ---
 
