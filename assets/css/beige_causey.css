@@ -191,7 +191,9 @@ body {
   display: inline-block;
   font-size: 0.5em;
   line-height: 1em;
-  vertical-align: top; }
+  vertical-align: top; 
+  padding-top: 0em;
+  margin-top: 0em;}
 
 .reveal small * {
   vertical-align: top; }
