@@ -10,7 +10,7 @@
 * References may be addresses (pointers) or array indices
 * Data can be added/removed during execution.
 
-![linked list](assets/images/LinkedList/LinkedList.svg)
+![linked list](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/LinkedList.svg)
 
 ---
 
@@ -18,11 +18,11 @@
 
 * Can grow or shrink as needed (unlike arrays).
 
-![linked list](assets/images/LinkedList/LinkedList_add_end.svg)
+![linked list](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/LinkedList_add_end.svg)
 
 * Can insert data between other nodes easily.
 
-![linked list](assets/images/LinkedList/LinkedList_add_mid.svg)
+![linked list](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/LinkedList_add_mid.svg)
 
 ---
 
@@ -31,7 +31,7 @@
 * Contains some sort of data.
 * Contains a reference (pointer or array index) to the “next” node in the list.
 
-![linked list](assets/images/LinkedList/LinkedList_node.svg)
+![linked list](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/LinkedList_node.svg)
 
 ---
 
@@ -42,7 +42,7 @@
 * The end of the list usually points to NULL.
 * A list containing 0 nodes is an _empty list_.
 
-![linked list](assets/images/LinkedList/LinkedList_empty.svg)
+![linked list](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/LinkedList_empty.svg)
 
 ---
 
@@ -55,3 +55,5 @@
 * Search the list.
 * Delete a node (from head/tail/arbitrary).
 * Empty the list.
+
+
