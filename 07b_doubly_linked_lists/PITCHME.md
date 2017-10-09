@@ -25,7 +25,7 @@ class DL_IntNode{
 
 A doubly-linked list's _node_ is different only in that it maintains one extra link &mdash; in this case, a pointer `prev` to the previous node.
 
-![doubly-linked list](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/Double-Linked_List.svg)
+![doubly-linked list](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/Doubly-Linked_List.svg)
 
 
 ---
