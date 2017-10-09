@@ -98,6 +98,7 @@ GradeType Grade<GradeType>::getGrade() const {
 ## Examples
 
 * Linked List node as a template
+* Array template
 * Stack template
 * Queue template
 * Ring buffer template
