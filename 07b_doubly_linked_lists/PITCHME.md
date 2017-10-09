@@ -8,6 +8,9 @@
 
 A _doubly-linked list_ is a linked list in which the _nodes_ support access to both the _next_ and _previous_ items in the list, allowing bidirectional traversal.
 
+
+![doubly-linked list](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/Doubly-Linked_List.svg)
+
 ---
 
 ## A Doubly-Linked Node
