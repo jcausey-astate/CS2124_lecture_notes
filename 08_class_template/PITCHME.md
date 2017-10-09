@@ -9,8 +9,10 @@
 
 Function templates provide a pattern for a function that can work with many types of data.
 
+<small style="font-size: 90%;">
 * When written, the data type specifiers are replaced with type parameters.
 * When called, the compiler generates a function with actual data types that match those provided in the call.
+</small>
 
 **Example**
 
