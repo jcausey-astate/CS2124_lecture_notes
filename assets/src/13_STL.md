@@ -46,6 +46,7 @@ Stephan T. Lavavej is a Senior Software Development Engineer at Microsoft, maint
 
 ---
 
+
 ##  Why Use STL?
 
 - Reuse: "Write less, do more"
@@ -113,7 +114,7 @@ STL’s `std::vector` is essentially a dynamic array.
 - Supports `push_back()` and `pop_back()` sequential (end) access.
 - Optimized for random access using array index operator. (`[]`)
 - Supports random access iterators
-    - Random access iterators offer essentially the same functionality as pointers.
+    - An _iterator_ is an object used to access individual items in a container, or to move (i.e. "iterate") through the container. 
 - `vector`s know their own size!
 
 
@@ -124,6 +125,9 @@ STL’s `std::vector` is essentially a dynamic array.
 ## `std::vector` Example
     
 ``` cpp
+using std::vector;
+using std::string;
+// [...]
 vector<string> v;                   // create vector
 
 v.push_back("The number is 10");    // push some values
@@ -132,9 +136,11 @@ v.push_back("The number is 30");
 
 cout << "Loop by index:" << endl;
 
-for(int i=0; i < v.size(); i++){   // print values by            
+for(vector<string>::size_type i=0;  // size type is unsigned
+    i < v.size();                   // vector knows its size!
+    i++){                           // print values by            
    cout << v[i] << endl;            // indexing the
-}                                   // vector
+}                                   // vector like an array
 ```
 
 +++
@@ -146,23 +152,26 @@ for(int i=0; i < v.size(); i++){   // print values by
 ## `std::vector` Example 2
     
 ``` cpp
-vector<string> v;                                  // create vector
+std::vector<std::string> v;         // create vector
 
-v.push_back("The number is 10");                   // push some values
-v.push_back("The number is 20");                   // into it...
+v.push_back("The number is 10");    // push some values
+v.push_back("The number is 20");    // into it...
 v.push_back("The number is 30");
 
 cout << "Loop by range:" << endl;
 
-for(vector<string>::const_iterator it = v.begin(); // iterator
-    it != v.end();                                 // runs from begin()
-    ++it)                                          // to end()
-{                                                  // and is 
-   cout << *it << endl;                            // dereferenced to
-}                                                  // print the value
+for(auto it = v.begin();            // iterator
+    it != v.end();                  // runs from begin()
+    ++it)                           // to end(), one at a time
+{                                   // and is 
+   cout << *it << endl;             // dereferenced to
+}                                   // print the value
 ```
 
 </small>
+
+* Think of an iterator as an arrow pointing to a value in the container.
+* The _dereference operator_ (`*`) is used to "follow the arrow" to get the value an iterator is pointing to.
 
 +++
 
@@ -171,16 +180,16 @@ for(vector<string>::const_iterator it = v.begin(); // iterator
 ## `std::vector` Example 2b
     
 ``` cpp
-vector<string> v;                        // create vector
+std::vector<std::string> v;         // create vector
 
-v.push_back("The number is 10");         // push some values
-v.push_back("The number is 20");         // into it...
+v.push_back("The number is 10");    // push some values
+v.push_back("The number is 20");    // into it...
 v.push_back("The number is 30");
 
 cout << "Loop by range:" << endl;
 
-for( auto item : v ){                   // each item in v
-   cout << item << endl;                // print the item
+for( auto item : v ){               // for each item in v
+   cout << item << endl;            // print the item
 }                                                  
 ```
 
@@ -191,22 +200,60 @@ for( auto item : v ){                   // each item in v
 ## `std::vector` Example 3
     
 ``` cpp
-auto v = vector<string>{3};             // reserve 3 items
+auto v = std::vector<std::string>{3};    // pre-size to 3
 
 int  n = 1;
-for( auto& item : v){                   // ref to each item
-    item = string{"The number is "}     // generate message
-         + std::to_string(10 * n++);    // and store in item
+for( auto& item : v){                    // each item (by ref.)
+    item = std::string{"The number is "} // generate message
+         + std::to_string(10 * n++);     // and store in item
 }
 
 cout << "Loop by range:" << endl;
 
-for( auto item : v ){                   // copy of each item
-   cout << item << endl;                // print the item
+for( auto item : v ){                    // for each item
+   cout << item << endl;                 // print the item
 }                              
 ```
 
-_`std::to_string()` is contained in `<string>`_
+_`std::to_string()` is contained in `<std::string>`_
+
+
+---
+
+## Iterators
+
+Iterators are a generalization of pointers.
+
+- Used to access information in containers, regardless of the internal layout
+- Four types:
+    - Forward (uses `++`)
+    - Bidirectional (uses `++` and `--`)
+    - Random-access (behave like normal pointers)
+    - Input (can be used with input streams)
+    - Output (can be used with output streams)
+
+
++++
+
+
+## Iterator Example
+
+<!-- .slide: data-transition="none", data-background="aliceblue" -->
+
+``` cpp
+std::vector<int> scores{3};
+
+scores[0] = 88;
+scores[1] = 92;
+scores[2] = 76;
+
+for(auto it = scores.begin(); it != grade_list.end(); it++){
+    std::cout << *it << '\t';
+}
+std::cout << '\n';
+```
+
+**`it`**'s type is `std::vector<int>::iterator`
 
 ---
 
@@ -278,7 +325,7 @@ std::cout << '\n';
 +++
 
 
-## `std::list` Example (C++11)
+## `std::list` Example (>=C++11)
 
 <!-- .slide: data-transition="none", data-background="aliceblue" -->
 
@@ -288,7 +335,7 @@ int myints[] = {75,23,65,42,13};
 std::list<int> l (myints, myints+5);
 
 std::cout << "l contains: ";
-for (const auto& item : l) {        // C++11!
+for (const auto& item : l) {        // range-based for
     std::cout << (&item != &l.front() ? ", " : "") << item;
 }
 std::cout << '\n';
@@ -328,6 +375,33 @@ if(grade_list.find("Tim") == grade_list.end()) {
 }
 ```
 
+---
+
+## Associative Container: `std::unordered_map`
+
+Unordered Maps are associative containers that store elements formed by a combination of a key value and a mapped value, but with no implied order.  The underlying data structure is a _hash table_.  These are often more performant than the ordered `std::map`.
+- Keys and values may be of different types
+
+    -----        -------
+    |Key| =====> |Value|
+    -----        -------
+
++++
+
+## `std::unordered_map` Example
+
+<!-- .slide: data-transition="none", data-background="aliceblue" -->
+
+``` cpp
+std::unordered_map <string, char> grade_list;
+
+grade_list["John"]  = 'B';
+grade_list["Alice"] = 'A';
+
+if(grade_list.find("Tim") == grade_list.end()) {
+    std::cout << "Tim is not in the map!" << std::endl;
+}
+```
 
 ---
 
