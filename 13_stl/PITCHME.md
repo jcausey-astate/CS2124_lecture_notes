@@ -36,17 +36,6 @@
 
 ---
 
-### Who is STL?
-
-![Stephan T. Lavavej](assets/images/STL/STL.jpg "Stephan T. Lavavej")
-
-Stephan T. Lavavej is a Senior Software Development Engineer at Microsoft, maintaining Visual Studio's C++ Standard Library implementation.
-
-* In all seriousness, _the_ STL is overseen by the C++ Standards Committee
-
----
-
-
 ##  Why Use STL?
 
 - Reuse: "Write less, do more"
@@ -59,7 +48,6 @@ Stephan T. Lavavej is a Senior Software Development Engineer at Microsoft, maint
 - Efficiency
     - Templates avoid virtual function overhead.
     - Strict attention to time and/or space complexity of algorithms.
-
 
 ---
 
@@ -215,7 +203,7 @@ for( auto item : v ){                    // for each item
 }
 ```
 
-_`std::to_string()` is contained in `<std::string>`_
+<emph>`std::to_string()` is contained in `<std::string>`</emph>
 
 
 ---
@@ -273,22 +261,17 @@ STL’s `std::deque` (pronounced “deck”) is a _**d**ouble-**e**nded **que**u
 ## `std::deque` Example
 
 ``` cpp
-// the iterator constructor can be used to copy arrays:
-int myints[] = {16,2,77,29};
-std::deque<int> dq(myints, myints + sizeof(myints) / sizeof(int) );
+std::deque<int> dq{16,2,77,29};
 
 std::cout << "The contents of the queue are:\n";
 for(const auto& item : dq){
-    static bool first = true;
-    std::cout << (!first ? ", " : "")
-              << item
-              << (&item == &dq.back() ? "\n" : "");
-    first = false;
+    std::cout << (&item != &dq.front() ? ", " : "") 
+              << item;
 }
+std::cout << '\n';
 ```
 
 ---
-
 
 ## Sequence Container: `std::list`
 
@@ -306,14 +289,10 @@ STL’s `std::list` are sequence containers optimized for constant-time insert a
 <!-- .slide: data-transition="linear", data-background="aliceblue" -->
 
 ``` cpp
-// again, the iterator constructor can be used:
-int myints[] = {75,23,65,42,13};
-std::list<int> l (myints, myints+5);
+std::list<int> l{75,23,65,42,13};
 
 std::cout << "l contains:";
-for (std::list<int>::iterator it = l.begin();
-    it != l.end();
-    ++it)
+for (auto it = l.begin(); it != l.end(); ++it)
 {
     std::cout << (it != l.begin() ? ", " : "") << *it;
 }
@@ -324,24 +303,18 @@ std::cout << '\n';
 
 +++
 
-
 ## `std::list` Example (>=C++11)
 
 <!-- .slide: data-transition="none", data-background="aliceblue" -->
 
 ``` cpp
-// again, the iterator constructor can be used:
-int myints[] = {75,23,65,42,13};
-std::list<int> l (myints, myints+5);
+std::list<int> l{75,23,65,42,13};
 
 std::cout << "l contains: ";
 for (const auto& item : l) {        // range-based for
     std::cout << (&item != &l.front() ? ", " : "") << item;
 }
 std::cout << '\n';
-//
-// Three lines were saved by `auto`!
-//
 ```
 
 ---
@@ -367,13 +340,19 @@ Maps are associative containers that store elements formed by a combination of a
 <!-- .slide: data-transition="none", data-background="aliceblue" -->
 
 ``` cpp
-std::map <string, char> grade_list;
+std::map <std::string, char> grade_list;
 
 grade_list["John"]  = 'B';
 grade_list["Alice"] = 'A';
 
-if(grade_list.find("Tim") == grade_list.end()) {
-    std::cout << "Tim is not in the map!" << std::endl;
+for(auto name : {"Alice", "Tim", "John", "Sarah"}){
+    if(grade_list.find(name) != grade_list.end()) {
+        std::cout << name << " : " 
+                  << grade_list[name] << '\n';
+    }
+    else{
+        std::cout << name << " is not in the map.\n";
+    }
 }
 ```
 
@@ -397,13 +376,19 @@ Unordered Maps are associative containers that store elements formed by a combin
 <!-- .slide: data-transition="none", data-background="aliceblue" -->
 
 ``` cpp
-std::unordered_map <string, char> grade_list;
+std::unordered_map <std::string, char> grade_list;
 
 grade_list["John"]  = 'B';
 grade_list["Alice"] = 'A';
 
-if(grade_list.find("Tim") == grade_list.end()) {
-    std::cout << "Tim is not in the map!" << std::endl;
+for(auto name : {"Alice", "Tim", "John", "Sarah"}){
+    if(grade_list.find(name) != grade_list.end()) {
+        std::cout << name << " : " 
+                  << grade_list[name] << '\n';
+    }
+    else{
+        std::cout << name << " is not in the map.\n";
+    }
 }
 ```
 
@@ -814,7 +799,6 @@ for( auto item : v ){
 
 
 Partitions so that elments matching the predicate are first, returns the split point.
-
 
 ```cpp
 bool is_even(int x){ return x % 2 == 0; }
