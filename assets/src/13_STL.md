@@ -493,22 +493,6 @@ Implemented as a _reference counting_ pointer, meaning that the resource will no
 STL contains algorithms implemented as function templates.
 
 - Designed to perform operations on containers.
-- Requires algorithm header file
-- Includes:
-
-        binary_search     count
-        find              find_if
-        for_each          max_element
-        min_element       partition
-        random_shuffle    rotate
-        sort              stable_partition
-        stable_sort       ... and many more
-
-## Algorithms
-
-STL contains algorithms implemented as function templates.
-
-- Designed to perform operations on containers.
 - Requires algorithm header file  `#include <algorithm>`
 - Includes:
 
