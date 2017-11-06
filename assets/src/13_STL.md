@@ -496,15 +496,17 @@ STL contains algorithms implemented as function templates.
 - Requires algorithm header file  `#include <algorithm>`
 - Includes:
 
-    accumulate()      max()           partition()
-    binary_search()   max_element()   stable_partition()
-    copy()            min()           for_each()
-    count()           min_element()   find_if()
-    fill()            reverse()       random_shuffle()
-    find()            sort()          rotate()
-    is_sorted()       swap()          stable_sort()
+<pre>
+        accumulate()      max()           partition()
+        binary_search()   max_element()   stable_partition()
+        copy()            min()           for_each()
+        count()           min_element()   find_if()
+        fill()            reverse()       random_shuffle()
+        find()            sort()          rotate()
+        is_sorted()       swap()          stable_sort()
 
             ... and many more ...
+</pre>
 
 ---
 
@@ -527,6 +529,7 @@ STL contains algorithms implemented as function templates.
 
 Container-wise algorithms:
 
+<pre>
         accumulate()        is_sorted()
         binary_search()     max_element()
         copy()              min_element()
@@ -535,11 +538,14 @@ Container-wise algorithms:
         find()              rotate()
         find_if()           [stable_]partition()
         for_each()          [stable_]sort()
+</pre>
 
 Element-wise algorithms:
 
+<pre>
         max()               swap()
         min()
+</pre>
 
 ---
 
