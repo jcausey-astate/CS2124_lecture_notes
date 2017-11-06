@@ -24,13 +24,13 @@
 
 ##  What is STL?
 
-> "The Standard Template Library provides a set of well structured 
+> "The Standard Template Library provides a set of well structured
 > generic C++ components that work together in a seamless way."
 >
-> \- Alexander Stepanov & Meng Lee,  
->    _The Standard Template Library_ 
+> \- Alexander Stepanov & Meng Lee,
+>    _The Standard Template Library_
 
-- Designed to provide a common, familiar interface. 
+- Designed to provide a common, familiar interface.
 - Designed to meet specific performance/complexity goals.
 - Keeps programmers from "re-inventing the wheel".
 
@@ -40,7 +40,7 @@
 
 ![Stephan T. Lavavej](assets/images/STL/STL.jpg "Stephan T. Lavavej")
 
-Stephan T. Lavavej is a Senior Software Development Engineer at Microsoft, maintaining Visual Studio's C++ Standard Library implementation. 
+Stephan T. Lavavej is a Senior Software Development Engineer at Microsoft, maintaining Visual Studio's C++ Standard Library implementation.
 
 * In all seriousness, _the_ STL is overseen by the C++ Standards Committee
 
@@ -90,11 +90,11 @@ Stephan T. Lavavej is a Senior Software Development Engineer at Microsoft, maint
 
 ## Container Types
 
-- Sequence 
+- Sequence
     - Provide efficient linear access to data
     - Element order is not related to value
     - Think arrays and linked lists
-- Associative     
+- Associative
     - Provide efficient access to data stored as a key/value pair
     - Keys can be ordered by `operator<`
     - Implemented as balanced binary trees
@@ -114,7 +114,7 @@ STL’s `std::vector` is essentially a dynamic array.
 - Supports `push_back()` and `pop_back()` sequential (end) access.
 - Optimized for random access using array index operator. (`[]`)
 - Supports random access iterators
-    - An _iterator_ is an object used to access individual items in a container, or to move (i.e. "iterate") through the container. 
+    - An _iterator_ is an object used to access individual items in a container, or to move (i.e. "iterate") through the container.
 - `vector`s know their own size!
 
 
@@ -123,7 +123,7 @@ STL’s `std::vector` is essentially a dynamic array.
 <!-- .slide: data-transition="linear", data-background="aliceblue" -->
 
 ## `std::vector` Example
-    
+
 ``` cpp
 using std::vector;
 using std::string;
@@ -138,7 +138,7 @@ cout << "Loop by index:" << endl;
 
 for(vector<string>::size_type i=0;  // size type is unsigned
     i < v.size();                   // vector knows its size!
-    i++){                           // print values by            
+    i++){                           // print values by
    cout << v[i] << endl;            // indexing the
 }                                   // vector like an array
 ```
@@ -150,7 +150,7 @@ for(vector<string>::size_type i=0;  // size type is unsigned
 <small style="font-size: 90%;">
 
 ## `std::vector` Example 2
-    
+
 ``` cpp
 std::vector<std::string> v;         // create vector
 
@@ -163,7 +163,7 @@ cout << "Loop by range:" << endl;
 for(auto it = v.begin();            // iterator
     it != v.end();                  // runs from begin()
     ++it)                           // to end(), one at a time
-{                                   // and is 
+{                                   // and is
    cout << *it << endl;             // dereferenced to
 }                                   // print the value
 ```
@@ -178,7 +178,7 @@ for(auto it = v.begin();            // iterator
 <!-- .slide: data-transition="linear", data-background="aliceblue" -->
 
 ## `std::vector` Example 2b
-    
+
 ``` cpp
 std::vector<std::string> v;         // create vector
 
@@ -190,7 +190,7 @@ cout << "Loop by range:" << endl;
 
 for( auto item : v ){               // for each item in v
    cout << item << endl;            // print the item
-}                                                  
+}
 ```
 
 +++
@@ -198,7 +198,7 @@ for( auto item : v ){               // for each item in v
 <!-- .slide: data-transition="linear", data-background="aliceblue" -->
 
 ## `std::vector` Example 3
-    
+
 ``` cpp
 auto v = std::vector<std::string>{3};    // pre-size to 3
 
@@ -212,7 +212,7 @@ cout << "Loop by range:" << endl;
 
 for( auto item : v ){                    // for each item
    cout << item << endl;                 // print the item
-}                              
+}
 ```
 
 _`std::to_string()` is contained in `<std::string>`_
@@ -280,9 +280,9 @@ std::deque<int> dq(myints, myints + sizeof(myints) / sizeof(int) );
 std::cout << "The contents of the queue are:\n";
 for(const auto& item : dq){
     static bool first = true;
-    std::cout << (!first ? ", " : "") 
-              << item 
-              << (&item == &dq.back() ? "\n" : ""); 
+    std::cout << (!first ? ", " : "")
+              << item
+              << (&item == &dq.back() ? "\n" : "");
     first = false;
 }
 ```
@@ -311,8 +311,8 @@ int myints[] = {75,23,65,42,13};
 std::list<int> l (myints, myints+5);
 
 std::cout << "l contains:";
-for (std::list<int>::iterator it = l.begin(); 
-    it != l.end(); 
+for (std::list<int>::iterator it = l.begin();
+    it != l.end();
     ++it)
 {
     std::cout << (it != l.begin() ? ", " : "") << *it;
@@ -339,9 +339,9 @@ for (const auto& item : l) {        // range-based for
     std::cout << (&item != &l.front() ? ", " : "") << item;
 }
 std::cout << '\n';
-// 
+//
 // Three lines were saved by `auto`!
-// 
+//
 ```
 
 ---
@@ -354,9 +354,11 @@ Maps are associative containers that store elements formed by a combination of a
     - `operator<`
     - `operator==`
 
+<pre>
     -----        -------
     |Key| =====> |Value|
     -----        -------
+</pre>
 
 +++
 
@@ -382,9 +384,11 @@ if(grade_list.find("Tim") == grade_list.end()) {
 Unordered Maps are associative containers that store elements formed by a combination of a key value and a mapped value, but with no implied order.  The underlying data structure is a _hash table_.  These are often more performant than the ordered `std::map`.
 - Keys and values may be of different types
 
+<pre>
     -----        -------
     |Key| =====> |Value|
     -----        -------
+</pre>
 
 +++
 
@@ -460,24 +464,6 @@ for(const auto& kv : grade_list){
 
 ---
 
-## Algorithms
-
-STL contains algorithms implemented as function templates.
-
-- Designed to perform operations on containers.
-- Requires algorithm header file
-- Includes:
-    
-        binary_search     count
-        find              find_if         
-        for_each          max_element
-        min_element       partition
-        random_shuffle    rotate
-        sort              stable_partition
-        stable_sort       ... and many more 
-
----
-
 ## C++ Standard Smart Pointers
 
 Requires the `<memory>` header.
@@ -486,5 +472,412 @@ Requires the `<memory>` header.
 * `std::shared_ptr` - Assumes shared ownership of a resource.
 * `std::weak_ptr` - A non-owning pointer that can be converted to a `shared_ptr` when access to the resource is required.
 
+---
 
+## Unique Pointer
+
+The C++ `std::unique_ptr` is defined in `<memory>`.  It represents a smart pointer that assumes singular ownership of a resource.
+
+**How it works:**
+
+* During construction, assume ownership of the resource.
+* Expose the operations expected for a pointer.
+    * dereference, arrow, and (maybe) array-index; maybe others...
+* During destruction, de-allocate the managed resource.
+
+---
+
+## Shared Pointer
+
+Implemented as a _reference counting_ pointer, meaning that the resource will not be deleted as long as at least one reference to it (via a `shared_ptr`) still exists.
+
+**How it works:**
+
+* During construction, assume ownership of the resource.
+    * If this is the first instance, set reference count to 1.
+    * If this is a copy, increment the reference count.
+* Expose the operations expected for a pointer.
+    * dereference, arrow, and (maybe) array-index; maybe others...
+* During destruction, decrement the reference count.
+    * If the reference count has gone to 0, delete the managed resource.
+
+---
+
+## Algorithms
+
+STL contains algorithms implemented as function templates.
+
+- Designed to perform operations on containers.
+- Requires algorithm header file
+- Includes:
+
+        binary_search     count
+        find              find_if
+        for_each          max_element
+        min_element       partition
+        random_shuffle    rotate
+        sort              stable_partition
+        stable_sort       ... and many more
+
+## Algorithms
+
+STL contains algorithms implemented as function templates.
+
+- Designed to perform operations on containers.
+- Requires algorithm header file  `#include <algorithm>`
+- Includes:
+
+    accumulate()      max()           partition()
+    binary_search()   max_element()   stable_partition()
+    copy()            min()           for_each()
+    count()           min_element()   find_if()
+    fill()            reverse()       random_shuffle()
+    find()            sort()          rotate()
+    is_sorted()       swap()          stable_sort()
+
+            ... and many more ...
+
+---
+
+## Algorithms Overview
+
+* Algorithms use _iterators_ for operating on _ranges_ of values in a container.
+* Most will take (at least) a "first" and "last" iterator:
+
+![Sub-range in array](https://cdn.rawgit.com/jcausey-astate/CS2114_lecture_notes/master/assets/images/shared/range_iterators_to_subrange.svg)
+
++++
+
+## Usually use `begin` and `end`
+
+* If you want the entire container, then<br>`first = container.begin()` and `last = container.end()`.
+
+![Range based iterators](https://cdn.rawgit.com/jcausey-astate/CS2114_lecture_notes/master/assets/images/shared/range_iterators_in_array.svg)
+
+---
+
+Container-wise algorithms:
+
+        accumulate()        is_sorted()
+        binary_search()     max_element()
+        copy()              min_element()
+        count()             random_shuffle()
+        fill()              reverse()
+        find()              rotate()
+        find_if()           [stable_]partition()
+        for_each()          [stable_]sort()
+
+Element-wise algorithms:
+
+        max()               swap()
+        min()
+
+---
+
+### `accumulate(first, last, start_value)`
+<br><br>
+
+
+Returns the sum of the range [`first`,`last`), starting from the initial value `start_value`.
+
+```cpp
+std::vector<int> v{5,3,4,2,9,2,6,3,8};
+
+int sum = std::accumulate(v.begin(), v.end(), 0);
+std::cout << sum << '\n';
+// 42
+```
+
+---
+
+### `binary_search(first, last, target)`
+<br><br>
+
+
+Fast search in range for `target`; requires range to be sorted.  Returns `true` if the target is found, `false` otherwise.
+
+```cpp
+std::vector<int> v{0,2,4,6,8,10,12,14,16,18};
+
+bool found = std::binary_search(v.begin(), v.end(), 10);
+if( found ){
+    std::cout << "Found 10.\n";
+}
+// Found 10
+found = std::binary_search(v.begin(), v.end(), 9);
+if( found ){
+    std::cout << "Found 9.\n";
+}
+// (9 was not found, no output)
+```
+
+---
+
+### `copy(src_first, src_last, dst_first)`
+<br><br>
+
+
+Copies range [`src_first`,`src_last`) to destination starting at `dst_first`.
+
+```cpp
+std::vector<int> v1{5,3,4,2,9,2,6,3,8};
+std::vector<int> v2;
+v2.resize(v1.size());  // Destination must be pre-allocated!
+
+std::copy(v1.begin(), v1.end(), v2.begin());
+
+for( auto item : v2 ){
+    std::cout << item << '\t';
+}
+// 5  3  4  2  9  2  6  3  8
+```
+
+Note that invalid arguments cause _**undefined behavior**_.
+
+---
+
+### `count(first, last, target)`
+<br><br>
+
+
+Count the number of times `target` appears in the range.
+
+```cpp
+std::vector<int> v{5,2,4,2,9,2,6,3,8};
+
+int number_of_twos = std::count(v.begin(), v.end(), 2);
+
+std::cout << "There are " << number_of_twos << " twos.\n";
+// There are 3 twos.
+```
+
+---
+
+### `fill(first, last, value)`
+<br><br>
+
+
+Fill a range with a single value.
+
+```cpp
+std::vector<int> v;
+v.resize(10);
+
+std::fill(v.begin(), v.end(), -1);
+
+for( auto item : v ){
+    std::cout << item << '\t';
+}
+// -1  -1  -1  -1  -1  -1  -1  -1  -1  -1
+```
+
+---
+
+### `find(first, last, target)`
+<br><br>
+
+
+Find "target" element; returns an iterator to the target or `last` if not found.
+
+```cpp
+std::vector<int> v{5,3,4,2,9,2,6,3,8};
+
+std::vector<int>::iterator it;
+it = std::find(v.begin(), v.end(), 9);
+
+if(it != v.end()){
+    std::cout << "Found " << (*it) << '\n';
+}
+// Found 9
+```
+
+---
+
+### `is_sorted(first, last)`
+<br><br>
+
+
+Returns `true` if the range is sorted; `false` otherwise.
+
+```cpp
+std::vector<int> v1{5,3,4,2,9,2,6,3,8};
+std::vector<int> v2{0,1,2,3,4,5,6,7,8,9};
+
+if( std::is_sorted(v1.begin(), v1.end())){
+    std::cout << "v1 is sorted\n";
+}
+
+if( std::is_sorted(v2.begin(), v2.end())){
+    std::cout << "v2 is sorted\n";
+}
+// v2 is sorted
+```
+
+---
+
+### `max_element(first, last)`
+<br><br>
+
+
+Returns an iterator to the (first) maximum element.
+
+```cpp
+std::vector<int> v{5,3,4,2,9,2,6,3,8};
+
+std::vector<int>::iterator it;
+it = std::max_element(v.begin(), v.end());
+
+std::cout << (*it) << '\n';
+// 9
+```
+
+---
+
+### `min_element(first, last)`
+<br><br>
+
+
+Returns an iterator to the (first) minimum element.
+
+```cpp
+std::vector<int> v{5,3,4,2,9,2,6,3,8};
+
+std::vector<int>::iterator it;
+it = std::min_element(v.begin(), v.end());
+
+std::cout << (*it) << '\n';
+// 2
+```
+
+---
+
+### `reverse(first, last)`
+<br><br>
+
+
+Reverses the order of values in the range.
+
+```cpp
+std::vector<int> v{0,1,2,3,4,5,6,7,8,9};
+
+std::reverse(v.begin(), v.end());
+
+for( auto item : v ){
+    std::cout << item << '\t';
+}
+// 9  8  7  6  5  4  3  2  1  0
+```
+
+---
+
+### `sort(first, last)`
+<br><br>
+
+
+Sorts a container in-place.
+
+```cpp
+std::vector<int> v{5,2,4,9,7,1,6,3,0,8};
+
+std::sort(v.begin(), v.end());
+
+for( auto item : v ){
+    std::cout << item << '\t';
+}
+// 0  1  2  3  4  5  6  7  8  9
+```
+
+---
+
+### `rotate(first, handle, last)`
+<br><br>
+
+
+Rotates the `handle` to the front of the range.
+
+
+```cpp
+std::vector<int> v{0,1,2,3,4,5,6,7,8,9};
+
+std::rotate(v.begin(), v.begin() + 3, v.end());
+
+for( auto item : v ){
+    std::cout << item << '\t';
+}
+// 3  4  5  6  7  8  9  0  1  2
+```
+
+---
+
+### `partition(first, last, predicate)`
+<br><br>
+
+
+Partitions so that elments matching the predicate are first, returns the split point.
+
+
+```cpp
+bool is_even(int x){ return x % 2 == 0; }
+std::vector<int> v{1,2,3,4,5,6,7,8,9,10};
+
+auto split = std::partition(v.begin(), v.end(), is_even);
+
+for( auto item : v ){
+    std::cout << item << '\t';
+}
+// 2  4  6  8  10  1  3  5  7  9
+for(auto it = v.begin(); it != split; ++it){
+    std::cout << *it << '\t';
+}
+// 2  4  6  8  10
+```
+
+---
+
+### `max(value1, value2)`
+<br><br>
+
+
+Returns the larger of the two values.
+
+```cpp
+int a = 8;
+int b = 12;
+
+std::cout << std::max(a, b) << '\n';
+// 12
+```
+
+---
+
+### `min(value1, value2)`
+<br><br>
+
+
+Returns the smaller of the two values.
+
+```cpp
+int a = 8;
+int b = 12;
+
+std::cout << std::min(a, b) << '\n';
+// 8
+```
+
+---
+
+### `swap(value1, value2)`
+<br><br>
+
+
+Swaps the values stored in the arguments.
+
+```cpp
+int a = 8;
+int b = 12;
+
+std::swap(a, b);
+std::cout << "a: " << a << " b: " << b << '\n';
+// a: 12 b: 8
+```
 
