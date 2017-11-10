@@ -162,6 +162,56 @@ std::cout << std::is_trivially_copyable<A>::value << '\n';
 // if the output is 'false' then A is not trivially copyable.
 ```
 
++++
+
+<small style='font-size: 75%;'>
+```cpp
+#include <iostream>
+#include <string>
+#include <type_traits>
+
+struct A{
+    int x;
+private:
+    int y;
+};
+
+struct B{
+    int x[10];
+private:
+    int y[10];
+};
+
+struct C{
+    int x[10];
+    std::string s;      // not OK!
+private:
+    int y[10];
+};
+
+struct D{
+    int* x = nullptr;   // maybe.. maybe not..
+};
+
+struct E{
+    int* x = nullptr;   // not OK!
+    E() : x{new int{3}} {}
+    ~E() { delete x; }
+};
+ 
+int main(){
+    std::cout << std::boolalpha;
+    std::cout << std::is_trivially_copyable<A>::value << '\n';
+    std::cout << std::is_trivially_copyable<B>::value << '\n';
+    std::cout << std::is_trivially_copyable<C>::value << '\n';
+    std::cout << std::is_trivially_copyable<D>::value << '\n';
+    std::cout << std::is_trivially_copyable<E>::value << '\n';
+    std::cout << '\n';
+    return 0;
+}
+```
+</small>
+
 ---
 
 ## Zero Memory Quickly
