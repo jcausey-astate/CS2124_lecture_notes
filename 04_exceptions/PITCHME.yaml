@@ -1,5 +1,5 @@
 theme: beige
 theme-override : assets/css/beige_causey.css
 transition : fade
-mathjax : TeX-MML-AM_HTMLorMML-full
+mathjax : TeX-AMS_SVG
 highlight : vs
