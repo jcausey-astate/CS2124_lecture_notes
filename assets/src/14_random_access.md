@@ -190,7 +190,7 @@ private:
 };
 
 struct D{
-    int* x = nullptr;   // maybe.. maybe not..
+    int* x = nullptr;   // watch out! probably not OK...
 };
 
 struct E{
