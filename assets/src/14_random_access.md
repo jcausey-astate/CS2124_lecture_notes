@@ -159,4 +159,6 @@ For security, it is often desirable to clear _all_ bytes associated with an obje
 ``` cpp
 // zero all bytes contained in `myObj`:
 memset(&myObj, 0, sizeof(myObj));
+// IMPORTANT:  Don't try this if your object contains non-primitive
+//             attributes or is a derived class!
 ```
