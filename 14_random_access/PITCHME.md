@@ -145,6 +145,25 @@ fin.seekg(25L, ios::beg);
 
 ---
 
+## Keep records primitive
+
+Every record in a (simple) random-access file needs to be the same _size_ (in bytes).
+
+* Avoid using any attribute type that is not _trivially copyable_:
+    * http://en.cppreference.com/w/cpp/types/is_trivially_copyable 
+
+```cpp
+#include <iostream>
+#include <type_traits>
+//[...]
+// Let class A be the class you are interested in...
+std::cout << std::boolalpha;
+std::cout << std::is_trivially_copyable<A>::value << '\n';
+// if the output is 'false' then A is not trivially copyable.
+```
+
+---
+
 ## Zero Memory Quickly
 
 For security, it is often desirable to clear _all_ bytes associated with an object's memory allocation.  This can be done efficiently with `memset()`:
