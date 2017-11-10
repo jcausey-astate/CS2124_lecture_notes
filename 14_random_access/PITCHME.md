@@ -145,7 +145,7 @@ fin.seekg(25L, ios::beg);
 
 ---
 
-## Keep records primitive
+## Keep records simple
 
 Every record in a (simple) random-access file needs to be the same _size_ (in bytes).
 
