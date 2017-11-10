@@ -164,7 +164,7 @@ std::cout << std::is_trivially_copyable<A>::value << '\n';
 
 +++
 
-<small style='font-size: 75%;'>
+<small>
 ```cpp
 #include <iostream>
 #include <string>
