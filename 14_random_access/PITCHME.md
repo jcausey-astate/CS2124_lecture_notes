@@ -149,6 +149,7 @@ fin.seekg(25L, ios::beg);
 
 Every record in a (simple) random-access file needs to be the same _size_ (in bytes).
 
+* Avoid using any attributes that are pointers.
 * Avoid using any attribute type that is not _trivially copyable_:
     * http://en.cppreference.com/w/cpp/types/is_trivially_copyable 
 
