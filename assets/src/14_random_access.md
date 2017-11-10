@@ -164,7 +164,7 @@ std::cout << std::is_trivially_copyable<A>::value << '\n';
 
 +++
 
-<small>
+<small style="min_width: 100%;">
 ```cpp
 #include <iostream>
 #include <string>
@@ -201,11 +201,11 @@ struct E{
  
 int main(){
     std::cout << std::boolalpha;
-    std::cout << std::is_trivially_copyable<A>::value << '\n';
-    std::cout << std::is_trivially_copyable<B>::value << '\n';
-    std::cout << std::is_trivially_copyable<C>::value << '\n';
-    std::cout << std::is_trivially_copyable<D>::value << '\n';
-    std::cout << std::is_trivially_copyable<E>::value << '\n';
+    std::cout << std::is_trivially_copyable<A>::value << '\n'; // true
+    std::cout << std::is_trivially_copyable<B>::value << '\n'; // true
+    std::cout << std::is_trivially_copyable<C>::value << '\n'; // false
+    std::cout << std::is_trivially_copyable<D>::value << '\n'; // true
+    std::cout << std::is_trivially_copyable<E>::value << '\n'; // false
     std::cout << '\n';
     return 0;
 }
