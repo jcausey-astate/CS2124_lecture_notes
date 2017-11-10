@@ -185,18 +185,18 @@ private:
 
 struct C{
     int x[10];
-    std::string s;      // not OK!
+    std::string s;              // not OK!
 private:
     int y[10];
 };
 
 struct D{
-    int* x = nullptr;   // watch out! probably not OK...
+    int* x = nullptr;           // watch out! probably not OK...
 };
 
 struct E{
-    int* x = nullptr;   // not OK!
-    E() : x{new int{3}} {}
+    int* x = nullptr;           
+    E () : x{ new int{3} } {}   // not OK!
     ~E() { delete x; }
 };
  
