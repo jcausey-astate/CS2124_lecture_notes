@@ -54,7 +54,7 @@ end function quicksort;
 
 ---
 
-![QuickSort](assets/images/Quicksort/quicksort_anim.gif)
+---?image=asseta/images/Quicksort/quicksort_anim.gif
 
 ---
 
