@@ -54,7 +54,7 @@ end function quicksort;
 
 ---
 
----?image=asseta/images/Quicksort/quicksort_anim.gif
+---?image=assets/images/Quicksort/quicksort_anim.gif
 
 ---
 
