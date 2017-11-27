@@ -54,6 +54,10 @@ end function quicksort;
 
 ---
 
+![QuickSort](images/Quicksort/quicksort_anim.gif){width=100%}
+
+---
+
 ## In-place Partitioning
 
 <small style="font-size: 90%;">
