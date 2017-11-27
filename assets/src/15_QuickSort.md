@@ -55,6 +55,7 @@ end function quicksort;
 ---
 
 <img src="assets/images/Quicksort/quicksort_anim.gif" width="80%">
+<small style="font-size: 9pt;"><br />Image source: Wikipedia.org (https://en.wikipedia.org/wiki/File:Sorting_quicksort_anim.gif)</small>
 
 ---
 
@@ -85,7 +86,7 @@ end function partition;
 
 ## In-place Partitioning
 
-> <img src="assets/images/Quicksort/partition.png" alt="Partitioning" style="height: 500px;" title="In-place partitioning." />
+> <img src="https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/Quicksort/partition.png" alt="Partitioning" style="height: 500px;" title="In-place partitioning." />
 > <small style="font-size: 9pt;"><br />Image source: Wikipedia.org (http://en.wikipedia.org/wiki/File:Partition_example.svg)</small>
 
 ---
