@@ -54,7 +54,7 @@ end function quicksort;
 
 ---
 
-![QuickSort](images/Quicksort/quicksort_anim.gif){width=100%}
+![QuickSort](assets/images/Quicksort/quicksort_anim.gif)
 
 ---
 
