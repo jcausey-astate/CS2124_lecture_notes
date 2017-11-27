@@ -113,4 +113,31 @@ end function quicksort;
 
 <br />
 
+<br />
+
+---
+
+## In-place Quicksort
+
+**In-place quicksort:**
+
+``` asciidoc
+function quicksort(array[], left, right):
+    // If the list has 2 or more items
+    if left < right :
+        // Choose a pivot (how you do this may vary):
+        choose any pivotIndex such that left <= pivotIndex <= right ;
+        // Get subarrays and final position of pivot
+        pivotNewIndex := partition(array, left, right, pivotIndex);
+        // Recursively sort elements smaller than the pivot
+        quicksort(array, left, pivotNewIndex - 1);
+        // Recursively sort elements at least as big as the pivot
+        quicksort(array, pivotNewIndex + 1, right);
+    end if;
+end function quicksort;
+```
+
+<br />
+
 ** Complexity:  $O(n \cdot lg(n))$ (average)   $O(n^2)$ (worst)**
+
