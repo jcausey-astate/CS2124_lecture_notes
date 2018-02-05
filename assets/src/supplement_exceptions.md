@@ -1,4 +1,5 @@
 # Exceptions
+## (When Everything Goes Wrong)
 # 
 ## (Ch 16)
 
@@ -19,6 +20,23 @@ __*`throw`*__ - Used to generate an exception and “throw” it up the _call st
 __*`try`*__ – Used to enclose a block of code in which an exception _might_ occur (allowing the programmer to handle it if it does).
 
 __*`catch`*__ – Used to detect and handle a specific type of exception, if it _actually occurred_ during execution of a `try` block.
+
+---
+
+## Exceptions are about _Communication_
+
+When something goes very wrong _in a way that you cannot fix in the local context_, exceptions give you a way to communicate that problem to a higher level in the program structure.
+
+### Exceptions are:
+* **out-of-band**
+    - They don't add complexity to function or object **interfaces**.
+        + They let the parameters and return types represent whatever they _naturally_ should, without mixing in error signaling.
+
+* **impossible to ignore**
+    - Someone using your library can't just ignore them (and expect their program to keep running).
+    - It forces us to think about what kinds of errors may happen.
+
+Exceptions are a way to handle things that *shouldn't have happened* when they inevitably *do happen*.
 
 ---
 
@@ -43,6 +61,9 @@ int totalDays(int days, int weeks){
         // value being thrown is a C-string:
         throw "Invalid value for days.";
     }
+    if(weeks < 0){
+        throw "Invalid value for weeks.";
+    }
     return 7 * weeks + days;
 }
 ```
@@ -51,15 +72,16 @@ int totalDays(int days, int weeks){
 
 <!-- .slide: data-transition="none", data-background="aliceblue" -->
 
-__Example__
+__Example: Handling the Exception__
 
 ``` cpp
 int main(){
     int days, weeks;
-    // assume days, weeks gets some value
-    // here (from user, etc).
+    cout << "Enter days and weeks separated by space: \n";
+    cin  >> days >> weeks;
+    
     try {  
-        auto totDays = totalDays(days, weeks);
+        int totDays = totalDays(days, weeks);
         cout << "Total days: " << totDays;
     }
     catch (const char* msg) {
@@ -68,6 +90,10 @@ int main(){
     return 0;
 }
 ```
+
+*Should* you *rely* on exception handling here?  (**NO**, you should check the values first.)
+
+But, exceptions provide an impossible-to-ignore failsafe in case the person writing `main()` wasn't thinking about checking pre-conditions.
 
 ---
 
@@ -78,6 +104,58 @@ int main(){
 * `try` block execution is halted, execution jumps to first `catch` block, looking for a <br />
 `catch(const char*)` <br />
 * Since the type matches, execution resumes in the `catch` block.
+
+---
+
+<!-- .slide: data-transition="none", data-background="aliceblue" -->
+
+__Example: Exceptions Can't be Ignored__
+
+``` cpp
+int main(){
+    int days, weeks;
+    cout << "Enter days and weeks separated by space: \n";
+    cin  >> days >> weeks;
+    // No validity check at all!
+    int totDays = totalDays(days, weeks);
+    cout << "Total days: " << totDays;
+
+    return 0;
+}
+```
+
+This code does not check to see if the values entered are valid.  
+
+If they aren't the exception will be thrown, but not caught, and the program will crash.
+
+**Exceptions cannot be (implicitly) ignored!**
+
++++
+
+<!-- .slide: data-transition="none", data-background="aliceblue" -->
+
+__Example: Checking Pre-Conditions__
+
+``` cpp
+int main(){
+    int days, weeks;
+    cout << "Enter days and weeks separated by space: \n";
+    cin  >> days >> weeks;
+    // check pre-conditions first:
+    if( days >= 0 && days < 7 && weeks >= 0 ){
+        int totDays = totalDays(days, weeks);
+        cout << "Total days: " << totDays << '\n';
+    }
+    else{
+        cout << "You entered invalid values.\n";
+    }
+    return 0;
+}
+```
+
+This code checks the pre-conditions before calling `totDays()`, so the exception can't be thrown.
+
+This is probably the "best" (most well thought-out) implementation.
 
 ---
 
