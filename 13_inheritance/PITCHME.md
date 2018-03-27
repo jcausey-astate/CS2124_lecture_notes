@@ -64,6 +64,12 @@ _... Infinite examples:  The real world works this way!_
 
 ---
 
+## Class Access Specifiers
+
+![Diagram of effect of access specifiers.](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/Inheritance/Inheritance_Access_Levels.svg)
+
+---
+
 ## Building and Tearing-Down
 
 * Base class must be constructed before derived class.
