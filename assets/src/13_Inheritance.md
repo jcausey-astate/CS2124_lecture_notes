@@ -76,5 +76,6 @@ _... Infinite examples:  The real world works this way!_
 * Derived class must be destructed before the base class.
 * Derived class may pass arguments to base class constructor:
 ```cpp
-    Square::Square(int s) : Rectangle(s, s)
+    Square::Square(int s) : Rectangle{s, s} { }
+    //                      ^^^^^^^^^^^^^^^
 ```
