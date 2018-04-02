@@ -225,3 +225,31 @@ _**Abstract base class**_: a base class that contains at least one pure virtual 
 * Scope resolution will be required.
 
 ![Multiple Inheritance](assets/images/virtual_Polymorphism/multi_inherit.png )
+
+---
+
+``` cpp
+class Person{
+public:
+    std::string name;
+};
+
+class Student : public Person{   |   class Faculty : public Person{                                     
+public:                          |   public:              
+    unsigned long id;            |       double salary;                            
+};                               |   };         
+
+class GA : public Student, Faculty {
+public:
+    std::vector<std::string> labs;
+};
+    
+int main() {
+    GA ga1;
+    ga1.name = "Alice";  // Error!
+    
+    return 0;
+}
+```
+
+
