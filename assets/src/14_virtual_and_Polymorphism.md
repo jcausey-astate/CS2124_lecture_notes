@@ -234,10 +234,10 @@ public:
     std::string name;
 };
 
-class Student : public Person{   |   class Faculty : public Person{                                     
-public:                          |   public:              
-    unsigned long id;            |       double salary;                            
-};                               |   };         
+class Student : public Person{ | class Faculty : public Person{                                     
+public:                        | public:              
+    unsigned long id;          |    double salary;                            
+};                             | };         
 
 class GA : public Student, Faculty {
 public:
