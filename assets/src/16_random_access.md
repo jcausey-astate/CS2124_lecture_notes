@@ -40,14 +40,14 @@ _**File**_: a set of data stored on a computer; often on secondary storage such 
 
 <small>
 
-| `ios::openmode`   | Meaning |
-|-------------------|-------------------------------------------|
-| `ios::app `       | Append mode.  If the file exists, all output is written to the end of the file. Create the file if it does not exist.   |
-| `ios::ate`        | If the file exists, the initial position markers are moved to the end of it.  |
-| `ios::binary `    | Binary mode.  Data is written/read in pure binary format (no en/decoding takes place)|
-| `ios::in `        | Input mode.  Data will be read from the file.  If the file does not exist, it will not be created and the open will fail. |
-| `ios::out`        | Output mode.  Data will be written to the file. By default, the file's contents will be deleted if it already exists; it will be created otherwise.|
-| `ios::trunc `     | If the file already exists, its contents will be deleted (truncated).  This is the default mode used by `ios::out`.|
+| `ios::openmode` | Meaning                                                                                                                                             |
+|:----------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `ios::app `     | Append mode.  If the file exists, all output is written to the end of the file. Create the file if it does not exist.                               |
+| `ios::ate`      | If the file exists, the initial position markers are moved to the end of it.                                                                        |
+| `ios::binary `  | Binary mode.  Data is written/read in pure binary format (no en/decoding takes place)                                                               |
+| `ios::in `      | Input mode.  Data will be read from the file.  If the file does not exist, it will not be created and the open will fail.                           |
+| `ios::out`      | Output mode.  Data will be written to the file. By default, the file's contents will be deleted if it already exists; it will be created otherwise. |
+| `ios::trunc `   | If the file already exists, its contents will be deleted (truncated).  This is the default mode used by `ios::out`.                                 |
 
 </small>
 
@@ -58,12 +58,13 @@ _**File**_: a set of data stored on a computer; often on secondary storage such 
 
 * The default open mode is "text mode"
     - ASCII – encoded text
-* Opening in "binary mode" (ios::binary) means no encoding scheme is used.
-    - So, raw binary data is written as-is.
+* Opening in "binary mode" (`ios::binary`) means no encoding scheme is used.
+    - Raw binary data is written as-is.
     - Use `read()` and `write()` methods instead of `>>` and `<<`.
 
 **Example**
 ``` cpp
+fstream fin{"my_file", ios::in|ios::binary};
 char ch;
 fin.read(&ch, sizeof(ch)); // read 1 character.
 ```
