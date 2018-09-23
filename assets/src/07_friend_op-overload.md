@@ -268,15 +268,130 @@ Vector2D v1{2, 4};
 
 ## Operator Overloading
 
-Be sure you have considered what the interfaces for each of the following would look like:
+Here are some operators that don't "follow the pattern":
 
-* Usual math (binary) operators
-    - Even when non-class members are on the left...
-* Unary `-`
+* Binary operators where there is an object that is **not** a member of your class on the *left*.
+    - Overload these as stand-alone functions.
 * Stream operators: `<<` and `>>`
-    - How should these be implemented?
-* Array operator `[]`
+    - Really, this is just an example of the previous point: The item on the left is a *stream* object.
+    - Be careful with the stream parameter and return value --- use references! (Never make a copy of an open stream.)
 * `++` and `--`
     - Remember, there is a "pre" and "post" version of each!
+* Array operator `[]`
+
+---
+
+### Binary operators with non-class member on left
+
+Example:  Multiply a real number and a vector:  `2.5 * v` where `v` is a `Vector2D`.
+
+```cpp
+Vector2D operator* (int lhs, const Vector2D& rhs);
+```
+
+Note that this is *not* a method of class `Vector2D` --- it must be implemented as a stand-alone function.
+
+Try to make use of the fact that `2.5 * v` is the same as `v * 2.5` to avoid repeating code.
+
+---
+
+### Stream Operators
+
+The stream operators `>>` and `<<` always have a *stream* object on the left, and always *return the stream*. Consider how the following expression would be evaluated:
+
+```cpp
+std::cout << "Have some " << 3.14 << '\n';
+```
+
+<small>The `<<` operators associate left-to-right, so `cout << "Have some "` executes first, then returns `cout`, which is applied to the left of `<< 3.14`, and so on.</small>
+
+Example: Prototype for stream insertion of `Vector2D`:
+
+```cpp
+std::ostream& operator<< (std::ostream& strm, const Vector2D& v);
+```
+
+---
+
+### `++` and `--`
+
+Incrementing and decrementing vectors doesn't make much sense, so let's use a `ComplexNumber` class defined like so:
+
+```cpp
+class ComplexNumber{
+public:
+    ComplexNumber(double real_part, double imaginary_part);
+    // ... other methods here
+private:
+    double real_part      = 0;
+    double imaginary_part = 0;
+};
+```
+
+---
+
+### `++` and `--` : Prefix version
+
+The expressions `++x` and `--x` increment and decrement `x`, respectively.  The increment happens before the value is returned, so they evaluate to the *modified* value of x.  Say `x` is a `ComplexNumber` with real part 2 and imaginary part 0:
+
+```cpp
+std::cout << x << ' ' << ++x << ' ' << x << '\n';
+// should print "2+0i 3+0i 3+0i", making some reasonable assumptions 
+// about overloading the `<<` operator.
+```
+The prefix increment operator is *unary*, so it makes sense that its prototype (as a member of `ComplexNumber`) would be:
+
+```cpp
+ComplexNumber operator++ (ComplexNumber& num);
+// Non-const reference!  This method _does_ change the object.
+```
+
+The decrement operator works the same, only it subtracts 1 instead of adding.
+
+---
+
+### `++` and `--` : Postfix version
+
+The expressions `x++` and `x--` increment and decrement `x`, respectively.  But in this case, the value that is returned is the original value (before increment/decrementing).  Say `x` is a `ComplexNumber` with real part 2 and imaginary part 0:
+
+```cpp
+std::cout << x << ' ' << ++x << ' ' << x << '\n';
+// should print "2+0i 2+0i 3+0i"
+```
+
+The postfix increment operator is **also** *unary* --- and this causes an ambiguity.  How can the compiler tell one unary operator with the symbol `++` from another?  
+
+They "cheat".   The language specification introduces a "dummy" parameter of type `int` as a second parameter of the *postfix* increment and decrement.  So the prototype for postfix increment is:
+
+```cpp
+ComplexNumber operator++ (ComplexNumber& num, int);
+// Notice the "dummy" parameter - not used in the function code for 
+// anything, so no need to name it.
+// It is there to signal to the compiler that this is the "postfix" increment.
+```
+
+---
+
+### Array operator `[]`:
+
+Imagine a `MyArray` class defined similarly to what we did earlier in the semester.  We defined an `at()` method to allow access to individual elements.
+
+But, C++ allows us to overload the `[]` operator so that our array class can be used the way we expect for an array --- with "bracket" indexing.
+
+`[]` is a *binary* operator (even though it looks odd).  The "left"-hand side is the array object.  The "right"-hand side is the value inside the brackets (normally an `int`).  So the prototype might look like this:
+
+```cpp
+int& operator[] (int index);
+// Notice the return-by-reference:  This allows us to do e.g. `x[3] = 8;`
+```
+
+
+
+
+
+
+
+
+
 
 
