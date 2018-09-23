@@ -352,14 +352,14 @@ The decrement operator works the same, only it subtracts 1 instead of adding.
 
 ### `++` and `--` : Postfix version
 
-The expressions `x++` and `x--` increment and decrement `x`, respectively.  But in this case, the value that is returned is the original value (before increment/decrementing).  Say `x` is a `ComplexNumber` with real part 2 and imaginary part 0:
+<small style="font-size: 80%;">The expressions `x++` and `x--` increment and decrement `x`, respectively.  But in this case, the value that is returned is the original value (before increment/decrementing).  Say `x` is a `ComplexNumber` with real part 2 and imaginary part 0:
 
 ```cpp
 std::cout << x << ' ' << ++x << ' ' << x << '\n';
 // should print "2+0i 2+0i 3+0i"
 ```
 
-<small style="font-size: 90%;">The postfix increment operator is **also** *unary* --- and this causes an ambiguity.  How can the compiler tell one unary operator with the symbol `++` from another?  
+The postfix increment operator is **also** *unary* --- and this causes an ambiguity.  How can the compiler tell one unary operator with the symbol `++` from another?  
 
 They "cheat".  The language specification introduces a "dummy" parameter of type `int` as a second parameter of the *postfix* increment and decrement.  So the prototype for postfix increment is:</small>
 
@@ -382,7 +382,8 @@ But, C++ allows us to overload the `[]` operator so that our array class can be 
 
 ```cpp
 int& operator[] (int index);
-// Notice the return-by-reference:  This allows us to do e.g. `x[3] = 8;`
+// Notice the return-by-reference:  
+// This allows us to do e.g. `x[3] = 8;`
 ```
 
 
