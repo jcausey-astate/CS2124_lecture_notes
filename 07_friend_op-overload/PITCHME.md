@@ -359,9 +359,9 @@ std::cout << x << ' ' << ++x << ' ' << x << '\n';
 // should print "2+0i 2+0i 3+0i"
 ```
 
-The postfix increment operator is **also** *unary* --- and this causes an ambiguity.  How can the compiler tell one unary operator with the symbol `++` from another?  
+<small style="font-size: 90%;">The postfix increment operator is **also** *unary* --- and this causes an ambiguity.  How can the compiler tell one unary operator with the symbol `++` from another?  
 
-They "cheat".   The language specification introduces a "dummy" parameter of type `int` as a second parameter of the *postfix* increment and decrement.  So the prototype for postfix increment is:
+They "cheat".  The language specification introduces a "dummy" parameter of type `int` as a second parameter of the *postfix* increment and decrement.  So the prototype for postfix increment is:</small>
 
 ```cpp
 ComplexNumber operator++ (ComplexNumber& num, int);
