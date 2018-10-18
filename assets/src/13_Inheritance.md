@@ -66,7 +66,7 @@ _... Infinite examples:  The real world works this way!_
 
 ## Class Access Specifiers
 
-![Diagram of effect of access specifiers.](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/Inheritance/Inheritance_Access_Levels.svg?sanitize=true)
+![Diagram of effect of access specifiers.](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/Inheritance/Inheritance_Access_Levels.svg)
 
 ---
 

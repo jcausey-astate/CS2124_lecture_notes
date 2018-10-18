@@ -86,7 +86,7 @@ end function partition;
 
 ## In-place Partitioning
 
-> <img src="https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/Quicksort/partition.png"?sanitize=true alt="Partitioning" style="height: 500px;" title="In-place partitioning." />
+> <img src="https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/Quicksort/partition.png" alt="Partitioning" style="height: 500px;" title="In-place partitioning." />
 > <small style="font-size: 9pt;"><br />Image source: Wikipedia.org (http://en.wikipedia.org/wiki/File:Partition_example.svg)</small>
 
 ---

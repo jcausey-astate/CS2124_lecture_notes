@@ -515,7 +515,7 @@ STL contains algorithms implemented as function templates.
 * Algorithms use _iterators_ for operating on _ranges_ of values in a container.
 * Most will take (at least) a "first" and "last" iterator:
 
-![Sub-range in array](https://raw.githubusercontent.com/jcausey-astate/CS2114_lecture_notes/master/assets/images/shared/range_iterators_to_subrange.svg?sanitize=true)
+![Sub-range in array](https://cdn.rawgit.com/jcausey-astate/CS2114_lecture_notes/master/assets/images/shared/range_iterators_to_subrange.svg)
 
 +++
 
@@ -523,7 +523,7 @@ STL contains algorithms implemented as function templates.
 
 * If you want the entire container, then<br>`first = container.begin()` and `last = container.end()`.
 
-![Range based iterators](https://raw.githubusercontent.com/jcausey-astate/CS2114_lecture_notes/master/assets/images/shared/range_iterators_in_array.svg?sanitize=true)
+![Range based iterators](https://cdn.rawgit.com/jcausey-astate/CS2114_lecture_notes/master/assets/images/shared/range_iterators_in_array.svg)
 
 ---
 
