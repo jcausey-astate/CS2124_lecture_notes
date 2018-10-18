@@ -29,7 +29,7 @@ int tests[5];
 
 allocates the following memory:
 
-![Array elements are contiguous boxes in memory.](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/integer_array_no_indices.svg)
+![Array elements are contiguous boxes in memory.](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/integer_array_no_indices.svg?sanitize=true)
 
 * Arrays are a _reference type_.
     - The array variable does not refer to the array as a whole, only to the location of the first element.
@@ -68,11 +68,11 @@ int       tests[CLASS_SIZE];
 
 Each individual data item in an array is referred to as an _array element_.
 
-![Array elements are contiguous boxes in memory.](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/integer_array_no_indices.svg)
+![Array elements are contiguous boxes in memory.](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/integer_array_no_indices.svg?sanitize=true)
 
 Elements are identified by an integer _index_, starting from 0.
 
-![Array elements are identified by integer indices.](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/integer_array_with_indices.svg)
+![Array elements are identified by integer indices.](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/integer_array_with_indices.svg?sanitize=true)
 
 ---
 
@@ -80,7 +80,7 @@ Elements are identified by an integer _index_, starting from 0.
 
 Array elements start out _uninitialized_.
 
-![Array elements are uninitialized.](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/integer_array_uninitialized.svg)
+![Array elements are uninitialized.](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/integer_array_uninitialized.svg?sanitize=true)
 
 Use the element's _index number_ and _array index syntax_ to access individual elements:
 
@@ -88,7 +88,7 @@ Use the element's _index number_ and _array index syntax_ to access individual e
 tests[0] = 88;
 ```
 
-![Array with first value initialized.](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/integer_array_first_element_initialized.svg)
+![Array with first value initialized.](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/integer_array_first_element_initialized.svg?sanitize=true)
 
 ---
 
@@ -104,7 +104,7 @@ tests[4] = 63;
 
 Produces:
 
-![Array with values.](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/integer_array_with_values.svg)
+![Array with values.](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/integer_array_with_values.svg?sanitize=true)
 
 ---
 
@@ -156,7 +156,7 @@ int tests[5] = { 88, 92, 76, 85, 63 };
 
 Creates the same array we saw earlier:
 
-![Array with values.](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/integer_array_with_values.svg)
+![Array with values.](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/integer_array_with_values.svg?sanitize=true)
 
 ---
 
@@ -273,7 +273,7 @@ int votes[5][3]; // create array with 5 rows and 3 columns
 int votes[5][3]; // create array with 5 rows and 3 columns
 ```
 
-![2-D Array of integers.](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/2D_array_with_indices.svg)
+![2-D Array of integers.](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/2D_array_with_indices.svg?sanitize=true)
 
 ---
 
@@ -286,7 +286,7 @@ In reality, all physical memory is 1-dimensional.
 
 Rows are sequential!
 
-![2-D Array of integers.](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/2D_array_with_indices_physical_layout.svg)
+![2-D Array of integers.](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/2D_array_with_indices_physical_layout.svg?sanitize=true)
 
 ---
 

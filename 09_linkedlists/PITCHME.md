@@ -10,7 +10,7 @@
 * References may be addresses (pointers) or array indices
 * Data can be added/removed during execution.
 
-![linked list](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/LinkedList.svg)
+![linked list](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/LinkedList.svg?sanitize=true)
 
 ---
 
@@ -18,11 +18,11 @@
 
 * Can grow or shrink as needed (unlike arrays).
 
-![linked list](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/LinkedList_add_end.svg)
+![linked list](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/LinkedList_add_end.svg?sanitize=true)
 
 * Can insert data between other nodes easily.
 
-![linked list](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/LinkedList_add_mid.svg)
+![linked list](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/LinkedList_add_mid.svg?sanitize=true)
 
 ---
 
@@ -31,7 +31,7 @@
 * Contains some sort of data.
 * Contains a reference (pointer or array index) to the “next” node in the list.
 
-![linked list](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/LinkedList_node.svg)
+![linked list](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/LinkedList_node.svg?sanitize=true)
 
 ---
 
@@ -42,7 +42,7 @@
 * The end of the list usually points to NULL.
 * A list containing 0 nodes is an _empty list_.
 
-![linked list](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/LinkedList_empty.svg)
+![linked list](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/LinkedList/LinkedList_empty.svg?sanitize=true)
 
 ---
 

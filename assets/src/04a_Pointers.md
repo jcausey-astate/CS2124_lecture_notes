@@ -72,7 +72,7 @@ xPtr = &x;     // point xPtr to x
 
 The following figure illustrates the _physical view_ of what a pointer actually looks like in memory.  The pointer `xPtr` contains the _address_ of the location where `x` is stored:
 
-![Physical view of pointer in memory.](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/pointer_in_memory.svg)
+![Physical view of pointer in memory.](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/pointer_in_memory.svg?sanitize=true)
 
 ---
 
@@ -87,7 +87,7 @@ xPtr = &x;     // point xPtr to x
 
 The following figure illustrates the _logical view_ of what a pointer conceptually does.  The pointer `xPtr` _points to_ the the variable `x`:
 
-![Conceptual view of pointer in memory.](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/pointer_in_memory_conceptual.svg)
+![Conceptual view of pointer in memory.](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/pointer_in_memory_conceptual.svg?sanitize=true)
 
 ---
 
@@ -100,9 +100,9 @@ int* xPtr;     // declare a pointer to an int
 xPtr = &x;     // point xPtr to x
 ```
 
-![Physical view of pointer in memory.](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/pointer_in_memory.svg)
+![Physical view of pointer in memory.](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/pointer_in_memory.svg?sanitize=true)
 
-![Conceptual view of pointer in memory.](https://cdn.rawgit.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/pointer_in_memory_conceptual.svg)
+![Conceptual view of pointer in memory.](https://raw.githubusercontent.com/jcausey-astate/CS2124_lecture_notes/master/assets/images/shared/pointer_in_memory_conceptual.svg?sanitize=true)
 
 ---
 
