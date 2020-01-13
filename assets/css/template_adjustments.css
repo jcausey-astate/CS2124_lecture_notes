@@ -1,6 +1,10 @@
 /*Make the font slightly smaller than the default.*/
 .reveal {
   font-family: "Ubuntu", sans-serif;
-  font-size: 36px;
+  font-size: 35px;
   font-weight: normal;
+}
+
+h1, h2, h3 {
+  text-align: center !important;
 }

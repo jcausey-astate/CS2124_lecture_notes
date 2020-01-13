@@ -1,8 +1,10 @@
 theme-override : assets/css/template_adjustments.css
 
 theme            : template
+layout           : center-left
 
-theme-background : [ "linear-gradient(315deg, #b76f5a 0%, #fdd68a 74%)" ]
+# theme-background : [ "linear-gradient(315deg, #e8cf7e 0%, #fdda8c 74%)" ]
+theme-background : [ "linear-gradient(135deg, rgba(255,249,245,1) 0%, rgba(255,230,200,1) 100%)" ]
 theme-headline   : [ "Montserrat", "black", "none" ]
 theme-byline     : [ "Raleway", "#0e0e0e", "none" ]
 theme-text       : [ "Raleway", "black", "none" ]
