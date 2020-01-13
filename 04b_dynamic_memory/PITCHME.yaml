@@ -1,5 +1,16 @@
-theme: beige
-theme-override : assets/css/beige_causey.css
-transition : fade
-mathjax : TeX-AMS_SVG
-highlight : vs
+theme-override : assets/css/template_adjustments.css
+
+theme            : template
+
+theme-background : [ "linear-gradient(315deg, #b76f5a 0%, #fdd68a 74%)" ]
+theme-headline   : [ "Montserrat", "black", "none" ]
+theme-byline     : [ "Raleway", "#0e0e0e", "none" ]
+theme-text       : [ "Raleway", "black", "none" ]
+theme-links      : [ "#0295BB", "#C0C0C0" ]
+theme-code       : [ "Input Mono" ]
+theme-controls   : [ "#484848" ]
+theme-margins    : [ "0", "15px" ]
+
+highlight        : tomorrow
+transition       : fade
+mathjax          : TeX-AMS_SVG

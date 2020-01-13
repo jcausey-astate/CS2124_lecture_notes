@@ -8,23 +8,30 @@
 
 * Procedural (structured) Programming
     - Concerned with processes (_actions_) that occur in a program.
+    - Basic unit of modularity is the _function_.
 * Object-Oriented Programming (OOP)
     - Focuses on the data (_things_) and the functions that operate on it.
+    - Basic unit of modularity is the _class_ (or structure).
 
 ---
 
-## OOP Concepts
+## OOP Central Concepts
 
 * Encapsulation
     - Bundling
-    - Data hiding
-* Public Interface
+    - Data / Implementation Hiding
+        + Principle of *least privilege*.
+    - Public Interface
+
+* Class Hierarchies (Inheritance)
+    - Factoring out common data/behavior.
+    - Standardizing a common (public) interface.
 
 ---
 
 ## OOP Terminology
 
-_**Class**_ - basically like a _structure_, but allows functions to be encapsulated as well as data.
+_**Class**_ - basically like a _structure_.  Encapsulates data and functions that are related.
 
 * The class is the _blueprint_ describing the new type of thing.
 
@@ -35,6 +42,10 @@ _**Object**_ - an instance of a class.
 _**Attributes**_ - a class's _member data_
 
 _**Methods**_ - a class's _member functions_
+
+@snap[south text-gray]
+<small>We will use `class` and `struct` somewhat interchangeably.</small>
+@snapend
 
 
 ---
@@ -71,7 +82,7 @@ struct Rectangle {  |   class Rectangle {
 **`protected`** - Similar to `private` (we'll see this later).
 
 * Order doesn't matter.
-* Default is `private`
+* Default is `private` for `class`.  (Default is `public` for `struct`.)
 
 ---
 
@@ -105,74 +116,4 @@ struct Rectangle {  |   class Rectangle {
 * A class may not have a default constructor.
 
 ---
-
-# Class and Object Details
-
-The next section will cover details concerned with including `class` definitions in your projects.
-
----
-
-## Specification and Implementation
-
-* Header files ( _`MyClass`_`.h` ) – place class specification (declaration) here
-* Implementation file ( _`MyClass`_`.cpp` ) – implement methods here
-* `#include` the header from the implementation file
-* Implementation ( `.cpp` ) files can be compiled; header files cannot.
-* **NEVER** `#include` a `.cpp` file!
-
----
-
-## Inline Methods
-
-* Implemented directly in class specification.
-* Substituted during compilation.
-* Speed VS executable size
-* “inline all 1-liners”
-* `inline` keyword
-    - Can be used to inline functions implemented separately.
-
----
-
-## Pointers to Objects
-
-* Uses same pointer notation
-* “dot-notation” becomes “arrow-notation”:
-* Arrow operator (  `->`  )
-* Dynamic allocation of objects is possible
-    - Review `new` and `delete`
-
----
-
-## Destructors
-
-* Called when object is destroyed
-* Either being deleted or going out of scope
-* Named same as class, but begins with `~`
-* No return value, no parameters.
-* Cannot be overloaded
-* When and why destructors are needed
-
----
-
-## Overloading
-* Constructors may be overloaded
-    - Consequences for default constructor
-* Methods may be overloaded
-* Destructors _may NOT_ be overloaded
-
----
-
-## Details
-
-* Timing of constructors, destructors
-* “normal objects” and dynamically-allocated objects
-* Private methods – what good are they?
-* Arrays of objects
-    - Requires default constructor ...
-    - ... unless array initializer syntax is used.
-        * May provide arguments only or constructor invocations.
-
-
-
-
 
