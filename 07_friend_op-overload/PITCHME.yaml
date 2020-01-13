@@ -11,6 +11,6 @@ theme-code       : [ "Input Mono" ]
 theme-controls   : [ "#484848" ]
 theme-margins    : [ "0", "15px" ]
 
-highlight        : tomorrow
+highlight        : vs
 transition       : fade
 mathjax          : TeX-AMS_SVG
