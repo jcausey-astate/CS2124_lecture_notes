@@ -43,7 +43,7 @@ _**Attributes**_ - a class's _member data_
 
 _**Methods**_ - a class's _member functions_
 
-@snap[south text-gray]
+@snap[south span-100 text-red]
 <small>We will use `class` and `struct` somewhat interchangeably.</small>
 @snapend
 
@@ -114,6 +114,3 @@ struct Rectangle {  |   class Rectangle {
 * _Default constructor_ is a constructor that takes no parameters; used to create a "default" or "blank" object.
 * Constructors may take parameters to allow _initialization_ during instantiation.
 * A class may not have a default constructor.
-
----
-
