@@ -12,7 +12,6 @@ theme-links      : [ "#0295BB", "#C0C0C0" ]
 theme-code       : [ "Input Mono" ]
 theme-controls   : [ "#484848" ]
 theme-margins    : [ "0", "15px" ]
-theme-selection  : [ "yellow" ]
 
 highlight        : vs
 transition       : fade

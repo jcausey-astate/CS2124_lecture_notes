@@ -3,6 +3,9 @@
   font-family: "Ubuntu", sans-serif;
   font-size: 35px;
   font-weight: normal;
+  ::selection{
+  	background: yellow !important;
+  }
 }
 
 h1, h2, h3 {
@@ -10,5 +13,5 @@ h1, h2, h3 {
 }
 
 ::selection {
-  background: yellow;
+  background: yellow !important;
 }
