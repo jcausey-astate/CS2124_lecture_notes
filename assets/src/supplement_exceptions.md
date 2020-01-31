@@ -1,6 +1,6 @@
 # Exceptions
+
 ## (When Everything Goes Wrong)
-# 
 ## (Ch 16)
 
 ---
@@ -26,6 +26,8 @@ __*`catch`*__ – Used to detect and handle a specific type of exception, if it 
 ## Exceptions are about _Communication_
 
 When something goes very wrong _in a way that you cannot fix in the local context_, exceptions give you a way to communicate that problem to a higher level in the program structure.
+
+---
 
 ### Exceptions are:
 * **out-of-band**
@@ -246,7 +248,7 @@ catch(exception& e){
 
 ---
 
-## Pre-Defined Standard Exceptions
+**Pre-Defined Standard Exceptions**
 
 The `<stdexcept>` header defines some standard exception classes that are ready-to-use.  They are divided into two sets (names are self-explanatory):
 
@@ -270,7 +272,7 @@ underflow_error
 
 ---
 
-## Other Useful Standard Library Exceptions
+**Other Useful Standard Library Exceptions**
 
 ``` cpp
     exception
