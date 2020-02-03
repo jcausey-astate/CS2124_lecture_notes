@@ -283,7 +283,7 @@ underflow_error
     ios_base::failure
 ```
 
----
+<!-- ---
 
 @snap[west span-40]
 @code[cpp zoom-07](code/exceptions_example.cpp)
@@ -314,3 +314,4 @@ underflow_error
 @[45,46, zoom-25](The `@throw` Doxygen tag is used for this -- "when"/"why" should be clearly stated.)
 @snapend
 
+ -->
