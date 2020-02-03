@@ -283,3 +283,36 @@ underflow_error
     ios_base::failure
 ```
 
+---
+
+## Documentation Guidelines
+
+Exceptions require some new documentation...  Here's an example:
+
+```{text}
+/**
+ * converts a numerical ranking in {1,2,3} to the corresponding 
+ * medal color from {"gold","silver","bronze"}
+ * 
+ * @param  rank  integer numerical ranking; should be in {1,2,3}
+ * @return the corresponding metal color for `rank` is returned 
+ *         from the set {"gold", "silver", "bronze"}.
+ * @throw  std::invalid_argument is thrown if `rank` is not one
+ *         of {1,2,3}.
+ */
+```
+
+---
+
+## Documentation Guidelines
+
+```{text}
+ * @throw  std::invalid_argument is thrown if `rank` is not one
+ *         of {1,2,3}.
+```
+
+Notice the `@throw` Doxygen tag -- it should be used once for *each type*
+of exception your function may throw.
+
+Be sure to describe the exception *type*, as well as when/why it would
+be thrown.
