@@ -56,7 +56,7 @@ When something unexpected happens, a function may choose to throw an exception.
 
 __Example__
 
-``` cpp
+```{cpp}
 // function that *may* throw an exception
 int totalDays(int days, int weeks){
     if((days < 0) || (days > 7)){
@@ -76,7 +76,7 @@ int totalDays(int days, int weeks){
 
 __Example: Handling the Exception__
 
-``` cpp
+```{cpp}
 int main(){
     int days, weeks;
     cout << "Enter days and weeks separated by space: \n";
@@ -113,7 +113,7 @@ But, exceptions provide an impossible-to-ignore failsafe in case the person writ
 
 __Example: Exceptions Can't be Ignored__
 
-``` cpp
+```{cpp}
 int main(){
     int days, weeks;
     cout << "Enter days and weeks separated by space: \n";
@@ -138,7 +138,7 @@ If they aren't the exception will be thrown, but not caught, and the program wil
 
 __Example: Checking Pre-Conditions__
 
-``` cpp
+```{cpp}
 int main(){
     int days, weeks;
     cout << "Enter days and weeks separated by space: \n";
@@ -198,13 +198,13 @@ is better than <br />
 
 **Example**
 
-``` cpp
+```{cpp}
 class NullPointerException{ };  // empty
 ```
 
 Or:
 
-``` cpp
+```{cpp}
 class NullPointerException{
     public:
         string msg;            // with attribute
@@ -218,7 +218,7 @@ The C++ Standard Library defines an `exception` base class in the `<exception>` 
 
 * Useful (later) to make our own exceptions with nice common behaviors.
 
-``` cpp
+```{cpp}
 #include<exception>
     using std::exception;
 
@@ -236,7 +236,7 @@ class NullPointerException : public exception{
 
 Also, _Polymorphism_!
 
-``` cpp
+```{cpp}
 try{
     [...] 
 }
@@ -274,7 +274,7 @@ underflow_error
 
 **Other Useful Standard Library Exceptions**
 
-``` cpp
+```{cpp}
     exception
     bad_alloc
     bad_cast
@@ -282,3 +282,35 @@ underflow_error
     bad_typeid
     ios_base::failure
 ```
+
+---
+
+@snap[west span-40]
+@code[cpp zoom-07](code/exceptions_example.cpp)
+@snapend
+
+@snap[east span-50]
+### Full Working Example
+@snapend
+
+---
+
+@code[cpp zoom-21](code/exceptions_example.cpp)
+
+@snap[south span-100]
+@[1-4, zoom-5]( )
+@[9, zoom-25](`to_medal_color()` converts a numeric rank to an award medal color.)
+@[48, zoom-25](It has a pre-condition that `rank` is 1, 2, or 3...)
+@[53-56, zoom-23](If `rank` contains an invalid value, we `throw` a `std::invalid_argument`.)
+@[21-32, zoom-23](We can `try` to call the function and `catch` the exception if it occurs.)
+@snapend
+
+---
+
+@code[cpp zoom-21](code/exceptions_example.cpp)
+
+@snap[south span-100]
+@[38-47, zoom-23](Don't forget to document the exception in the function's documentation header.)
+@[45,46, zoom-25](The `@throw` Doxygen tag is used for this -- "when"/"why" should be clearly stated.)
+@snapend
+
