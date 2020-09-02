@@ -93,6 +93,7 @@ struct Rectangle {  |   class Rectangle {
     - May also be in same file.
 * _Scope resolution operator_ ( `::` ) – used to establish ownership of an identifier
     - Must be used when splitting method definitions from the class declaration.
+* Private methods – what good are they?
 
 ---
 
@@ -113,4 +114,4 @@ struct Rectangle {  |   class Rectangle {
 * Constructors have the same name as the class.
 * _Default constructor_ is a constructor that takes no parameters; used to create a "default" or "blank" object.
 * Constructors may take parameters to allow _initialization_ during instantiation.
-* A class may not have a default constructor.
+* Classes do not always have a default constructor.

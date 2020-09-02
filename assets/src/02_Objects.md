@@ -35,6 +35,18 @@
 
 ---
 
+## Constructors
+
+* Allow an object to be _instantiated_ (created) in an already-working state.
+    - Contrast this with the _uninitialized_ state that regular data and `struct`s begin with.
+* Constructors _do not_ have any return type.
+* Constructors have the same name as the class.
+* _Default constructor_ is a constructor that takes no parameters; used to create a "default" or "blank" object.
+* Constructors may take parameters to allow _initialization_ during instantiation.
+* Classes do not always have a default constructor.
+
+---
+
 ## Destructors
 
 * Called when object is destroyed
@@ -48,18 +60,57 @@
 
 ## Overloading
 * Constructors may be overloaded
-    - Consequences for default constructor
+    - Remember that there are consequences for default constructor
 * Methods may be overloaded
 * Destructors _may NOT_ be overloaded
+
+---
+
+## Uniform Initialization Syntax
+* Added in C++11
+* Allows initialization of all types of variables with the same syntax.
+* The "old" syntax for each type still works, but consider using uniform syntax.
+
+**Syntax:**
+`variableType  variableName{argument1, argument2};`
+
+**Example:**
+```cpp
+int       age{23};
+Rectangle classroom{24, 30};
+// The following is an array - we will talk more about these soon:
+double    temperatures[]{78.8, 80.2, 92.4, 87.5, 95.3, 95.1, 92.8};
+```
 
 ---
 
 ## Details
 
 * Timing of constructors, destructors
-* "normal objects" and dynamically-allocated objects
-* Private methods – what good are they?
+* "normal objects"
+* Sneek peek: Pointers to objects, and `this` keyword.
 * Arrays of objects
     - Requires default constructor ...
     - ... unless initialization syntax is used.
         * May provide arguments only or constructor invocations.
+
+---
+
+## Constructor initialization list syntax
+
+* Compact syntax for placing values into attributes in a constructor implementation.
+* Only works with constructors.
+* Guarantees initialization *before* body of constructor executes.
+
+**Example**
+
+```cpp
+struct Rectangle{
+    Rectangle(int l, int w) : length{l}, width{w} {}
+    int length;
+    int width;
+};
+```
+
+The body of the constructor above is _empty_ since there is no more initialization work to do... But the body (curly braces) is still required syntactically.
+
