@@ -25,16 +25,6 @@
 
 ---
 
-## Pointers to Objects
-
-* Uses same pointer notation
-* “dot-notation” becomes “arrow-notation”:
-* Arrow operator (  `->`  )
-* Dynamic allocation of objects is possible
-    - Operators `new` and `delete` (coming soon...)
-
----
-
 ## Constructors
 
 * Allow an object to be _instantiated_ (created) in an already-working state.
@@ -44,6 +34,43 @@
 * _Default constructor_ is a constructor that takes no parameters; used to create a "default" or "blank" object.
 * Constructors may take parameters to allow _initialization_ during instantiation.
 * Classes do not always have a default constructor.
+
+---
+
+## c-tor initialization lists
+
+* Compact syntax for placing values into attributes in a constructor implementation.
+* Guarantees initialization *before* body of constructor executes.
+
+**Example**
+
+```cpp
+struct Rectangle{
+    Rectangle(int l, int w) : length{l}, width{w} {}
+    int length;
+    int width;
+};
+```
+
+The body of the constructor above is _empty_ since there is no more initialization work to do... But the body (curly braces) is still required syntactically.
+
+---
+
+## c-tor initialization lists
+
+There is no need for name disambiguation in a constructor initialization list, due to the syntactic requirements of the language.
+
+**Example**
+
+```cpp
+struct Rectangle{
+    Rectangle(int length, int width) : length{length}, width{width} {}
+    int length;
+    int width;
+};
+```
+
+This can allow you to write more expressive code, more easily.
 
 ---
 
@@ -66,7 +93,39 @@
 
 ---
 
-## Uniform Initialization Syntax
+## Sneek Peek: Pointers to Objects
+
+* Uses same pointer notation
+* “dot-notation” becomes “arrow-notation”:
+* Arrow operator (  `->`  )
+* Dynamic allocation of objects is possible (coming soon...)
+
+---
+
+**`this` keyword**
+
+* `this` is a keyword representing a *pointer to* the current object.
+* Used to disambiguate naming within method bodies.
+
+**Example**
+
+```cpp
+struct Rectangle{
+    Rectangle(int l, int w);
+    void set_length(int length){
+        this->length = length;
+    }
+    // [...] other methods not shown.
+private:
+    int length;
+    int width;
+};
+```
+
+---
+
+**Uniform Initialization Syntax**
+
 * Added in C++11
 * Allows initialization of all types of variables with the same syntax.
 * The "old" syntax for each type still works, but consider using uniform syntax.
@@ -84,33 +143,10 @@ double    temperatures[]{78.8, 80.2, 92.4, 87.5, 95.3, 95.1, 92.8};
 
 ---
 
-## Details
+## Other Details
 
 * Timing of constructors, destructors
-* "normal objects"
-* Sneek peek: Pointers to objects, and `this` keyword.
 * Arrays of objects
     - Requires default constructor ...
     - ... unless initialization syntax is used.
         * May provide arguments only or constructor invocations.
-
----
-
-## Constructor initialization list syntax
-
-* Compact syntax for placing values into attributes in a constructor implementation.
-* Only works with constructors.
-* Guarantees initialization *before* body of constructor executes.
-
-**Example**
-
-```cpp
-struct Rectangle{
-    Rectangle(int l, int w) : length{l}, width{w} {}
-    int length;
-    int width;
-};
-```
-
-The body of the constructor above is _empty_ since there is no more initialization work to do... But the body (curly braces) is still required syntactically.
-
