@@ -9,7 +9,7 @@ _Arrays_ allow programmers to store multiple related values of the same type.
 
 * Values are stored sequentially in memory.
 * Declaration syntax: <br />
-_`type`_ _`arrayname`_`[`_`size_declarator`_`]`;
+_`type`_ _`arrayname`_`[` _`size_declarator`_ `]`;
 
 **Example Declarations**
 ``` cpp
