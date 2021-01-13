@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href="https://jcausey-astate.github.io/CS2124_lecture_notes/favicon.ico">
+	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2124_lecture_notes/css/remark.css" />
+	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2124_lecture_notes/css/prog-courses.css" />
+
+</head>
+
+
+<body>
+    <textarea id="source" class="three-col">
+
+
+
+&lt;small style=&#34;font-size: 100%; margin-left: -3em; min-width: 95%; height: 100%; margin-top: -100px;&#34;&gt;
+```cpp
+#include &lt;random&gt;
+/**
+ * @brief   returns a pseudo-random integer in the interval [low, high]
+ * @details Sets up an mt19937 Mersenne Twister random number generator
+ *          using a random seed obtained from the best entropy source
+ *          available to the &lt;random&gt; library.
+ *          Notice:  first call incurs additional setup time.
+ * 
+ * @param low  lower-bound of interval for random value (included in interval)
+ * @param high upper-bound of interval for random value (included in interval)  
+ * 
+ * @return pseudo-random integer in the range [low, high]
+ */
+int rand_between(int low, int high){
+    // used to seed with system entropy
+    static std::random_device            seeder;                    
+    // set up (and seed) the PRNG
+    static std::mt19937                  generator{seeder()};       
+    // set up distribution for requested range
+    std::uniform_int_distribution&lt;int&gt;   distribution{low, high};   
+    // generate and return result
+    return distribution(generator);                                 
+}
+
+```
+&lt;/small&gt;
+
+</textarea>
+    <script src="https://jcausey-astate.github.io/CS2124_lecture_notes/js/remark-latest.min.js"></script>
+<script src='https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML' type="text/javascript"></script>
+<script>
+	var slideshow = remark.create();
+
+	
+	MathJax.Hub.Config({
+		tex2jax: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+		}
+	});
+	MathJax.Hub.Queue(function () {
+		$(MathJax.Hub.getAllJax()).map(function (index, elem) {
+			return (elem.SourceElement());
+		}).parent().addClass('has-jax');
+	});
+
+	MathJax.Hub.Configured();
+</script>
+</body>
+
+</html>

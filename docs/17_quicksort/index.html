@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href="https://jcausey-astate.github.io/CS2124_lecture_notes/favicon.ico">
+	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2124_lecture_notes/css/remark.css" />
+	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2124_lecture_notes/css/prog-courses.css" />
+
+</head>
+
+
+<body>
+    <textarea id="source" class="three-col">
+
+
+# Quicksort
+
+
+---
+
+## Simple Sorting Methods
+
+* Bubble Sort
+* Selection Sort
+* Insertion Sort &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+* **All are $O(n^2)$** 
+* A better algorithm is needed!
+
+---
+
+## Quicksort
+
+Quicksort is a divide-and-conquer algorithm developed in 1960 by Tony Hoare.
+
+&lt;br /&gt;
+
+It divides the array into two halves, and sorts those halves recursively.
+
+---
+
+## Quicksort
+
+Quicksort divides the array into two halves, and sorts those halves recursively.
+
+A _pivot_ element is chosen, then all elements greater than the pivot are moved to its right, and all elements less than the pivot are moved to its left.
+
+The left and right sub-arrays are then sorted recursively.
+
+---
+
+## Algorithm
+
+``` asciidoc
+function quicksort(data[], n):
+    if n &gt; 1:
+        choose pivot element;
+        for each element in the array:
+            if element &lt;= pivot:
+                place in left_sub_array;
+            else if element &gt;= pivot:
+                place in right_sub_array;
+            end if;
+        end for;
+        quicksort(left_subarray, size_of_left_subarray);
+        quicksort(right_subarray, size_of_right_subarray);
+    end if;
+end function quicksort;
+```
+
+---
+
+&lt;img src=&#34;../images/Quicksort/quicksort_anim.gif&#34; width=&#34;80%&#34;&gt;
+&lt;small style=&#34;font-size: 9pt;&#34;&gt;&lt;br /&gt;Image source: Wikipedia.org (https://en.wikipedia.org/wiki/File:Sorting_quicksort_anim.gif)&lt;/small&gt;
+
+---
+
+## In-place Partitioning
+
+&lt;small style=&#34;font-size: 90%;&#34;&gt;
+
+``` asciidoc
+// left is the index of the leftmost element of the array
+// right is the index of the rightmost element of the array (inclusive)
+// number of elements in subarray = right-left&#43;1
+function partition(data[], left, right, pivotIndex):
+   pivotValue := array[pivotIndex];
+   swap(array[pivotIndex], array[right]);  // Move pivot to end
+   storeIndex := left;
+   for i from left to right - 1 :          // left &lt;= i &lt; right
+       if array[i] &lt; pivotValue:
+           swap(array[i], array[storeIndex]);
+           storeIndex := storeIndex &#43; 1;
+   swap(array[storeIndex], array[right]);  // Move pivot to its final place
+   return storeIndex;
+end function partition;
+```
+
+&lt;/small&gt;
+
+---
+
+## In-place Partitioning
+
+&gt; &lt;img src=&#34;../images/Quicksort/partition.png&#34; alt=&#34;Partitioning&#34; style=&#34;height: 500px;&#34; title=&#34;In-place partitioning.&#34; /&gt;
+&gt; &lt;small style=&#34;font-size: 9pt;&#34;&gt;&lt;br /&gt;Image source: Wikipedia.org (http://en.wikipedia.org/wiki/File:Partition_example.svg)&lt;/small&gt;
+
+---
+
+## In-place Quicksort
+
+**In-place quicksort:**
+
+``` asciidoc
+function quicksort(array[], left, right):
+    // If the list has 2 or more items
+    if left &lt; right :
+        // Choose a pivot (how you do this may vary):
+        choose any pivotIndex such that left &lt;= pivotIndex &lt;= right ;
+        // Get subarrays and final position of pivot
+        pivotNewIndex := partition(array, left, right, pivotIndex);
+        // Recursively sort elements smaller than the pivot
+        quicksort(array, left, pivotNewIndex - 1);
+        // Recursively sort elements at least as big as the pivot
+        quicksort(array, pivotNewIndex &#43; 1, right);
+    end if;
+end function quicksort;
+```
+
+&lt;br /&gt;
+
+&lt;br /&gt;
+
+---
+
+## In-place Quicksort
+
+**In-place quicksort:**
+
+``` asciidoc
+function quicksort(array[], left, right):
+    // If the list has 2 or more items
+    if left &lt; right :
+        // Choose a pivot (how you do this may vary):
+        choose any pivotIndex such that left &lt;= pivotIndex &lt;= right ;
+        // Get subarrays and final position of pivot
+        pivotNewIndex := partition(array, left, right, pivotIndex);
+        // Recursively sort elements smaller than the pivot
+        quicksort(array, left, pivotNewIndex - 1);
+        // Recursively sort elements at least as big as the pivot
+        quicksort(array, pivotNewIndex &#43; 1, right);
+    end if;
+end function quicksort;
+```
+
+&lt;br /&gt;
+
+** Complexity:  $O(n \cdot lg(n))$ (average)   $O(n^2)$ (worst)**
+
+
+
+</textarea>
+    <script src="https://jcausey-astate.github.io/CS2124_lecture_notes/js/remark-latest.min.js"></script>
+<script src='https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML' type="text/javascript"></script>
+<script>
+	var slideshow = remark.create();
+
+	
+	MathJax.Hub.Config({
+		tex2jax: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+		}
+	});
+	MathJax.Hub.Queue(function () {
+		$(MathJax.Hub.getAllJax()).map(function (index, elem) {
+			return (elem.SourceElement());
+		}).parent().addClass('has-jax');
+	});
+
+	MathJax.Hub.Configured();
+</script>
+</body>
+
+</html>

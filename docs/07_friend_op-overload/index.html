@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href="https://jcausey-astate.github.io/CS2124_lecture_notes/favicon.ico">
+	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2124_lecture_notes/css/remark.css" />
+	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2124_lecture_notes/css/prog-courses.css" />
+
+</head>
+
+
+<body>
+    <textarea id="source" class="three-col">
+
+
+## `friend` Functions  
+## Operator Overloading
+
+---
+
+## Friends of Classes
+
+* A function or class may be declared to be a `friend` of a new class.  
+    - Created by adding the `friend` type modifier to the front of a declaration/prototype.
+* Declaring a function or class as a friend gives that function/class access to the private data in the class being defined.
+* __*Use this sparingly!*__
+
+If you find yourself needing a `friend` function/class, you could probably _design your class better_ and avoid the problem.
+
+---
+
+## Memberwise Assignment
+* When using `=` to assign one object to another...
+    - Each member is assigned directly (by copy) from the class on the right to the one on the left.
+    - This is often the desired outcome... but not always!
+        &#43; (reference types like arrays can cause problems)
+* Two parts to the solution:
+    - Copy Constructor
+    - Overloaded assignment operator
+
+---
+
+### Review: Operator Overloading
+
+* Almost all operators in C&#43;&#43; can be overloaded (see book).
+* Many can be overloaded as class methods.
+    - Some, like `=` and `[]` can _only_ be overloaded as class methods.
+    - Overloading as methods helps keep class-related code _encapsulated_ in the class.
+
+---
+
+### Review: Operator Arity
+
+* **Unary Operators** --- Operators with __one__ operand.
+    - Examples: negation, logical &#34;not&#34;
+* **Binary Operators** --- Operators with __two__ operands.
+    - Examples:  addition, subtraction, multiplication, division, etc.
+* **Ternary Operators** --- Operators with __three__ operands.
+    - Example:  The `?:` _conditional_ operator.
+    - Cannot be overloaded.
+
+---
+
+### Review: Operator Overloading
+
+Function name is just &#34;`operator`&#34; followed by the symbol for the operator being overloaded (space optional).
+
+**Examples**
+
+`operator&#43;`
+
+`operator*`
+
+`operator/`
+
+`operator-`
+
+`operator&lt;&lt;`
+
+---
+
+### Review Example: `struct Vector2D`
+
+In Structured Programming, you developed a `Vector2D` data type using a `struct`.  It contained an `x` and `y` attribute (integers):
+
+``` cpp
+struct Vector2D {
+    int x;
+    int y;
+};
+```
+
+---
+
+### Review: Stand-Alone Op. Functions
+
+The following examples use the `Vector2D` type for demonstration.
+
+**Binary** (the most common type):
+
+``` cpp
+// Handle expressions similar to:  v1 &#43; v2
+Vector2D operator&#43; (const Vector2D&amp; left, 
+                    const Vector2D&amp; right);
+```
+Note how the left-hand and right-hand operands become parameters.
+
+---
+
+### Review: Stand-Alone Op. Functions
+
+**Unary**:
+
+``` cpp
+// Handle expressions similar to:  -v1
+Vector2D operator- (const Vector2D&amp; right);
+```
+For unary operators, there is only one operand involved, and it is usually the right-hand side.
+
+---
+
+**`class Vector2D`:**  `class Vector2D` will be used in the following slides:
+
+&lt;small style=&#34;font-size: 77%;&#34;&gt;
+
+``` cpp
+using std::ostream;
+
+class Vector2D {
+public:
+    // default c-tor (zero x and y using universal 
+    // initializer syntax in the c-tor initialization 
+    // list).
+    Vector2D()             : x{0}, y{0} { }
+    // overloaded c-tor allows construction given an 
+    // x- and y- component value.
+    Vector2D(int x, int y) : x{x}, y{y} { }
+
+    // [...] other operators prototyped here...
+
+    // as seen in class, stream insertion may be 
+    // designated a `friend` to allow access to 
+    // private attributes `x` &amp; `y`.
+    friend ostream&amp; operator&lt;&lt; (ostream&amp; s, 
+                                const Vector2D&amp; v);
+private:
+    int x;
+    int y;
+};
+```
+
+&lt;/small&gt;
+
+---
+
+### Binary Operator Methods
+
+When overloading a binary operator in a `class` method, the _object itself_ __always__ takes the &#34;left-hand&#34; position:
+
+**Example:**
+
+```cpp
+class Vector2D {
+public:
+    [...]
+
+    // Addition:   v1 &#43; v2
+    Vector2D  operator&#43; (const Vector2D&amp; right);
+    
+    [...]
+};
+```
+
+---
+
+### `const` Methods
+
+Previous slide prototype has a problem:
+``` cpp
+Vector2D  operator&#43; (const Vector2D&amp; right);
+```
+This specifies that the right- operand must remain unchanged ...    
+But the left- operand (the object iself) _should also_ remain unchanged!    
+Mark _methods_ as `const` to indicate the object&#39;s state is not modified by the method:
+``` cpp
+Vector2D  operator&#43; (const Vector2D&amp; right) const;
+```
+Note the keyword `const` __following__ the parameter list. This creates a _`const` method_.  The method __must not__ modify the object (`this`).
+
+---
+
+### `class Vector2D` Now:
+
+&lt;small style=&#34;font-size: 77%;&#34;&gt;
+
+``` cpp
+using std::ostream;
+
+class Vector2D {
+public:
+    // default c-tor (zero x and y using universal 
+    // initializer syntax in the c-tor initialization 
+    // list).
+    Vector2D()             : x{0}, y{0} { }
+    // overloaded c-tor allows construction given an 
+    // x- and y- component value.
+    Vector2D(int x, int y) : x{x}, y{y} { }
+
+    // overloaded addition:  v1 &#43; v2
+    Vector2D  operator&#43; (const Vector2D&amp; right) const;
+
+    // as seen in class, stream insertion may be 
+    // designated a `friend` to allow access to 
+    // private attributes `x` &amp; `y`.
+    friend ostream&amp; operator&lt;&lt; (ostream&amp; s, 
+                                const Vector2D&amp; v);
+private:
+    int x;
+    int y;
+};
+```
+
+&lt;/small&gt;
+
+---
+
+### Implement `Vector2d::operator&#43;`
+
+Now implement the method `Vector2d::operator&#43;`.
+
+* Addition of vectors involves adding the $x$- and $y$- component of the left and right operands together:
+    - $a &#43; b = \langle a_x&#43;b_x, a_y&#43;b_y \rangle$ 
+
+---
+
+### Unary Operator Methods
+
+When overloading a unary operator in a `class` method, the _object itself_ is being operated upon, and there are __no__ additional parameters.
+
+**Example:**
+
+```cpp
+class Vector2D {
+public:
+    [...]
+
+    // unary `-` : invert vector
+    Vector2D  operator- ( ) const; 
+    
+    [...]
+};
+```
+
+---
+
+### Implement `Vector2d::operator-` (unary)
+
+Now implement the unary operator method `Vector2d::operator-`.
+
+* Inversion of vectors involves reversing the direction of both the $x$- and $y$- components:
+    - $-a = \langle -a_x, -a_y \rangle$ 
+
+---
+
+### Follow the Pattern
+
+Other unary and binary operators are overloaded the same way.
+
+* Determine the proper return type.
+* The object is on the left (for binary)
+* Most operators don&#39;t change the operands
+    - (so use `const` methods and pass by `const` ref.)
+
+**Q:** What would happen if you had a non-class item on the left of a binary operation?
+
+**Example:**
+``` cpp
+Vector2D v1{2, 4};
+// What would the expression 3 * v1   do?
+```
+
+---
+
+## Operator Overloading
+
+Here are some operators that don&#39;t &#34;follow the pattern&#34;:
+
+* Binary operators where there is an object that is **not** a member of your class on the *left*.
+    - Overload these as stand-alone functions.
+* Stream operators: `&lt;&lt;` and `&gt;&gt;`
+    - Really, this is just an example of the previous point: The item on the left is a *stream* object.
+    - Be careful with the stream parameter and return value --- use references! (Never make a copy of an open stream.)
+* `&#43;&#43;` and `--`
+    - Remember, there is a &#34;pre&#34; and &#34;post&#34; version of each!
+* Array operator `[]`
+
+---
+
+### Binary operators with non-class member on left
+
+Example:  Multiply a real number and a vector:  `2.5 * v` where `v` is a `Vector2D`.
+
+```cpp
+Vector2D operator* (int lhs, const Vector2D&amp; rhs);
+```
+
+Note that this is *not* a method of class `Vector2D` --- it must be implemented as a stand-alone function.
+
+Try to make use of the fact that `2.5 * v` is the same as `v * 2.5` to avoid repeating code.
+
+---
+
+### Stream Operators
+
+The stream operators `&gt;&gt;` and `&lt;&lt;` always have a *stream* object on the left, and always *return the stream*. Consider how the following expression would be evaluated:
+
+```cpp
+std::cout &lt;&lt; &#34;Have some &#34; &lt;&lt; 3.14 &lt;&lt; &#39;\n&#39;;
+```
+
+&lt;small&gt;The `&lt;&lt;` operators associate left-to-right, so `cout &lt;&lt; &#34;Have some &#34;` executes first, then returns `cout`, which is applied to the left of `&lt;&lt; 3.14`, and so on.&lt;/small&gt;
+
+Example: Prototype for stream insertion of `Vector2D`:
+
+```cpp
+std::ostream&amp; operator&lt;&lt; (std::ostream&amp; strm, const Vector2D&amp; v);
+```
+
+---
+
+### `&#43;&#43;` and `--`
+
+Incrementing and decrementing vectors doesn&#39;t make much sense, so let&#39;s use a `ComplexNumber` class defined like so:
+
+```cpp
+class ComplexNumber{
+public:
+    ComplexNumber(double real_part, double imaginary_part);
+    // ... other methods here
+private:
+    double real_part      = 0;
+    double imaginary_part = 0;
+};
+```
+
+---
+
+### `&#43;&#43;` and `--` : Prefix version
+
+The expressions `&#43;&#43;x` and `--x` increment and decrement `x`, respectively.  The increment happens before the value is returned, so they evaluate to the *modified* value of x.  Say `x` is a `ComplexNumber` with real part 2 and imaginary part 0:
+
+```cpp
+std::cout &lt;&lt; x &lt;&lt; &#39; &#39; &lt;&lt; &#43;&#43;x &lt;&lt; &#39; &#39; &lt;&lt; x &lt;&lt; &#39;\n&#39;;
+// should print &#34;2&#43;0i 3&#43;0i 3&#43;0i&#34;, making some reasonable assumptions 
+// about overloading the `&lt;&lt;` operator.
+```
+The prefix increment operator is *unary*, so it makes sense that its prototype (as a member of `ComplexNumber`) would be:
+
+```cpp
+ComplexNumber operator&#43;&#43; (ComplexNumber&amp; num);
+// Non-const reference!  This method _does_ change the object.
+```
+
+The decrement operator works the same, only it subtracts 1 instead of adding.
+
+---
+
+### `&#43;&#43;` and `--` : Postfix version
+
+&lt;small style=&#34;font-size: 80%;&#34;&gt;The expressions `x&#43;&#43;` and `x--` increment and decrement `x`, respectively.  But in this case, the value that is returned is the original value (before increment/decrementing).  Say `x` is a `ComplexNumber` with real part 2 and imaginary part 0:
+
+```cpp
+std::cout &lt;&lt; x &lt;&lt; &#39; &#39; &lt;&lt; &#43;&#43;x &lt;&lt; &#39; &#39; &lt;&lt; x &lt;&lt; &#39;\n&#39;;
+// should print &#34;2&#43;0i 2&#43;0i 3&#43;0i&#34;
+```
+
+The postfix increment operator is **also** *unary* --- and this causes an ambiguity.  How can the compiler tell one unary operator with the symbol `&#43;&#43;` from another?  
+
+They &#34;cheat&#34;.  The language specification introduces a &#34;dummy&#34; parameter of type `int` as a second parameter of the *postfix* increment and decrement.  So the prototype for postfix increment is:&lt;/small&gt;
+
+```cpp
+ComplexNumber operator&#43;&#43; (ComplexNumber&amp; num, int);
+// Notice the &#34;dummy&#34; parameter - not used in the function code for 
+// anything, so no need to name it.
+// It is there to signal to the compiler that this is the &#34;postfix&#34; increment.
+```
+
+---
+
+### Array operator `[]`:
+
+Imagine a `MyArray` class defined similarly to what we did earlier in the semester.  We defined an `at()` method to allow access to individual elements.
+
+But, C&#43;&#43; allows us to overload the `[]` operator so that our array class can be used the way we expect for an array --- with &#34;bracket&#34; indexing.
+
+`[]` is a *binary* operator (even though it looks odd).  The &#34;left&#34;-hand side is the array object.  The &#34;right&#34;-hand side is the value inside the brackets (normally an `int`).  So the prototype might look like this:
+
+```cpp
+int&amp; operator[] (int index);
+// Notice the return-by-reference:  
+// This allows us to do e.g. `x[3] = 8;`
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+    <script src="https://jcausey-astate.github.io/CS2124_lecture_notes/js/remark-latest.min.js"></script>
+<script src='https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML' type="text/javascript"></script>
+<script>
+	var slideshow = remark.create();
+
+	
+	MathJax.Hub.Config({
+		tex2jax: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+		}
+	});
+	MathJax.Hub.Queue(function () {
+		$(MathJax.Hub.getAllJax()).map(function (index, elem) {
+			return (elem.SourceElement());
+		}).parent().addClass('has-jax');
+	});
+
+	MathJax.Hub.Configured();
+</script>
+</body>
+
+</html>

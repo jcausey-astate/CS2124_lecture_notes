@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href="https://jcausey-astate.github.io/CS2124_lecture_notes/favicon.ico">
+	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2124_lecture_notes/css/remark.css" />
+	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2124_lecture_notes/css/prog-courses.css" />
+
+</head>
+
+
+<body>
+    <textarea id="source" class="three-col">
+
+
+## Doubly-Linked Lists
+
+#### CS2124
+
+---
+
+## Doubly-Linked List
+
+A _doubly-linked list_ is a linked list in which the _nodes_ support access to both the _next_ and _previous_ items in the list, allowing bidirectional traversal.
+
+
+![doubly-linked list](../images/LinkedList/Doubly-Linked_List.svg)
+
+---
+
+## A Doubly-Linked Node
+
+```cpp
+class DL_IntNode{
+    private:
+        int data;
+        DL_IntNode* prev;   // NEW
+        DL_IntNode* next;
+    public:
+        // [...] Public interface same as singly-linked list.
+};
+```
+
+A doubly-linked list&#39;s _node_ is different only in that it maintains one extra link &amp;mdash; in this case, a pointer `prev` to the previous node.
+
+![doubly-linked list](../images/LinkedList/Doubly-Linked_List.svg)
+
+
+---
+
+## Considerations for List Operations
+
+Because the list is linked in two directions, list operations are affected in that they must maintain the correct links:
+
+* add to list
+    - at front
+    - at back
+* remove from list
+    - at front
+    - at back
+* clear / destroy the list
+
+Additionally, new _traversals_ are possible (traversing the list in reverse, for example).
+
+---
+
+## Advantages and Drawbacks
+
+* Advantages
+    - Reverse traversal is possible
+    - Remove at tail becomes $O(1)$
+* Drawbacks
+    - Added complexity of list maintenance code
+    - Storage requirements
+        &#43; _compare cost of adding a pointer `prev` in the **node** &lt;br /&gt; versus adding a pointer `tail` in the **list**_
+
+</textarea>
+    <script src="https://jcausey-astate.github.io/CS2124_lecture_notes/js/remark-latest.min.js"></script>
+<script src='https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML' type="text/javascript"></script>
+<script>
+	var slideshow = remark.create();
+
+	
+	MathJax.Hub.Config({
+		tex2jax: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+		}
+	});
+	MathJax.Hub.Queue(function () {
+		$(MathJax.Hub.getAllJax()).map(function (index, elem) {
+			return (elem.SourceElement());
+		}).parent().addClass('has-jax');
+	});
+
+	MathJax.Hub.Configured();
+</script>
+</body>
+
+</html>

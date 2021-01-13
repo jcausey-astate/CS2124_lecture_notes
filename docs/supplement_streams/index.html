@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href="https://jcausey-astate.github.io/CS2124_lecture_notes/favicon.ico">
+	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2124_lecture_notes/css/remark.css" />
+	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2124_lecture_notes/css/prog-courses.css" />
+
+</head>
+
+
+<body>
+    <textarea id="source" class="three-col">
+
+
+# C&#43;&#43; Streams
+## Supplement
+
+---
+
+## The Streams You Know
+
+### `std::cin` and `std::cout`
+
+You are already familliar with the _standard input_ and _standard output_ streams (`cin` and `cout`, respectively).  But, you may not have considered much beyond the simplest basics about how they work.
+
+This supplement will talk about how C&#43;&#43; supports a whole _family_ of streams and stream-like objects, and how they work on a conceptual level that may help you when you run into confusion with stream-processing tasks.
+
+---
+
+## The Stream You May Not
+
+In addition to `cin` and `cout`, there is also a stream designed to communicate error messages out of your programs!  This one is named `std::cerr`, and it is the _standard error_ stream.  It behaves exactly like `cout` except that its output can be routed differently at the OS level:
+
+``` {.cpp}
+std::cerr &lt;&lt; &#34;This is an error message.&#34; &lt;&lt; std::endl;
+```
+
+---
+
+## File Streams
+
+You have probably also seen streams attached to files, opened in &#34;character mode&#34; (also known as &#34;text mode&#34;):
+
+``` {.cpp}
+std::ifstream input_file_stream { &#34;your_input_file.txt&#34; };
+std::ofstream output_file_stream { &#34;your_output_file.txt&#34; };
+```
+
+These streams behave exactly like their console I/O counterparts, except that the &#34;other end&#34; of the stream is attached to a file, whose name is specified when you open the stream.
+
+---
+
+## What does a stream look like?
+
+When you imagine what a stream looks like (from the point-of-view of your program), what do you imagine?
+
+Character-encoded streams are &#34;seen&#34; by the program as a series of characters (type `char`) and a _position_ in that series of characters that serves as a marker of the &#34;current location&#34;.
+
+Imagine a series of blocks with a character on each, stretching in a row off into the distance.  As you walk along this path of character blocks, _you_ are the &#34;current location&#34; marker.  Each time you walk past a block, it essentially fades into the &#34;past&#34; as far as you are concerned, and there are more character blocks ahead that you will walk by in &#34;the future&#34;.
+
+---
+
+
+Let&#39;s visualize this as it exists in memory (more or less):
+
+``` {.txt}
+--------------------------------------------------------------------
+|H|e|l|l|o| |W|o|r|l|d|!|\n|T|h|i|s| |i|s| |a| |s|t|r|e|a|m| |.|.|.|
+--------------------------------------------------------------------
+             ^
+```
+
+The caret (arrow) below the stream indicates the current position. The current position typically only moves &#34;forward&#34; (to the right in the figure).  It is possible to go back in some cases, though.
+
+---
+
+## Time is Relative
+
+&lt;img src=&#39;../images/shared/yellow_brick_road.jpg&#39; style=&#39; max-height: 500px; float: right;&#39; /&gt;
+
+Here&#39;s where it can get confusing.  From a stream&#39;s point-of-view, there is no end to this row of characters (as long as the stream is open).  
+
+Although you might walk to a position where you don&#39;t see any more blocks in front of you _now_, more may appear at any moment.
+
+If new characters appear, you can continue walking along the stream.
+
+
+
+---
+
+You have observed this effect every time you&#39;ve prompted the user to enter some keyboard input.  Like this:
+
+``` {.cpp}
+int x;
+cout &lt;&lt; &#34;Enter an integer: &#34;;
+cin  &gt;&gt; x;
+cout &lt;&lt; &#34;Great!\n&#34;;
+```
+
+This code will appear to &#34;stop and wait&#34; on the line beginning with `cin` until the user types some characters and presses `&lt;ENTER&gt;`.  
+
+From the program&#39;s standpoint, it is just waiting for the stream to increase in length so that it can &#34;walk&#34; along it further.  When the user pressed `&lt;ENTER&gt;`, more characters appeared and the walk continued.
+
+---
+
+File streams are different from user input -- all of the data that will exist in the file is (usually) _already there_ when the file is opened.
+
+Imagine you want to read three integers:
+
+``` {.cpp}
+int a, b, c;
+input_file_stream &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+```
+
+---
+
+``` {.cpp}
+int a, b, c;
+input_file_stream &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+```
+
+This works fine, assuming the file looks like this:
+
+``` {.txt}
+5
+12
+17
+```
+
+Or, even this:
+
+``` {.txt}
+5 12 17
+```
+
+---
+
+From the moment the stream is _opened_ (from your program&#39;s point-of-view), **all** of the input is already in the stream!
+
+``` {.txt}
+----------------------
+|5| |1|2| |1|7|\n|EOF|
+----------------------
+ ^
+```
+The streams position is initially at the start.  As the stream extraction operator sees characters matching the signature of an `int`, it &#34;walks&#34; the stream to the right, until a whitespace.  
+
+---
+
+After `a` is extracted (the 5 is read), the stream will look like this:
+
+``` {.txt}
+----------------------
+|5| |1|2| |1|7|\n|EOF|
+----------------------
+   ^
+```
+
+The stream&#39;s position is at the first space character.  (The stream extraction operator does not &#34;remove&#34; the delimiter, meaning it doesn&#39;t walk past it.)
+
+---
+
+Now let&#39;s consider a different case.  We want to read an ID number (integer) followed by a full name (which will contain spaces).  We might do this:
+
+``` {.cpp}
+int id;
+std::string name;
+input_file_stream &gt;&gt; id;
+getline(input_file_stream, name);
+cout &lt;&lt; name &lt;&lt; &#34; is ID number &#34; &lt;&lt; id &lt;&lt; &#39;\n&#39;;
+```
+
+Let&#39;s assume an input file like this:
+
+``` {.txt}
+324
+Alice Sanders
+```
+
+---
+
+
+``` {.txt}
+324
+Alice Sanders
+```
+
+The input will **fail** to do what we _want_.  (You should expect it though, if you&#39;ve used `getline()` before...)  Here&#39;s the code again:
+
+``` {.cpp}
+int id;
+std::string name;
+input_file_stream &gt;&gt; id;
+getline(input_file_stream, name);
+cout &lt;&lt; name &lt;&lt; &#34; is ID number &#34; &lt;&lt; id &lt;&lt; &#39;\n&#39;;
+```
+
+The output would be:
+
+``` {.txt}
+ is ID number 324
+```
+
+Where did the name go?
+
+---
+
+## The name is in the future.
+
+That&#39;s right -- the name is still in the stream&#39;s &#34;future&#34;.  Let&#39;s look at the stream.  Here it is at the moment we open the file:
+
+``` {.txt}
+---------------------------------------
+|3|2|4|\n|A|l|i|c|e| |S|a|n|d|e|r|s|\n|
+---------------------------------------
+ ^
+```
+
+We do `input\_file\_stream &gt;&gt; id;`.  Now the stream is:
+
+``` {.txt}
+---------------------------------------
+|3|2|4|\n|A|l|i|c|e| |S|a|n|d|e|r|s|\n|
+---------------------------------------
+       ^
+```
+
+The stream extraction operator **_doesn&#39;t walk past the delimiter_**.
+
+---
+
+``` {.txt}
+---------------------------------------
+|3|2|4|\n|A|l|i|c|e| |S|a|n|d|e|r|s|\n|
+---------------------------------------
+       ^
+```
+
+Now we do `getline(input\_file\_stream, name);`.
+
+The first thing in the stream is the `\n`, which is the delimiter for `getline()`, so it happily _removes_ the delimiter and stops.  It didn&#39;t read anything useful, so the name remains empty.  The stream is:
+
+``` {.txt}
+---------------------------------------
+|3|2|4|\n|A|l|i|c|e| |S|a|n|d|e|r|s|\n|
+---------------------------------------
+          ^
+```
+
+---
+
+This is why we have to use `ignore()` when mixing stream extraction operators and `getline()`.  We have to walk past anything that looks like a delimiter.
+
+This code is correct:
+
+``` {.cpp}
+int id;
+std::string name;
+input_file_stream &gt;&gt; id;
+input_file_stream.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), &#39;\n&#39;);
+getline(input_file_stream, name);
+cout &lt;&lt; name &lt;&lt; &#34; is ID number &#34; &lt;&lt; id &lt;&lt; &#39;\n&#39;;
+```
+
+`ignore()` will &#34;keep walking&#34; until it sees the `\n` or the end of the stream&#39;s current content.  
+
+---
+
+`ignore()` will &#34;keep walking&#34; until it sees the `\n` or the end of the stream&#39;s current content.  It will walk past the delimiter too, so after the `ignore` call, the stream would look like:
+
+``` {.txt}
+---------------------------------------
+|3|2|4|\n|A|l|i|c|e| |S|a|n|d|e|r|s|\n|
+---------------------------------------
+          ^
+```
+
+That&#39;s perfect for the `getline()`.  
+
+But **we only needed to do this because the** `&gt;&gt;` **left the delimiter in our path**.  Don&#39;t assume you always need to use `ignore()`.  You have to think about what the stream actually looks like.
+
+---
+
+## Streams can go bad...
+
+Whenever we try to operate on a stream, but the stream is unable to complete the operation successfully, the stream can &#34;go bad&#34;.  This actually isn&#39;t a single condition, but three:
+
+* The &#34;bad&#34; bit is set.
+  * Read/writing error on i/o operation.
+* The &#34;EOF&#34; bit is set.
+  * End-of-File was reached on input operation.
+* The &#34;fail&#34; bit is set.
+  * Logical error on i/o operation.
+
+\(Ref: http://www.cplusplus.com/reference/ios/ios/good/ \)
+
+---
+
+## Check for bad streams...
+
+It is easy to check for these &#34;bad&#34; stream conditions.  There are four stream methods you should keep in mind:
+
+* `good()` : Returns `true` if none of the failure indicator bits are set, indicating the stream is &#34;good&#34; and ready for use.
+* `eof()` : Returns `true` if the &#34;eof&#34; bit is set.  Cannot read from a stream in this condition.  Attempts to do so also set the &#34;fail&#34; bit.
+* `bad()` : Returns `true` if the &#34;bad&#34; bit is set.  Most stream operations will fail while this condition is present.  May not be recoverable.
+* `fail()` : Returns `true` if the &#34;fail&#34; or the &#34;bad&#34; bit is set.  May be able to resume operation after a `clear()`.
+
+---
+
+## We can clean up a bad stream.
+
+If the stream has failed due to an operation like trying to read an integer when the next value in the stream was a string, or reading at the end of file, we can clear the state flags and restore the stream to a &#34;good&#34; state with the `clear()` method.
+
+---
+
+**Example**
+
+File:
+
+``` {.txt}
+Hello 42
+```
+
+Code:
+
+```{.cpp}
+int x;
+std::string msg;
+input_file_stream &gt;&gt; x;         // will fail; a string is first in the file.
+if(!input_file_stream.good()){
+    cerr &lt;&lt; &#34;Stream error... trying again.&#34; &lt;&lt; endl;
+    input_file_stream.clear();  // clears the fail bit.
+}
+input_file_stream &gt;&gt; msg;       // works; a string is there.
+input_file_stream &gt;&gt; x;         // works now, an int is the next token
+cout &lt;&lt; msg &lt;&lt; &#34; &#34; &lt;&lt; x &lt;&lt; endl;
+```
+
+---
+
+#### References 
+
+&lt;small&gt;
+
+`&lt;iostream&gt;` - C&#43;&#43; Reference:  http://www.cplusplus.com/reference/iostream/
+
+`istream` - C&#43;&#43; Reference:  http://www.cplusplus.com/reference/istream/istream/
+
+`ostream` - C&#43;&#43; Reference:  http://www.cplusplus.com/reference/ostream/ostream/
+
+`istream::operator&gt;&gt;` - C&#43;&#43; Reference:  http://www.cplusplus.com/reference/istream/istream/operator%3E%3E/
+
+`ostream::operator&lt;&lt;` - C&#43;&#43; Reference:  http://www.cplusplus.com/reference/ostream/ostream/operator%3C%3C/
+
+C&#43;&#43; Files and Streams - Tutorialspoint:  https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm
+
+A Gentle Introduction to IO Streams in C&#43;&#43; - Cprogramming.com:  https://www.cprogramming.com/tutorial/c&#43;&#43;-iostreams.html
+
+&lt;/small&gt;
+
+
+
+</textarea>
+    <script src="https://jcausey-astate.github.io/CS2124_lecture_notes/js/remark-latest.min.js"></script>
+<script src='https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML' type="text/javascript"></script>
+<script>
+	var slideshow = remark.create();
+
+	
+	MathJax.Hub.Config({
+		tex2jax: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+		}
+	});
+	MathJax.Hub.Queue(function () {
+		$(MathJax.Hub.getAllJax()).map(function (index, elem) {
+			return (elem.SourceElement());
+		}).parent().addClass('has-jax');
+	});
+
+	MathJax.Hub.Configured();
+</script>
+</body>
+
+</html>

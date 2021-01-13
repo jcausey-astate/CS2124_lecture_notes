@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href="https://jcausey-astate.github.io/CS2124_lecture_notes/favicon.ico">
+	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2124_lecture_notes/css/remark.css" />
+	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2124_lecture_notes/css/prog-courses.css" />
+
+</head>
+
+
+<body>
+    <textarea id="source" class="three-col">
+
+
+# C&#43;&#43; Lambdas
+
+---
+
+## Lambda Expressions
+
+* A _lambda expression_ (AKA &#34;lambda&#34;) is an expression defining an anonymous function.
+* Beginning with C&#43;&#43;11, _lambda_ expressions are a standard language feature.
+
+---
+
+## Lambdas - Why?
+
+* Why do we need another way of defining a function? 
+    - Flexibility, convenience and expressiveness of syntax.
+* Why do we say these are _anonymous_ functions?
+    - They do not (inherently) have a name; they are defined only as an expression.
+        &#43; Although, of course, they can be stored in a &#34;variable&#34; -- which effectively gives them a name.
+* Why would you want an _anonymous_ function?
+    - &#34;Use once and throw away&#34;
+        &#43; Sometimes you don&#39;t need a specific function more than once.
+
+---
+
+## Syntax
+
+Simple C&#43;&#43; lambda expressions are defined with the following syntax:
+
+``` text
+[=] ()  { std::cout &lt;&lt; &#34;I&#39;m a lambda!&#34;; }
+(1) (2) (---------------3---------------)
+```
+
+(1): _capture clause_: lambdas can be allowed to &#34;see&#34; the local context from where they are written.  This clause sets rules/permissions for this &#34;context capturing&#34;.
+
+(2): _parameter list_: like regular functions, lambdas can receive parameters.
+
+(3): _lambda body_: the body of the function
+
+
+</textarea>
+    <script src="https://jcausey-astate.github.io/CS2124_lecture_notes/js/remark-latest.min.js"></script>
+<script src='https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML' type="text/javascript"></script>
+<script>
+	var slideshow = remark.create();
+
+	
+	MathJax.Hub.Config({
+		tex2jax: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+		}
+	});
+	MathJax.Hub.Queue(function () {
+		$(MathJax.Hub.getAllJax()).map(function (index, elem) {
+			return (elem.SourceElement());
+		}).parent().addClass('has-jax');
+	});
+
+	MathJax.Hub.Configured();
+</script>
+</body>
+
+</html>

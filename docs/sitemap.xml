@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_streams/</loc>
+    <lastmod>2020-10-04T16:30:22-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/09b_doubly_linked_lists/</loc>
+    <lastmod>2020-10-02T12:30:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/10_class_template/</loc>
+    <lastmod>2020-10-02T12:30:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/11_smart_pointers/</loc>
+    <lastmod>2020-10-02T12:30:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/12_trees/</loc>
+    <lastmod>2020-10-02T12:30:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/13_inheritance/</loc>
+    <lastmod>2020-10-02T12:30:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/14_virtual_and_polymorphism/</loc>
+    <lastmod>2020-10-02T12:30:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/15_stl/</loc>
+    <lastmod>2020-10-02T12:30:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/16_random_access/</loc>
+    <lastmod>2020-10-02T12:30:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/17_quicksort/</loc>
+    <lastmod>2020-10-02T12:30:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/18_heapsort/</loc>
+    <lastmod>2020-10-02T12:30:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/18_lambda/</loc>
+    <lastmod>2020-10-02T12:30:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/easy_rand/</loc>
+    <lastmod>2020-10-02T12:30:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_exceptions/</loc>
+    <lastmod>2020-10-02T12:30:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_static_function_pointers/</loc>
+    <lastmod>2020-10-02T12:30:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/01_classes_and_objects/</loc>
+    <lastmod>2020-10-02T12:30:15-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/02_objects/</loc>
+    <lastmod>2020-10-02T12:30:15-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/03_arrays/</loc>
+    <lastmod>2020-10-02T12:30:15-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/03b_c-style-strings/</loc>
+    <lastmod>2020-10-02T12:30:15-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/04a_pointers/</loc>
+    <lastmod>2020-10-02T12:30:15-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/04b_dynamic_memory/</loc>
+    <lastmod>2020-10-02T12:30:15-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/05_copy_constructor/</loc>
+    <lastmod>2020-10-02T12:30:15-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/07_friend_op-overload/</loc>
+    <lastmod>2020-10-02T12:30:15-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/08_aggregation/</loc>
+    <lastmod>2020-10-02T12:30:15-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/09_linkedlists/</loc>
+    <lastmod>2020-10-02T12:30:15-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jcausey-astate.github.io/CS2124_lecture_notes/tags/</loc>
+  </url>
+  
+</urlset>
