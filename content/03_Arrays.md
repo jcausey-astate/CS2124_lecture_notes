@@ -179,6 +179,17 @@ int tests[] = { 88, 92, 76, 85, 63 };
 
 ---
 
+## Uniform Initialization Syntax
+
+``` cpp
+int tests[] { 88, 92, 76, 85, 63 };
+```
+
+* Like array initializer syntax, the size declarator is _optional_ here.
+* The only difference is the lack of the `=` operator.
+
+---
+
 ## Array Assignment
 
 You **cannot** directly _assign_ one array to another:

@@ -3,9 +3,9 @@
 <head>
 	<title></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href="https://jcausey-astate.github.io/CS2124_lecture_notes/favicon.ico">
-	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2124_lecture_notes/css/remark.css" />
-	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2124_lecture_notes/css/prog-courses.css" />
+	<link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href="https://jcausey-astate.github.io/CS2114_lecture_notes/favicon.ico">
+	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2114_lecture_notes/css/remark.css" />
+	<link rel="stylesheet" href="https://jcausey-astate.github.io/CS2114_lecture_notes/css/prog-courses.css" />
 
 </head>
 
@@ -186,6 +186,17 @@ int tests[] = { 88, 92, 76, 85, 63 };
 * This is _only_ useful if you know all of the values that will be stored at the time you are writing the program.
     - That is rarely the case.
 * So, loops it is!
+
+---
+
+## Uniform Initialization Syntax
+
+``` cpp
+int tests[] { 88, 92, 76, 85, 63 };
+```
+
+* Like array initializer syntax, the size declarator is _optional_ here.
+* The only difference is the lack of the `=` operator.
 
 ---
 
@@ -418,7 +429,7 @@ for(int move = 0; move &lt; MOVES; move&#43;&#43;){
 
 
 </textarea>
-    <script src="https://jcausey-astate.github.io/CS2124_lecture_notes/js/remark-latest.min.js"></script>
+    <script src="https://jcausey-astate.github.io/CS2114_lecture_notes/js/remark-latest.min.js"></script>
 <script src='https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML' type="text/javascript"></script>
 <script>
 	var slideshow = remark.create();
