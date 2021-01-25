@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CS2114 Lecture Notes</title>
-    <link>https://jcausey-astate.github.io/CS2114_lecture_notes/</link>
-    <description>Recent content on CS2114 Lecture Notes</description>
+    <title>CS2124 Lecture Notes</title>
+    <link>https://jcausey-astate.github.io/CS2124_lecture_notes/</link>
+    <description>Recent content on CS2124 Lecture Notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://jcausey-astate.github.io/CS2114_lecture_notes/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://jcausey-astate.github.io/CS2124_lecture_notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Supplement: Streams</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/supplement_streams/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_streams/</link>
       <pubDate>Sun, 04 Oct 2020 16:30:22 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/supplement_streams/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_streams/</guid>
       <description>C++ Streams Supplement  The Streams You Know std::cin and std::cout You are already familliar with the standard input and standard output streams (cin and cout, respectively). But, you may not have considered much beyond the simplest basics about how they work.
 This supplement will talk about how C++ supports a whole family of streams and stream-like objects, and how they work on a conceptual level that may help you when you run into confusion with stream-processing tasks.</description>
     </item>
     
     <item>
       <title>09b_Doubly_Linked_Lists</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/09b_doubly_linked_lists/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/09b_doubly_linked_lists/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/09b_doubly_linked_lists/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/09b_doubly_linked_lists/</guid>
       <description>Doubly-Linked Lists CS2124  Doubly-Linked List A doubly-linked list is a linked list in which the nodes support access to both the next and previous items in the list, allowing bidirectional traversal.
  A Doubly-Linked Node class DL_IntNode{ private: int data; DL_IntNode* prev; // NEW  DL_IntNode* next; public: // [...] Public interface same as singly-linked list. }; A doubly-linked list&amp;rsquo;s node is different only in that it maintains one extra link — in this case, a pointer prev to the previous node.</description>
     </item>
     
     <item>
       <title>10_Class_Template</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/10_class_template/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/10_class_template/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/10_class_template/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/10_class_template/</guid>
       <description>Templates CS2124  Review: Function Templates Function templates provide a pattern for a function that can work with many types of data.
  When written, the data type specifiers are replaced with type parameters. When called, the compiler generates a function with actual data types that match those provided in the call.  Example
 template&amp;lt;typename Numeric&amp;gt; Numeric times10(Numeric num){ return 10 * num; } Numeric is the type parameter (it can be any valid identifier, but is usually capitalized (UpperCamelCase or sometimes ALL_CAPS) by convention.</description>
@@ -39,10 +39,10 @@ template&amp;lt;typename Numeric&amp;gt; Numeric times10(Numeric num){ return 10
     
     <item>
       <title>11_Smart_Pointers</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/11_smart_pointers/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/11_smart_pointers/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/11_smart_pointers/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/11_smart_pointers/</guid>
       <description>Smart Pointers CS 2124  Owner&amp;rsquo;s Remorse Dynamic memory allocation in C++ requires that a pointer be used to manage the dynamic resource.
  We refer to such pointers as owning pointers. If a raw pointer (regular C++ pointer type) is used as an owning pointer, there is no guarantee that the managed resource will be freed.   Freeing the managed resource is the responsibility of the programmer.
   The OOP Way The main advantage of objects is in their ability to self-initialize and safely destruct.</description>
@@ -50,39 +50,39 @@ template&amp;lt;typename Numeric&amp;gt; Numeric times10(Numeric num){ return 10
     
     <item>
       <title>12_Trees</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/12_trees/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/12_trees/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/12_trees/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/12_trees/</guid>
       <description>Trees Featuring: The Binary Search Tree (Ch 20)  Trees In the computer science sense, trees are simply non-linear linked structures where each node may link to two or more other nodes, in a hierarchical fashion.
  The entry point into a tree is called the root. Trees are (usually) drawn &amp;ldquo;upside down&amp;rdquo;, with the root at the top. Normally, we don’t draw the NULL pointers when we draw a tree&amp;hellip; but we must remember that they are there.</description>
     </item>
     
     <item>
       <title>13_Inheritance</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/13_inheritance/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/13_inheritance/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/13_inheritance/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/13_inheritance/</guid>
       <description>Inheritance (Ch 15)  Inheritance Establishes an &amp;ldquo;is-a&amp;rdquo; relationship:
  A flower is a plant. A lager is a beer. An ale is a beer. A truck is a vehicle.  A dump truck is a truck.   A mammal is a(n) animal.  A dog is a mammal.  A poodle is a dog.      &amp;hellip; Infinite examples: The real world works this way!</description>
     </item>
     
     <item>
       <title>14_virtual_and_Polymorphism</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/14_virtual_and_polymorphism/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/14_virtual_and_polymorphism/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/14_virtual_and_polymorphism/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/14_virtual_and_polymorphism/</guid>
       <description>Virtual Methods &amp;amp; Polymorphism (Ch 15.4)  Redefining Base Class Methods  A method is said to be redefined in a derived class when it has the same name (and perhaps parameter list) as a method in the base class.  This is not the same thing as overloading.   Base class objects use the base class method&amp;hellip; derived class objects use the derived class method.   Problem with Redefining Consider this situation:</description>
     </item>
     
     <item>
       <title>15_STL</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/15_stl/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/15_stl/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/15_stl/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/15_stl/</guid>
       <description>background-image: url(../images/STL/circle_template.jpg)
 STL The C++ Standard Template Library (Ch. 16.5)  The Standard Template Library  What is STL? Why use STL? Overview of STL Features and Concepts Containers Iterators Algorithms References for more information on STL   What is STL?  &amp;ldquo;The Standard Template Library provides a set of well structured generic C++ components that work together in a seamless way.&amp;rdquo;
 - Alexander Stepanov &amp;amp; Meng Lee, The Standard Template Library</description>
@@ -90,20 +90,20 @@ STL The C++ Standard Template Library (Ch. 16.5)  The Standard Template Library 
     
     <item>
       <title>16_random_access</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/16_random_access/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/16_random_access/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/16_random_access/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/16_random_access/</guid>
       <description>Random Access Files (Ch. 12)  Files – Review File: a set of data stored on a computer; often on secondary storage such as a disk drive.
  Used to abstract the concept of &amp;ldquo;a blob of data&amp;rdquo; in a well-understood and system-wide way. Can be read and/or written (depending on permissions).   Files – Review  Requires the fstream header file. ifstream objects are specialized for input ofstream object are specialized for output fstream objects are more general – can do both input and output.</description>
     </item>
     
     <item>
       <title>17_QuickSort</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/17_quicksort/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/17_quicksort/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/17_quicksort/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/17_quicksort/</guid>
       <description>Quicksort  Simple Sorting Methods  Bubble Sort Selection Sort Insertion Sort  All are $O(n^2)$ A better algorithm is needed!   Quicksort Quicksort is a divide-and-conquer algorithm developed in 1960 by Tony Hoare.
 It divides the array into two halves, and sorts those halves recursively.
  Quicksort Quicksort divides the array into two halves, and sorts those halves recursively.
@@ -112,10 +112,10 @@ A pivot element is chosen, then all elements greater than the pivot are moved to
     
     <item>
       <title>18_HeapSort</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/18_heapsort/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/18_heapsort/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/18_heapsort/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/18_heapsort/</guid>
       <description>Heaps and Heapsort  Heaps A heap is a kind of (usually binary) tree. They come in two varieties:
  Min-Heaps always maintain the smallest value at the root. Max-Heaps always maintain the largest value at the root.   Heaps In order to be a Heap, the following properties must hold (min heap used as an example; for a max heap just reverse the comparison operator).
  The empty tree is a heap.</description>
@@ -123,65 +123,65 @@ A pivot element is chosen, then all elements greater than the pivot are moved to
     
     <item>
       <title>18_lambda</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/18_lambda/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/18_lambda/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/18_lambda/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/18_lambda/</guid>
       <description>C++ Lambdas  Lambda Expressions  A lambda expression (AKA &amp;ldquo;lambda&amp;rdquo;) is an expression defining an anonymous function. Beginning with C++11, lambda expressions are a standard language feature.   Lambdas - Why?  Why do we need another way of defining a function?  Flexibility, convenience and expressiveness of syntax.   Why do we say these are anonymous functions?  They do not (inherently) have a name; they are defined only as an expression.</description>
     </item>
     
     <item>
       <title>Easy_rand</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/easy_rand/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/easy_rand/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/easy_rand/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/easy_rand/</guid>
       <description>&amp;lt;/small&amp;gt;</description>
     </item>
     
     <item>
       <title>Supplement: exceptions</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/supplement_exceptions/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_exceptions/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/supplement_exceptions/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_exceptions/</guid>
       <description>Exceptions (When Everything Goes Wrong) (Ch 16)  Exceptions  Used to communicate that something unexpected has occurred. Allows the programmer to deal with unexpected situations in a controlled manner. May be as simple or as complex as desired (depending on usage in the program) In C++, any data value can be used as an exception!   Key Words throw - Used to generate an exception and “throw” it up the call stack.</description>
     </item>
     
     <item>
       <title>Supplement: static, function pointers</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/supplement_static_function_pointers/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_static_function_pointers/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/supplement_static_function_pointers/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_static_function_pointers/</guid>
       <description>static Members and Function Pointers  Instance and Static Members  Normal members of a class are called instance members. Each object has its own copy. Members may also be declared static.  Static Attributes: Only one memory location is allocated for the class; all objects instantiated from the class share the storage (shared data). Static Methods: Can be called without first instantiating an object of the class; can access static attributes.</description>
     </item>
     
     <item>
       <title>01_Classes_and_Objects</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/01_classes_and_objects/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/01_classes_and_objects/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/01_classes_and_objects/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/01_classes_and_objects/</guid>
       <description>CS2124 Classes and Objects  Introduction  Procedural (structured) Programming  Concerned with processes (actions) that occur in a program. Basic unit of modularity is the function.   Object-Oriented Programming (OOP)  Focuses on the data (things) and the functions that operate on it. Basic unit of modularity is the class (or structure).     OOP Central Concepts   Encapsulation
  Bundling Data / Implementation Hiding  Principle of least privilege.</description>
     </item>
     
     <item>
       <title>02_Objects</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/02_objects/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/02_objects/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/02_objects/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/02_objects/</guid>
       <description>CS2124 Objects (Chapter 13)  Separating Specification and Implementation  Header files ( MyClass.h ) – place class specification (declaration) here Implementation file ( MyClass.cpp ) – implement methods here #include the header from the implementation file Implementation ( .cpp ) files can be compiled; header files cannot. NEVER #include a .cpp file!   Inline Methods  Implemented directly in class specification. Substituted during compilation. Speed VS executable size “inline all 1-liners” inline keyword  Can be used to inline functions implemented separately.</description>
     </item>
     
     <item>
       <title>03_Arrays</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/03_arrays/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/03_arrays/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/03_arrays/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/03_arrays/</guid>
       <description>Arrays CS2124 (Ch. 7)  The C++ Array Arrays allow programmers to store multiple related values of the same type.
  Values are stored sequentially in memory. Declaration syntax: type arrayname[ size_declarator ];  Example Declarations
 int a[100]; // Declares an array of 100 integers. double b[50]; // Declares an array of 50 doubles.  Array Memory Layout The declaration:
@@ -191,10 +191,10 @@ int tests[5]; allocates the following memory:
     
     <item>
       <title>03b_C Style Strings</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/03b_c-style-strings/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/03b_c-style-strings/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/03b_c-style-strings/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/03b_c-style-strings/</guid>
       <description>Characters &amp;amp;C-Style Strings CS2124 (Ch. 10)  ASCII Encoding Internally, all characters must be encoded into a numeric representation.
 There is more than one way to do it&amp;hellip; But C++ (by default) type char uses the ASCII encoding scheme.
   C-Style Strings C++ provides support for a low-level representation of strings of characters as they were defined in the C language: as null-terminated arrays of type char. We refer to strings of this type as C-Style strings, or simply C-Strings.</description>
@@ -202,10 +202,10 @@ There is more than one way to do it&amp;hellip; But C++ (by default) type char u
     
     <item>
       <title>04a_Pointers</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/04a_pointers/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/04a_pointers/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/04a_pointers/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/04a_pointers/</guid>
       <description>Pointers CS2124 (Ch. 9)  Addresses and Data Every variable in a program is stored at a unique memory address.
 The unary &amp;amp; is the address operator; the address operator retrieves the address of its operand:
 int x = 42; // Print out the address at which x is stored: std::cout &amp;lt;&amp;lt; &amp;amp;x &amp;lt;&amp;lt; &amp;#34;\n&amp;#34;;  Pointers  A pointer is a variable that stores a memory address.  Declare by adding the pointer type modifier (  *  ) to a variable declaration.</description>
@@ -213,20 +213,20 @@ int x = 42; // Print out the address at which x is stored: std::cout &amp;lt;&am
     
     <item>
       <title>04b_Dynamic_Memory</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/04b_dynamic_memory/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/04b_dynamic_memory/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/04b_dynamic_memory/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/04b_dynamic_memory/</guid>
       <description>Dynamic MemoryAllocation CS2124 (Ch. 9.8)  Creating Memory at Runtime New memory can be allocated for individual data values or arrays at runtime.
  new operator allocates new memory.  returns a pointer to the allocated space. Places responsibility on the programmer to &amp;ldquo;clean up&amp;rdquo; the memory later.   delete operator de-allocates memory that was allocated with new.  Failure to de-allocate memory creates a memory leak.    Both operators come in two forms; one for a single data item and one for an array.</description>
     </item>
     
     <item>
       <title>05_Copy_Constructor</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/05_copy_constructor/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/05_copy_constructor/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/05_copy_constructor/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/05_copy_constructor/</guid>
       <description>CS2124 Copy Constructors (Chapter 14 Sections 14.3, 14.4)  First, something new&amp;hellip; Constructor initialization lists A constructor&amp;rsquo;s job is to initialize attributes of the class:
 class Rectangle { public: Rectangle (int l, int w){ length = l; width = w; } int length = 0; int width = 0; };  Constructor initialization lists
 But&amp;hellip; there is another way to do it:
@@ -235,19 +235,19 @@ class Rectangle { public: Rectangle (int l, int w) : length{l}, width{w} {} int 
     
     <item>
       <title>07_friend_op Overload</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/07_friend_op-overload/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/07_friend_op-overload/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/07_friend_op-overload/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/07_friend_op-overload/</guid>
       <description>friend Functions Operator Overloading  Friends of Classes  A function or class may be declared to be a friend of a new class.  Created by adding the friend type modifier to the front of a declaration/prototype.   Declaring a function or class as a friend gives that function/class access to the private data in the class being defined. Use this sparingly!  If you find yourself needing a friend function/class, you could probably design your class better and avoid the problem.</description>
     </item>
     
     <item>
       <title>08_Aggregation</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/08_aggregation/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/08_aggregation/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/08_aggregation/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/08_aggregation/</guid>
       <description>Aggregation ofObjects  Aggregation  Aggregation: an object of one class is used as an attribute in another class Sometimes called composition Creates the &amp;ldquo;has a&amp;rdquo; relationship.  Large book example in Chapter 14 Instructor Textbook Course
  Example
 class Tool{ private: std::string name; double weight; public: [...] // interface not shown for brevity }; class ToolBox{ private: Tool inventory[1024]; // aggregation of &amp;#34;Tool&amp;#34; objects  public: [...] // interface not shown for brevity }; </description>
@@ -255,10 +255,10 @@ class Tool{ private: std::string name; double weight; public: [...] // interface
     
     <item>
       <title>09_LinkedLists</title>
-      <link>https://jcausey-astate.github.io/CS2114_lecture_notes/09_linkedlists/</link>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/09_linkedlists/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2114_lecture_notes/09_linkedlists/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/09_linkedlists/</guid>
       <description>Linked Lists (Ch 17)  The Linked List ADT  Linked list: set of data structures (nodes) that contain references to other data structures  Relationship is linear: Each node references the next node (and sometimes the previous node).   References may be addresses (pointers) or array indices Data can be added/removed during execution.   Linked Lists  Can grow or shrink as needed (unlike arrays).   Can insert data between other nodes easily.</description>
     </item>
     
