@@ -352,14 +352,18 @@ char ch1 = &#39;H&#39;;
 char ch2 = &#39;e&#39;;
 char ch3 = &#39;!&#39;;
 
-cout &lt;&lt; toupper(ch1);  // displays &#39;H’
-cout &lt;&lt; toupper(ch2);  // displays &#39;E’
-cout &lt;&lt; toupper(ch3);  // displays &#39;!&#39;
+cout &lt;&lt; static_cast&lt;char&gt;(toupper(ch1)) &lt;&lt; &#39;\n&#39;;  // displays &#39;H’
+cout &lt;&lt; static_cast&lt;char&gt;(toupper(ch2)) &lt;&lt; &#39;\n&#39;;  // displays &#39;E’
+cout &lt;&lt; static_cast&lt;char&gt;(toupper(ch3)) &lt;&lt; &#39;\n&#39;;  // displays &#39;!&#39;
 
-cout &lt;&lt; tolower(ch1);  // displays &#39;h’
-cout &lt;&lt; tolower(ch2);  // displays &#39;e’
-cout &lt;&lt; tolower(ch3);  // displays &#39;!&#39;
+cout &lt;&lt; static_cast&lt;char&gt;(tolower(ch1)) &lt;&lt; &#39;\n&#39;;  // displays &#39;h’
+cout &lt;&lt; static_cast&lt;char&gt;(tolower(ch2)) &lt;&lt; &#39;\n&#39;;  // displays &#39;e’
+cout &lt;&lt; static_cast&lt;char&gt;(tolower(ch3)) &lt;&lt; &#39;\n&#39;;  // displays &#39;!&#39;
 ```
+
+---
+
+&lt;iframe height=&#34;400px&#34; width=&#34;100%&#34; src=&#34;https://repl.it/@jcausey_astate/charcaseconversionexample?lite=true&#34; scrolling=&#34;no&#34; frameborder=&#34;no&#34; allowtransparency=&#34;true&#34; allowfullscreen=&#34;true&#34; sandbox=&#34;allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals&#34;&gt;&lt;/iframe&gt;
 
 
 

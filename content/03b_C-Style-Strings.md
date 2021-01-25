@@ -342,12 +342,16 @@ char ch1 = 'H';
 char ch2 = 'e';
 char ch3 = '!';
 
-cout << toupper(ch1);  // displays 'H’
-cout << toupper(ch2);  // displays 'E’
-cout << toupper(ch3);  // displays '!'
+cout << static_cast<char>(toupper(ch1)) << '\n';  // displays 'H’
+cout << static_cast<char>(toupper(ch2)) << '\n';  // displays 'E’
+cout << static_cast<char>(toupper(ch3)) << '\n';  // displays '!'
 
-cout << tolower(ch1);  // displays 'h’
-cout << tolower(ch2);  // displays 'e’
-cout << tolower(ch3);  // displays '!'
+cout << static_cast<char>(tolower(ch1)) << '\n';  // displays 'h’
+cout << static_cast<char>(tolower(ch2)) << '\n';  // displays 'e’
+cout << static_cast<char>(tolower(ch3)) << '\n';  // displays '!'
 ```
+
+---
+
+<iframe height="400px" width="100%" src="https://repl.it/@jcausey_astate/charcaseconversionexample?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
