@@ -16,6 +16,7 @@ marp: true
 * Creates the _"has a" relationship_.
 
 Large book example in Chapter 14
+
     Instructor
     Textbook
     Course
@@ -40,4 +41,3 @@ class ToolBox{
         [...] // interface not shown for brevity
 };
 ```
-
