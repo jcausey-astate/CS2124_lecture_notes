@@ -2,6 +2,7 @@
 title: "07_friend_op Overload"
 date: 2020-10-02T12:30:15-05:00
 draft: false
+marp: true
 ---
 
 ## `friend` Functions  
@@ -345,11 +346,21 @@ std::cout << x << ' ' << ++x << ' ' << x << '\n';
 // should print "2+0i 3+0i 3+0i", making some reasonable assumptions 
 // about overloading the `<<` operator.
 ```
-The prefix increment operator is *unary*, so it makes sense that its prototype (as a member of `ComplexNumber`) would be:
+---
+### `++` and `--` : Prefix version
+
+The prefix increment operator is *unary*, so it makes sense that its prototype (as a standalone function) would be:
 
 ```cpp
 ComplexNumber operator++ (ComplexNumber& num);
-// Non-const reference!  This method _does_ change the object.
+// Non-const reference!  This function _does_ change the object.
+```
+
+And its prototype as a method of `ComplexNumber` would be:
+
+```cpp
+ComplexNumber operator++ ();
+// Non-const method.  This method _does_ change the object.
 ```
 
 The decrement operator works the same, only it subtracts 1 instead of adding.
@@ -358,22 +369,35 @@ The decrement operator works the same, only it subtracts 1 instead of adding.
 
 ### `++` and `--` : Postfix version
 
-<small style="font-size: 80%;">The expressions `x++` and `x--` increment and decrement `x`, respectively.  But in this case, the value that is returned is the original value (before increment/decrementing).  Say `x` is a `ComplexNumber` with real part 2 and imaginary part 0:
+The expressions `x++` and `x--` increment and decrement `x`, respectively.  But in this case, the value that is returned is the original value (before increment/decrementing).  Say `x` is a `ComplexNumber` with real part 2 and imaginary part 0:
 
 ```cpp
-std::cout << x << ' ' << ++x << ' ' << x << '\n';
+std::cout << x << ' ' << x++ << ' ' << x << '\n';
 // should print "2+0i 2+0i 3+0i"
 ```
 
 The postfix increment operator is **also** *unary* --- and this causes an ambiguity.  How can the compiler tell one unary operator with the symbol `++` from another?  
 
-They "cheat".  The language specification introduces a "dummy" parameter of type `int` as a second parameter of the *postfix* increment and decrement.  So the prototype for postfix increment is:</small>
+---
+### `++` and `--` : Postfix version
+
+> How can the compiler tell one unary operator with the symbol `++` from another?
+
+They "cheat".  The language specification introduces a dummy parameter of type `int` as a second parameter of the *postfix* increment and decrement.  So the prototype for postfix increment (as a standalone function) is:</small>
 
 ```cpp
 ComplexNumber operator++ (ComplexNumber& num, int);
-// Notice the "dummy" parameter - not used in the function code for 
+// Notice the dummy parameter - not used in the function code for 
 // anything, so no need to name it.
 // It is there to signal to the compiler that this is the "postfix" increment.
+```
+
+And the prototype for the same operator as a method of `ComplexNumber` is:
+
+```cpp
+ComplexNumber operator++ (int);
+// The `int` parameter signals to the compiler that this is the
+// "postfix" increment.
 ```
 
 ---
@@ -391,6 +415,8 @@ int& operator[] (int index);
 // Notice the return-by-reference:  
 // This allows us to do e.g. `x[3] = 8;`
 ```
+
+The array operator can only be overloaded as a _method_.
 
 
 

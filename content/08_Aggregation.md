@@ -2,6 +2,7 @@
 title: "08_Aggregation"
 date: 2020-10-02T12:30:15-05:00
 draft: false
+marp: true
 ---
 
 # Aggregation <br />of<br />Objects
