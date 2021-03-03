@@ -16,7 +16,7 @@ draft: false
 * References may be addresses (pointers) or array indices
 * Data can be added/removed during execution.
 
-![linked list](../images/LinkedList/LinkedList.svg)
+.center[![:scale Linked List, 80%](../images/LinkedList/LinkedList.svg)]
 
 ---
 
@@ -24,11 +24,11 @@ draft: false
 
 * Can grow or shrink as needed (unlike arrays).
 
-![linked list](../images/LinkedList/LinkedList_add_end.svg)
+.center[![:scale Adding at the end of a linked list., 80%](../images/LinkedList/LinkedList_add_end.svg)]
 
 * Can insert data between other nodes easily.
 
-![linked list](../images/LinkedList/LinkedList_add_mid.svg)
+.center[![:scale Adding in the middle of a linked list., 50%](../images/LinkedList/LinkedList_add_mid.svg)]
 
 ---
 
@@ -37,7 +37,7 @@ draft: false
 * Contains some sort of data.
 * Contains a reference (pointer or array index) to the “next” node in the list.
 
-![linked list](../images/LinkedList/LinkedList_node.svg)
+.center[![:scale Linked list node., 50%](../images/LinkedList/LinkedList_node.svg)]
 
 ---
 
@@ -48,7 +48,7 @@ draft: false
 * The end of the list usually points to NULL.
 * A list containing 0 nodes is an _empty list_.
 
-![linked list](../images/LinkedList/LinkedList_empty.svg)
+.center[![:scale Empty linked list., 20%](../images/LinkedList/LinkedList_empty.svg)]
 
 ---
 

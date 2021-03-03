@@ -259,7 +259,8 @@ class Tool{ private: std::string name; double weight; public: [...] // interface
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/09_linkedlists/</guid>
-      <description>Linked Lists (Ch 17)  The Linked List ADT  Linked list: set of data structures (nodes) that contain references to other data structures  Relationship is linear: Each node references the next node (and sometimes the previous node).   References may be addresses (pointers) or array indices Data can be added/removed during execution.   Linked Lists  Can grow or shrink as needed (unlike arrays).   Can insert data between other nodes easily.</description>
+      <description>Linked Lists (Ch 17)  The Linked List ADT  Linked list: set of data structures (nodes) that contain references to other data structures  Relationship is linear: Each node references the next node (and sometimes the previous node).   References may be addresses (pointers) or array indices Data can be added/removed during execution.  .center[]
+ Linked Lists  Can grow or shrink as needed (unlike arrays).  .</description>
     </item>
     
   </channel>

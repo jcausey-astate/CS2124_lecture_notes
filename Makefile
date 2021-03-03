@@ -11,7 +11,7 @@ build:
 	@hugo
 
 preview:
-	hugo serve --buildDrafts
+	@hugo serve --buildDrafts
 
 drafts:
 	@hugo list drafts
