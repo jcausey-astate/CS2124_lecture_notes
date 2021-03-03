@@ -45,7 +45,7 @@ draft: false
 
 * Linked lists contain 0 or more nodes.
 * Must have an “entry point” to the list.  We call it the list “head”.
-* The end of the list usually points to NULL.
+* The end of the list usually points to `nullptr`.
 * A list containing 0 nodes is an _empty list_.
 
 .center[![:scale Empty linked list., 20%](../images/LinkedList/LinkedList_empty.svg)]
