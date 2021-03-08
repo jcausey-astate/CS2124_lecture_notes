@@ -6,7 +6,7 @@ draft: false
 
 # Linked Lists
 
-### (Ch 17) 
+### (Chapter 18) 
 
 ---
 

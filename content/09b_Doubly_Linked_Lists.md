@@ -5,8 +5,7 @@ draft: false
 ---
 
 ## Doubly-Linked Lists
-
-#### CS2124
+### (Chapter 18)
 
 ---
 
@@ -25,8 +24,8 @@ A _doubly-linked list_ is a linked list in which the _nodes_ support access to b
 class DL_IntNode{
     private:
         int data;
-        DL_IntNode* prev;   // NEW
-        DL_IntNode* next;
+        DL_IntNode* prev = nullptr;   // NEW
+        DL_IntNode* next = nullptr;
     public:
         // [...] Public interface same as singly-linked list.
 };

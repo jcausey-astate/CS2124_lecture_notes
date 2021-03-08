@@ -4,13 +4,48 @@ date: 2020-10-02T12:30:16-05:00
 draft: false
 ---
 
-## Templates
+## Templates, Stacks, and Queues
 
-#### CS2124
+### (Chapters 16, 19)
 
 
 ---
 
+## Stacks
+
+A _stack_ is a data structure optimized for addition and removal only at one end.  It focuses on the _last-in, first-out_ access pattern.
+
+**Stack Operations:**  Primary stack operations are:
+
+* _**push**_ : Add a value at the "top" of the stack.
+* _**pop**_ : Remove the value at the "top" of the stack.
+* _**top**_ : Access the value at the "top" of the stack, but do not remove it.
+* Operations such as "write", "clear", etc. are also possible.
+
+Stacks can easily be implemented as a _singly-linked list_ where access is restricted to the "front".
+
+* `add_front()` becomes `push()` 
+* `remove_front()` becomes `pop()`
+
+---
+
+## Queues
+
+A _queue_ is a data structure optimized for addition at one end and removal at the other.  It focuses on the _first-in, first-out_ access pattern.
+
+**Queue Operations:**  Primary queue operations are:
+
+* _**enqueue**_ : Add a value at the "end" of the queue.
+* _**dequeue**_ : Remove the value at the "front" of the queue.
+* _**front**_ : Access the value at the "front" of the queue.
+* Operations such as "write", "clear", etc. are also possible.
+
+Queues can easily be implemented as a _singly-linked list_ where additions occur at the tail and removals are from the head (for efficiency):
+
+* `enqueue()` becomes `add_back()` 
+* `dequeue()` becomes `remove_front()`
+
+---
 ## Review: Function Templates
 
 Function templates provide a pattern for a function that can work with many types of data.

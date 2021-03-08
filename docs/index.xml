@@ -22,8 +22,8 @@ This supplement will talk about how C++ supports a whole family of streams and s
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/09b_doubly_linked_lists/</guid>
-      <description>Doubly-Linked Lists CS2124  Doubly-Linked List A doubly-linked list is a linked list in which the nodes support access to both the next and previous items in the list, allowing bidirectional traversal.
- A Doubly-Linked Node class DL_IntNode{ private: int data; DL_IntNode* prev; // NEW  DL_IntNode* next; public: // [...] Public interface same as singly-linked list. }; A doubly-linked list&amp;rsquo;s node is different only in that it maintains one extra link — in this case, a pointer prev to the previous node.</description>
+      <description>Doubly-Linked Lists (Chapter 18)  Doubly-Linked List A doubly-linked list is a linked list in which the nodes support access to both the next and previous items in the list, allowing bidirectional traversal.
+ A Doubly-Linked Node class DL_IntNode{ private: int data; DL_IntNode* prev = nullptr; // NEW  DL_IntNode* next = nullptr; public: // [...] Public interface same as singly-linked list. }; A doubly-linked list&amp;rsquo;s node is different only in that it maintains one extra link — in this case, a pointer prev to the previous node.</description>
     </item>
     
     <item>
@@ -32,9 +32,9 @@ This supplement will talk about how C++ supports a whole family of streams and s
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/10_class_template/</guid>
-      <description>Templates CS2124  Review: Function Templates Function templates provide a pattern for a function that can work with many types of data.
- When written, the data type specifiers are replaced with type parameters. When called, the compiler generates a function with actual data types that match those provided in the call.  Example
-template&amp;lt;typename Numeric&amp;gt; Numeric times10(Numeric num){ return 10 * num; } Numeric is the type parameter (it can be any valid identifier, but is usually capitalized (UpperCamelCase or sometimes ALL_CAPS) by convention.</description>
+      <description>Templates, Stacks, and Queues (Chapters 16, 19)  Stacks A stack is a data structure optimized for addition and removal only at one end. It focuses on the last-in, first-out access pattern.
+Stack Operations: Primary stack operations are:
+ push : Add a value at the &amp;ldquo;top&amp;rdquo; of the stack. pop : Remove the value at the &amp;ldquo;top&amp;rdquo; of the stack. top : Access the value at the &amp;ldquo;top&amp;rdquo; of the stack, but do not remove it.</description>
     </item>
     
     <item>
@@ -259,7 +259,7 @@ class Tool{ private: std::string name; double weight; public: [...] // interface
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/09_linkedlists/</guid>
-      <description>Linked Lists (Ch 17)  The Linked List ADT  Linked list: set of data structures (nodes) that contain references to other data structures  Relationship is linear: Each node references the next node (and sometimes the previous node).   References may be addresses (pointers) or array indices Data can be added/removed during execution.  .center[]
+      <description>Linked Lists (Chapter 18)  The Linked List ADT  Linked list: set of data structures (nodes) that contain references to other data structures  Relationship is linear: Each node references the next node (and sometimes the previous node).   References may be addresses (pointers) or array indices Data can be added/removed during execution.  .center[]
  Linked Lists  Can grow or shrink as needed (unlike arrays).  .</description>
     </item>
     
