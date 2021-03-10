@@ -8,10 +8,10 @@
 all: build
 
 build:
-	@hugo
+	@hugo --cleanDestinationDir
 
 preview:
-	@hugo serve --buildDrafts
+	@hugo serve --buildDrafts --cleanDestinationDir
 
 drafts:
 	@hugo list drafts

@@ -38,43 +38,43 @@ Stack Operations: Primary stack operations are:
     </item>
     
     <item>
-      <title>11_Smart_Pointers</title>
-      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/11_smart_pointers/</link>
+      <title>11_Trees</title>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/11_trees/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/11_smart_pointers/</guid>
-      <description>Smart Pointers CS 2124  Owner&amp;rsquo;s Remorse Dynamic memory allocation in C++ requires that a pointer be used to manage the dynamic resource.
- We refer to such pointers as owning pointers. If a raw pointer (regular C++ pointer type) is used as an owning pointer, there is no guarantee that the managed resource will be freed.   Freeing the managed resource is the responsibility of the programmer.
-  The OOP Way The main advantage of objects is in their ability to self-initialize and safely destruct.</description>
-    </item>
-    
-    <item>
-      <title>12_Trees</title>
-      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/12_trees/</link>
-      <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
-      
-      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/12_trees/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/11_trees/</guid>
       <description>Trees Featuring: The Binary Search Tree (Ch 20)  Trees In the computer science sense, trees are simply non-linear linked structures where each node may link to two or more other nodes, in a hierarchical fashion.
  The entry point into a tree is called the root. Trees are (usually) drawn &amp;ldquo;upside down&amp;rdquo;, with the root at the top. Normally, we don’t draw the NULL pointers when we draw a tree&amp;hellip; but we must remember that they are there.</description>
     </item>
     
     <item>
-      <title>13_Inheritance</title>
-      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/13_inheritance/</link>
+      <title>12_Inheritance</title>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/12_inheritance/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/13_inheritance/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/12_inheritance/</guid>
       <description>Inheritance (Ch 15)  Inheritance Establishes an &amp;ldquo;is-a&amp;rdquo; relationship:
  A flower is a plant. A lager is a beer. An ale is a beer. A truck is a vehicle.  A dump truck is a truck.   A mammal is a(n) animal.  A dog is a mammal.  A poodle is a dog.      &amp;hellip; Infinite examples: The real world works this way!</description>
     </item>
     
     <item>
-      <title>14_virtual_and_Polymorphism</title>
-      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/14_virtual_and_polymorphism/</link>
+      <title>13_virtual_and_Polymorphism</title>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/13_virtual_and_polymorphism/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/14_virtual_and_polymorphism/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/13_virtual_and_polymorphism/</guid>
       <description>Virtual Methods &amp;amp; Polymorphism (Ch 15.4)  Redefining Base Class Methods  A method is said to be redefined in a derived class when it has the same name (and perhaps parameter list) as a method in the base class.  This is not the same thing as overloading.   Base class objects use the base class method&amp;hellip; derived class objects use the derived class method.   Problem with Redefining Consider this situation:</description>
+    </item>
+    
+    <item>
+      <title>14_Smart_Pointers</title>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/14_smart_pointers/</link>
+      <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
+      
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/14_smart_pointers/</guid>
+      <description>Smart Pointers CS 2124  Owner&amp;rsquo;s Remorse Dynamic memory allocation in C++ requires that a pointer be used to manage the dynamic resource.
+ We refer to such pointers as owning pointers. If a raw pointer (regular C++ pointer type) is used as an owning pointer, there is no guarantee that the managed resource will be freed.   Freeing the managed resource is the responsibility of the programmer.
+  The OOP Way The main advantage of objects is in their ability to self-initialize and safely destruct.</description>
     </item>
     
     <item>
