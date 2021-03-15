@@ -2,6 +2,7 @@
 title: "11_Trees"
 date: 2020-10-02T12:30:16-05:00
 draft: false
+marp: true
 ---
 
 ## Trees
@@ -81,5 +82,5 @@ As the name implies, Binary Search Trees are optimized for searching.
     - In-order
     - pre-order
     - post-order
-* Remove items
+* What would be involved with removing items?
 
