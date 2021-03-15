@@ -99,4 +99,3 @@ As the name implies, Binary Search Trees are optimized for searching.
     - pre-order
     - post-order
 * What would be involved with removing items?
-

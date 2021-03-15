@@ -82,7 +82,7 @@ _... Infinite examples:  The real world works this way!_
 
 ## Class Access Specifiers
 
-![Diagram of effect of access specifiers.](../images/Inheritance/Inheritance_Access_Levels.svg)
+.center[![Diagram of effect of access specifiers.](../images/Inheritance/Inheritance_Access_Levels.svg)]
 
 ---
 
@@ -91,10 +91,13 @@ _... Infinite examples:  The real world works this way!_
 * Base class must be constructed before derived class.
 * Derived class must be destructed before the base class.
 * Derived class may pass arguments to base class constructor:
+
 ```cpp
     Square::Square(int s) : Rectangle{s, s} { }
     //                      ^^^^^^^^^^^^^^^
 ```
+
+You _must_ use the constructor&#39;s _member initialization list_ for this.
 
 
 </textarea>
