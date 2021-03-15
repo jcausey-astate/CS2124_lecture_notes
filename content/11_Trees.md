@@ -16,7 +16,7 @@ In the computer science sense, trees are simply non-linear linked structures whe
 
 * The entry point into a tree is called the _**root**_.
 * Trees are (usually) drawn "upside down", with the root at the top.
-* Normally, we don’t draw the NULL pointers when we draw a tree... but we must remember that they are there.
+* Normally, we don’t draw the null pointers when we draw a tree... but we must remember that they are there.
 
 
 ---
@@ -51,6 +51,22 @@ A _binary tree_ is a tree in which each node has up to two children.
 * Easy to design and conceptualize (and code)
 * Useful in many contexts
 * The order of the values may or may not matter.
+
+---
+## Binary Tree Node
+
+The binary tree "Node" must store a payload value and maintain pointers to the left and right subtree.
+
+.center[![](../images/Trees/Binary_Tree_Node.svg)]
+
+---
+
+## Binary Tree
+
+The "Tree" object must store an owning pointer to the root of the tree.  The tree itself has ownership responsibility too all nodes in the data structure.
+
+.center[![](../images/Trees/Binary_Tree.svg)]
+
 
 ---
 
