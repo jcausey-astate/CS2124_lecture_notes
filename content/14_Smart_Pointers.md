@@ -2,10 +2,11 @@
 title: "14_Smart_Pointers"
 date: 2020-10-02T12:30:16-05:00
 draft: false
+marp: true
 ---
 
 # Smart Pointers
-## CS 2124
+## CS 2124 (Ch. 9.10)
 
 ---
 
@@ -16,7 +17,7 @@ Dynamic memory allocation in C++ requires that a pointer be used to manage the d
 * We refer to such pointers as _owning_ pointers.
 * If a _raw pointer_ (regular C++ pointer type) is used as an owning pointer, there is no guarantee that the managed resource will be freed.
 
-> Freeing the managed resource is the responsibility of the programmer.
+Freeing the managed resource is the _responsibility of the programmer_.
 
 ---
 
@@ -29,14 +30,15 @@ The main advantage of objects is in their ability to self-initialize and safely 
 
 ---
 
-## RAII
+## RAII (review)
 
 * _**Resource Allocation Is Initialization**_ (RAII) is a term coined by Bjarne Stroustrup (the creator of C++).  
 * It refers to the fact that resources should be _allocated_ during the _initialization_ phase of object instantiation (construction).
 * Also implied is the concept that resource lifetime should be determined by object lifetime.
 
 **To summarize:**
-> The constructor initializes resources to be managed by the object until its destructor deallocates them.
+
+The constructor initializes resources to be managed by the object until its destructor deallocates them.
 
 ---
 
@@ -55,8 +57,8 @@ Owning pointers can be improved by simply "wrapping" them with an object.
 
 ![Smart Pointer](../images/Smart_Pointer/SmartPointer_simple.png)
 
-* The object becomes responsible for allocating the resource (during construction) and deallocating it (during destruction).  
-* The lifetime of the managed resource will be identical to the lifetime of the object.
+* The _object_ becomes responsible for allocating the resource (during construction) and deallocating it (during destruction).  
+* The lifetime of the managed resource will be identical to the _lifetime of the object_.
 
 ---
 

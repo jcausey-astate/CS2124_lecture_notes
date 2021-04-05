@@ -72,9 +72,8 @@ Stack Operations: Primary stack operations are:
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/14_smart_pointers/</guid>
-      <description>Smart Pointers CS 2124  Owner&amp;rsquo;s Remorse Dynamic memory allocation in C++ requires that a pointer be used to manage the dynamic resource.
- We refer to such pointers as owning pointers. If a raw pointer (regular C++ pointer type) is used as an owning pointer, there is no guarantee that the managed resource will be freed.   Freeing the managed resource is the responsibility of the programmer.
-  The OOP Way The main advantage of objects is in their ability to self-initialize and safely destruct.</description>
+      <description>Smart Pointers CS 2124 (Ch. 9.10)  Owner&amp;rsquo;s Remorse Dynamic memory allocation in C++ requires that a pointer be used to manage the dynamic resource.
+ We refer to such pointers as owning pointers. If a raw pointer (regular C++ pointer type) is used as an owning pointer, there is no guarantee that the managed resource will be freed.  Freeing the managed resource is the responsibility of the programmer.</description>
     </item>
     
     <item>
