@@ -1,5 +1,5 @@
 ---
-title: "18_lambda"
+title: "17_lambda"
 date: 2020-10-02T12:30:16-05:00
 draft: false
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Easy_rand"
+title: "supplement_easy_rand"
 date: 2020-10-02T12:30:16-05:00
 draft: false
 ---

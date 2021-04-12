@@ -77,32 +77,21 @@ Stack Operations: Primary stack operations are:
     </item>
     
     <item>
-      <title>15_STL</title>
-      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/15_stl/</link>
+      <title>15_random_access</title>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/15_random_access/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/15_stl/</guid>
-      <description>background-image: url(../images/STL/circle_template.jpg)
-STL The C++ Standard Template Library (Ch. 16.5)  The Standard Template Library  What is STL? Why use STL? Overview of STL Features and Concepts Containers Iterators Algorithms References for more information on STL   What is STL?  &amp;ldquo;The Standard Template Library provides a set of well structured generic C++ components that work together in a seamless way.&amp;rdquo;
-- Alexander Stepanov &amp;amp; Meng Lee, The Standard Template Library</description>
-    </item>
-    
-    <item>
-      <title>16_random_access</title>
-      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/16_random_access/</link>
-      <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
-      
-      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/16_random_access/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/15_random_access/</guid>
       <description>Random Access Files (Ch. 12)  Files – Review File: a set of data stored on a computer; often on secondary storage such as a disk drive.
  Used to abstract the concept of &amp;ldquo;a blob of data&amp;rdquo; in a well-understood and system-wide way. Can be read and/or written (depending on permissions).   Files – Review  Requires the fstream header file. ifstream objects are specialized for input ofstream object are specialized for output fstream objects are more general – can do both input and output.</description>
     </item>
     
     <item>
-      <title>17_QuickSort</title>
-      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/17_quicksort/</link>
+      <title>16a_QuickSort</title>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/16a_quicksort/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/17_quicksort/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/16a_quicksort/</guid>
       <description>Quicksort  Simple Sorting Methods  Bubble Sort Selection Sort Insertion Sort  All are $O(n^2)$ A better algorithm is needed!   Quicksort Quicksort is a divide-and-conquer algorithm developed in 1960 by Tony Hoare.
 It divides the array into two halves, and sorts those halves recursively.
  Quicksort Quicksort divides the array into two halves, and sorts those halves recursively.
@@ -110,32 +99,23 @@ A pivot element is chosen, then all elements greater than the pivot are moved to
     </item>
     
     <item>
-      <title>18_HeapSort</title>
-      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/18_heapsort/</link>
+      <title>16b_HeapSort</title>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/16b_heapsort/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/18_heapsort/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/16b_heapsort/</guid>
       <description>Heaps and Heapsort  Heaps A heap is a kind of (usually binary) tree. They come in two varieties:
  Min-Heaps always maintain the smallest value at the root. Max-Heaps always maintain the largest value at the root.   Heaps In order to be a Heap, the following properties must hold (min heap used as an example; for a max heap just reverse the comparison operator).
  The empty tree is a heap.</description>
     </item>
     
     <item>
-      <title>18_lambda</title>
-      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/18_lambda/</link>
+      <title>17_lambda</title>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/17_lambda/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/18_lambda/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/17_lambda/</guid>
       <description>C++ Lambdas  Lambda Expressions  A lambda expression (AKA &amp;ldquo;lambda&amp;rdquo;) is an expression defining an anonymous function. Beginning with C++11, lambda expressions are a standard language feature.   Lambdas - Why?  Why do we need another way of defining a function?  Flexibility, convenience and expressiveness of syntax.   Why do we say these are anonymous functions?  They do not (inherently) have a name; they are defined only as an expression.</description>
-    </item>
-    
-    <item>
-      <title>Easy_rand</title>
-      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/easy_rand/</link>
-      <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
-      
-      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/easy_rand/</guid>
-      <description>&amp;lt;/small&amp;gt;</description>
     </item>
     
     <item>
@@ -154,6 +134,26 @@ A pivot element is chosen, then all elements greater than the pivot are moved to
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_static_function_pointers/</guid>
       <description>static Members and Function Pointers  Instance and Static Members  Normal members of a class are called instance members. Each object has its own copy. Members may also be declared static.  Static Attributes: Only one memory location is allocated for the class; all objects instantiated from the class share the storage (shared data). Static Methods: Can be called without first instantiating an object of the class; can access static attributes.</description>
+    </item>
+    
+    <item>
+      <title>supplement_easy_rand</title>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_easy_rand/</link>
+      <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
+      
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_easy_rand/</guid>
+      <description>&amp;lt;/small&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>supplement_STL</title>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_stl/</link>
+      <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
+      
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_stl/</guid>
+      <description>background-image: url(../images/STL/circle_template.jpg)
+STL The C++ Standard Template Library (Ch. 16.5)  The Standard Template Library  What is STL? Why use STL? Overview of STL Features and Concepts Containers Iterators Algorithms References for more information on STL   What is STL?  &amp;ldquo;The Standard Template Library provides a set of well structured generic C++ components that work together in a seamless way.&amp;rdquo;
+- Alexander Stepanov &amp;amp; Meng Lee, The Standard Template Library</description>
     </item>
     
     <item>
