@@ -5,7 +5,9 @@ draft: false
 marp: true
 ---
 
-# Aggregation <br />of<br />Objects
+## Aggregation <br />of<br />Objects
+
+### (Ch. 14.7)
 
 ---
 

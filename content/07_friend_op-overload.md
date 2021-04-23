@@ -8,6 +8,7 @@ marp: true
 ## `friend` Functions  
 ## Operator Overloading
 
+### (Ch. 14)
 ---
 
 ## Friends of Classes

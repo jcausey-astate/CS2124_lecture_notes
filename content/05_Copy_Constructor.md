@@ -6,7 +6,7 @@ draft: false
 
 # CS2124
 ## Copy Constructors
-### (Chapter 14 Sections 14.3, 14.4)
+### (Ch. 14.3 - 14.4)
 
 ---
 

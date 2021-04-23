@@ -4,10 +4,10 @@ date: 2020-10-02T12:30:16-05:00
 draft: false
 ---
 
-# Exceptions
+## Exceptions
 
-## (When Everything Goes Wrong)
-## (Ch 16)
+### (When Everything Goes Wrong)
+### (Ch. 16)
 
 ---
 

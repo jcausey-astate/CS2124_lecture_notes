@@ -5,8 +5,8 @@ draft: false
 marp: true
 ---
 
-# Smart Pointers
-## CS 2124 (Ch. 9.10)
+## Smart Pointers
+### (Ch. 9.10)
 
 ---
 

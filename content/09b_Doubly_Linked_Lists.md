@@ -5,7 +5,7 @@ draft: false
 ---
 
 ## Doubly-Linked Lists
-### (Chapter 18)
+### (Ch. 18)
 
 ---
 

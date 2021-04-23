@@ -4,8 +4,8 @@ date: 2020-10-02T12:30:16-05:00
 draft: false
 ---
 
-# Inheritance
-## (Ch 15)
+## Inheritance
+### (Ch. 15)
 
 ---
 

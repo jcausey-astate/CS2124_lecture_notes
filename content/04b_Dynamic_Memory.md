@@ -4,8 +4,8 @@ date: 2020-10-02T12:30:15-05:00
 draft: false
 ---
 
-# Dynamic Memory<br />Allocation
-## CS2124 (Ch. 9.8)
+## Dynamic Memory<br />Allocation
+### (Ch. 9.8)
 
 ---
 

@@ -4,9 +4,9 @@ date: 2020-10-02T12:30:15-05:00
 draft: false
 ---
 
-# Linked Lists
+## Linked Lists
 
-### (Chapter 18) 
+### (Ch. 18) 
 
 ---
 

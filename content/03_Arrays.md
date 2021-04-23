@@ -4,8 +4,8 @@ date: 2020-10-02T12:30:15-05:00
 draft: false
 ---
 
-# Arrays
-## CS2124 (Ch. 7)
+## Arrays
+### (Ch. 7)
 
 ---
 

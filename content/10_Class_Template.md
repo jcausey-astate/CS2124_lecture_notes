@@ -6,7 +6,7 @@ draft: false
 
 ## Templates, Stacks, and Queues
 
-### (Chapters 16, 19)
+### (Ch. 16, 19)
 
 
 ---

@@ -22,7 +22,7 @@ This supplement will talk about how C++ supports a whole family of streams and s
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/09b_doubly_linked_lists/</guid>
-      <description>Doubly-Linked Lists (Chapter 18)  Doubly-Linked List A doubly-linked list is a linked list in which the nodes support access to both the next and previous items in the list, allowing bidirectional traversal.
+      <description>Doubly-Linked Lists (Ch. 18)  Doubly-Linked List A doubly-linked list is a linked list in which the nodes support access to both the next and previous items in the list, allowing bidirectional traversal.
  A Doubly-Linked Node class DL_IntNode{ private: int data; DL_IntNode* prev = nullptr; // NEW  DL_IntNode* next = nullptr; public: // [...] Public interface same as singly-linked list. }; A doubly-linked list&amp;rsquo;s node is different only in that it maintains one extra link — in this case, a pointer prev to the previous node.</description>
     </item>
     
@@ -32,7 +32,7 @@ This supplement will talk about how C++ supports a whole family of streams and s
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/10_class_template/</guid>
-      <description>Templates, Stacks, and Queues (Chapters 16, 19)  Stacks A stack is a data structure optimized for addition and removal only at one end. It focuses on the last-in, first-out access pattern.
+      <description>Templates, Stacks, and Queues (Ch. 16, 19)  Stacks A stack is a data structure optimized for addition and removal only at one end. It focuses on the last-in, first-out access pattern.
 Stack Operations: Primary stack operations are:
  push : Add a value at the &amp;ldquo;top&amp;rdquo; of the stack. pop : Remove the value at the &amp;ldquo;top&amp;rdquo; of the stack. top : Access the value at the &amp;ldquo;top&amp;rdquo; of the stack, but do not remove it.</description>
     </item>
@@ -43,7 +43,7 @@ Stack Operations: Primary stack operations are:
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/11_trees/</guid>
-      <description>Trees Featuring: The Binary Search Tree (Ch 20)  Trees In the computer science sense, trees are simply non-linear linked structures where each node may link to two or more other nodes, in a hierarchical fashion.
+      <description>Trees Featuring: The Binary Search Tree (Ch. 20)  Trees In the computer science sense, trees are simply non-linear linked structures where each node may link to two or more other nodes, in a hierarchical fashion.
  The entry point into a tree is called the root. Trees are (usually) drawn &amp;ldquo;upside down&amp;rdquo;, with the root at the top. Normally, we don’t draw the null pointers when we draw a tree&amp;hellip; but we must remember that they are there.</description>
     </item>
     
@@ -53,7 +53,7 @@ Stack Operations: Primary stack operations are:
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/12_inheritance/</guid>
-      <description>Inheritance (Ch 15)  Inheritance Establishes an &amp;ldquo;is-a&amp;rdquo; relationship:
+      <description>Inheritance (Ch. 15)  Inheritance Establishes an &amp;ldquo;is-a&amp;rdquo; relationship:
  A flower is a plant. A lager is a beer. An ale is a beer. A truck is a vehicle.  A dump truck is a truck.   A mammal is a(n) animal.  A dog is a mammal.  A poodle is a dog.      &amp;hellip; Infinite examples: The real world works this way!</description>
     </item>
     
@@ -63,7 +63,7 @@ Stack Operations: Primary stack operations are:
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/13_virtual_and_polymorphism/</guid>
-      <description>Virtual Methods &amp;amp; Polymorphism (Ch 15.4)  Redefining Base Class Methods  A method is said to be redefined in a derived class when it has the same name (and perhaps parameter list) as a method in the base class.  This is not the same thing as overloading.   Base class objects use the base class method&amp;hellip; derived class objects use the derived class method.   Problem with Redefining Consider this situation:</description>
+      <description>Virtual Methods &amp;amp; Polymorphism (Ch. 15.4)  Redefining Base Class Methods  A method is said to be redefined in a derived class when it has the same name (and perhaps parameter list) as a method in the base class.  This is not the same thing as overloading.   Base class objects use the base class method&amp;hellip; derived class objects use the derived class method.   Problem with Redefining Consider this situation:</description>
     </item>
     
     <item>
@@ -72,8 +72,9 @@ Stack Operations: Primary stack operations are:
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/14_smart_pointers/</guid>
-      <description>Smart Pointers CS 2124 (Ch. 9.10)  Owner&amp;rsquo;s Remorse Dynamic memory allocation in C++ requires that a pointer be used to manage the dynamic resource.
- We refer to such pointers as owning pointers. If a raw pointer (regular C++ pointer type) is used as an owning pointer, there is no guarantee that the managed resource will be freed.  Freeing the managed resource is the responsibility of the programmer.</description>
+      <description>Smart Pointers (Ch. 9.10)  Owner&amp;rsquo;s Remorse Dynamic memory allocation in C++ requires that a pointer be used to manage the dynamic resource.
+ We refer to such pointers as owning pointers. If a raw pointer (regular C++ pointer type) is used as an owning pointer, there is no guarantee that the managed resource will be freed.  Freeing the managed resource is the responsibility of the programmer.
+ The OOP Way The main advantage of objects is in their ability to self-initialize and safely destruct.</description>
     </item>
     
     <item>
@@ -92,21 +93,21 @@ Stack Operations: Primary stack operations are:
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/16a_quicksort/</guid>
-      <description>Quicksort  Simple Sorting Methods  Bubble Sort Selection Sort Insertion Sort  All are $O(n^2)$ A better algorithm is needed!   Quicksort Quicksort is a divide-and-conquer algorithm developed in 1960 by Tony Hoare.
+      <description>Quicksort (Ch. 20.8)  Simple Sorting Methods  Bubble Sort Selection Sort Insertion Sort  All are $O(n^2)$ A better algorithm is needed!   Quicksort Quicksort is a divide-and-conquer algorithm developed in 1960 by Tony Hoare.
 It divides the array into two halves, and sorts those halves recursively.
  Quicksort Quicksort divides the array into two halves, and sorts those halves recursively.
 A pivot element is chosen, then all elements greater than the pivot are moved to its right, and all elements less than the pivot are moved to its left.</description>
     </item>
     
     <item>
-      <title>16b_HeapSort</title>
+      <title>16b_Heaps_and_HeapSort</title>
       <link>https://jcausey-astate.github.io/CS2124_lecture_notes/16b_heapsort/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/16b_heapsort/</guid>
-      <description>Heaps and Heapsort  Heaps A heap is a kind of (usually binary) tree. They come in two varieties:
- Min-Heaps always maintain the smallest value at the root. Max-Heaps always maintain the largest value at the root.   Heaps In order to be a Heap, the following properties must hold (min heap used as an example; for a max heap just reverse the comparison operator).
- The empty tree is a heap.</description>
+      <description>Heaps and Heapsort (This material does not appear in the Gaddis textbook.)
+ Heaps A heap is a kind of (usually binary) tree. They come in two varieties:
+ Min-Heaps always maintain the smallest value at the root. Max-Heaps always maintain the largest value at the root.   Heaps In order to be a Heap, the following properties must hold (min heap used as an example; for a max heap just reverse the comparison operator).</description>
     </item>
     
     <item>
@@ -124,7 +125,7 @@ A pivot element is chosen, then all elements greater than the pivot are moved to
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_exceptions/</guid>
-      <description>Exceptions (When Everything Goes Wrong) (Ch 16)  Exceptions  Used to communicate that something unexpected has occurred. Allows the programmer to deal with unexpected situations in a controlled manner. May be as simple or as complex as desired (depending on usage in the program) In C++, any data value can be used as an exception!   Key Words throw - Used to generate an exception and “throw” it up the call stack.</description>
+      <description>Exceptions (When Everything Goes Wrong) (Ch. 16)  Exceptions  Used to communicate that something unexpected has occurred. Allows the programmer to deal with unexpected situations in a controlled manner. May be as simple or as complex as desired (depending on usage in the program) In C++, any data value can be used as an exception!   Key Words throw - Used to generate an exception and “throw” it up the call stack.</description>
     </item>
     
     <item>
@@ -162,7 +163,7 @@ STL The C++ Standard Template Library (Ch. 16.5)  The Standard Template Library 
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/01_classes_and_objects/</guid>
-      <description>CS2124 Classes and Objects  Introduction  Procedural (structured) Programming  Concerned with processes (actions) that occur in a program. Basic unit of modularity is the function.   Object-Oriented Programming (OOP)  Focuses on the data (things) and the functions that operate on it. Basic unit of modularity is the class (or structure).     OOP Central Concepts   Encapsulation
+      <description>Classes and Objects (Ch. 13)  Introduction  Procedural (structured) Programming  Concerned with processes (actions) that occur in a program. Basic unit of modularity is the function.   Object-Oriented Programming (OOP)  Focuses on the data (things) and the functions that operate on it. Basic unit of modularity is the class (or structure).     OOP Central Concepts   Encapsulation
  Bundling Data / Implementation Hiding  Principle of least privilege.</description>
     </item>
     
@@ -172,7 +173,7 @@ STL The C++ Standard Template Library (Ch. 16.5)  The Standard Template Library 
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/02_objects/</guid>
-      <description>CS2124 Objects (Chapter 13)  Separating Specification and Implementation  Header files ( MyClass.h ) – place class specification (declaration) here Implementation file ( MyClass.cpp ) – implement methods here #include the header from the implementation file Implementation ( .cpp ) files can be compiled; header files cannot. NEVER #include a .cpp file!   Inline Methods  Implemented directly in class specification. Substituted during compilation. Speed VS executable size “inline all 1-liners” inline keyword  Can be used to inline functions implemented separately.</description>
+      <description>Objects (Ch. 13)  Separating Specification and Implementation  Header files ( MyClass.h ) – place class specification (declaration) here Implementation file ( MyClass.cpp ) – implement methods here #include the header from the implementation file Implementation ( .cpp ) files can be compiled; header files cannot. NEVER #include a .cpp file!   Inline Methods  Implemented directly in class specification. Substituted during compilation. Speed VS executable size “inline all 1-liners” inline keyword  Can be used to inline functions implemented separately.</description>
     </item>
     
     <item>
@@ -181,7 +182,7 @@ STL The C++ Standard Template Library (Ch. 16.5)  The Standard Template Library 
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/03_arrays/</guid>
-      <description>Arrays CS2124 (Ch. 7)  The C++ Array Arrays allow programmers to store multiple related values of the same type.
+      <description>Arrays (Ch. 7)  The C++ Array Arrays allow programmers to store multiple related values of the same type.
  Values are stored sequentially in memory. Declaration syntax: type arrayname[ size_declarator ];  Example Declarations
 int a[100]; // Declares an array of 100 integers. double b[50]; // Declares an array of 50 doubles.  Array Memory Layout The declaration:
 int tests[5]; allocates the following memory:
@@ -194,7 +195,7 @@ int tests[5]; allocates the following memory:
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/03b_c-style-strings/</guid>
-      <description>Characters &amp;amp;C-Style Strings CS2124 (Ch. 10)  ASCII Encoding Internally, all characters must be encoded into a numeric representation.
+      <description>Characters &amp;amp;C-Style Strings (Ch. 10)  ASCII Encoding Internally, all characters must be encoded into a numeric representation.
 There is more than one way to do it&amp;hellip; But C++ (by default) type char uses the ASCII encoding scheme.
   C-Style Strings C++ provides support for a low-level representation of strings of characters as they were defined in the C language: as null-terminated arrays of type char. We refer to strings of this type as C-Style strings, or simply C-Strings.</description>
     </item>
@@ -216,7 +217,7 @@ int x = 42; // Print out the address at which x is stored: std::cout &amp;lt;&am
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/04b_dynamic_memory/</guid>
-      <description>Dynamic MemoryAllocation CS2124 (Ch. 9.8)  Creating Memory at Runtime New memory can be allocated for individual data values or arrays at runtime.
+      <description>Dynamic MemoryAllocation (Ch. 9.8)  Creating Memory at Runtime New memory can be allocated for individual data values or arrays at runtime.
  new operator allocates new memory.  returns a pointer to the allocated space. Places responsibility on the programmer to &amp;ldquo;clean up&amp;rdquo; the memory later.   delete operator de-allocates memory that was allocated with new.  Failure to de-allocate memory creates a memory leak.    Both operators come in two forms; one for a single data item and one for an array.</description>
     </item>
     
@@ -226,7 +227,7 @@ int x = 42; // Print out the address at which x is stored: std::cout &amp;lt;&am
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/05_copy_constructor/</guid>
-      <description>CS2124 Copy Constructors (Chapter 14 Sections 14.3, 14.4)  First, something new&amp;hellip; Constructor initialization lists A constructor&amp;rsquo;s job is to initialize attributes of the class:
+      <description>CS2124 Copy Constructors (Ch. 14.3 - 14.4)  First, something new&amp;hellip; Constructor initialization lists A constructor&amp;rsquo;s job is to initialize attributes of the class:
 class Rectangle { public: Rectangle (int l, int w){ length = l; width = w; } int length = 0; int width = 0; };  Constructor initialization lists
 But&amp;hellip; there is another way to do it:
 class Rectangle { public: Rectangle (int l, int w) : length{l}, width{w} {} int length = 0; int width = 0; }; This:</description>
@@ -238,7 +239,7 @@ class Rectangle { public: Rectangle (int l, int w) : length{l}, width{w} {} int 
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/07_friend_op-overload/</guid>
-      <description>friend Functions Operator Overloading  Friends of Classes  A function or class may be declared to be a friend of a new class.  Created by adding the friend type modifier to the front of a declaration/prototype.   Declaring a function or class as a friend gives that function/class access to the private data in the class being defined. Use this sparingly!  If you find yourself needing a friend function/class, you could probably design your class better and avoid the problem.</description>
+      <description>friend Functions Operator Overloading (Ch. 14)  Friends of Classes  A function or class may be declared to be a friend of a new class.  Created by adding the friend type modifier to the front of a declaration/prototype.   Declaring a function or class as a friend gives that function/class access to the private data in the class being defined. Use this sparingly!  If you find yourself needing a friend function/class, you could probably design your class better and avoid the problem.</description>
     </item>
     
     <item>
@@ -247,9 +248,9 @@ class Rectangle { public: Rectangle (int l, int w) : length{l}, width{w} {} int 
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/08_aggregation/</guid>
-      <description>Aggregation ofObjects  Aggregation  Aggregation: an object of one class is used as an attribute in another class Sometimes called composition Creates the &amp;ldquo;has a&amp;rdquo; relationship.  Large book example in Chapter 14
+      <description>Aggregation ofObjects (Ch. 14.7)  Aggregation  Aggregation: an object of one class is used as an attribute in another class Sometimes called composition Creates the &amp;ldquo;has a&amp;rdquo; relationship.  Large book example in Chapter 14
 Instructor Textbook Course   Example
-class Tool{ private: std::string name; double weight; public: [...] // interface not shown for brevity }; class ToolBox{ private: Tool inventory[1024]; // aggregation of &amp;#34;Tool&amp;#34; objects  public: [...] // interface not shown for brevity }; </description>
+class Tool{ private: std::string name; double weight; public: [...] // interface not shown for brevity }; class ToolBox{ private: Tool inventory[1024]; // aggregation of &amp;#34;Tool&amp;#34; objects  public: [.</description>
     </item>
     
     <item>
@@ -258,7 +259,7 @@ class Tool{ private: std::string name; double weight; public: [...] // interface
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/09_linkedlists/</guid>
-      <description>Linked Lists (Chapter 18)  The Linked List ADT  Linked list: set of data structures (nodes) that contain references to other data structures  Relationship is linear: Each node references the next node (and sometimes the previous node).   References may be addresses (pointers) or array indices Data can be added/removed during execution.  .center[]
+      <description>Linked Lists (Ch. 18)  The Linked List ADT  Linked list: set of data structures (nodes) that contain references to other data structures  Relationship is linear: Each node references the next node (and sometimes the previous node).   References may be addresses (pointers) or array indices Data can be added/removed during execution.  .center[]
  Linked Lists  Can grow or shrink as needed (unlike arrays).  .</description>
     </item>
     

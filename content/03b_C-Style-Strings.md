@@ -4,8 +4,8 @@ date: 2020-10-02T12:30:15-05:00
 draft: false
 ---
 
-# Characters &<br />C-Style Strings
-## CS2124 (Ch. 10)
+## Characters &<br />C-Style Strings
+### (Ch. 10)
 
 ---
 

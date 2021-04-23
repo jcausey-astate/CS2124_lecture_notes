@@ -1,11 +1,12 @@
 ---
-title: "16b_HeapSort"
+title: "16b_Heaps_and_HeapSort"
 date: 2020-10-02T12:30:16-05:00
 draft: false
 ---
 
 # Heaps and Heapsort
 
+(This material does not appear in the Gaddis textbook.)
 
 ---
 

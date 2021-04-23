@@ -4,9 +4,9 @@ date: 2020-10-02T12:30:15-05:00
 draft: false
 ---
 
-# CS2124
+## Objects
 
-## Objects (Chapter 13)
+### (Ch. 13)
 
 ---
 

@@ -7,8 +7,8 @@ draft: false
 
 background-image: url(../images/STL/circle_template.jpg)
 
-#   STL
-##  The C++ <br> Standard Template Library
+##   STL
+###  The C++ <br> Standard Template Library
 ### (Ch. 16.5)
 
 
