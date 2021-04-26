@@ -93,8 +93,8 @@ end function partition;
 
 ## In-place Partitioning
 
-> <img src="../images/Quicksort/partition.png" alt="Partitioning" style="height: 500px;" title="In-place partitioning." />
-> <small style="font-size: 9pt;"><br />Image source: Wikipedia.org (http://en.wikipedia.org/wiki/File:Partition_example.svg)</small>
+> <img src="../images/Quicksort/partitioning.svg" alt="Partitioning" style="height: 20em;" title="In-place partitioning." />
+>
 
 ---
 
