@@ -174,11 +174,12 @@ double    temperatures[]{78.8, 80.2, 92.4, 87.5, 95.3, 95.1, 92.8};
 * In classes / structures, a method can &#34;promise&#34; not to modify the *state* of the object.
     - meaning, values of attributes will not be modified
 * accomplished by marking methods as `const`:
+
 ```cpp
 class Rectangle(){
 public:
     int get_length() const;  // const method
-    //[... other code not shown]
+    //[... other code not shown ...]
 private:
     int length;
     int width;
