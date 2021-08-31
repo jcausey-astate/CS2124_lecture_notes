@@ -211,6 +211,7 @@ for(int i = 0; i < 5; i++){
 ## Arrays as Parameters
 
 * Arrays may be passed to functions:
+
 ```cpp
 void print_tests(int tests[], int size){
     for(int i = 0; i < size; i++){
@@ -218,6 +219,7 @@ void print_tests(int tests[], int size){
     }
 }
 ```
+
 * Notice that the array's **size must also be passed**.
     - Arrays do not "know their own size". 
 * Notice the empty size declarator in the formal parameter.
@@ -247,6 +249,7 @@ void print_tests(int tests[], int size){
     - All elements at index `i` the parallel arrays make up a single _record_ `i`.
 
 **Example**
+
 ``` cpp
 const int   N_CONTESTANTS = 5;
 std::string names[N_CONTESTANTS];
@@ -319,6 +322,7 @@ const int N_DAYS        = 3; // contest length
 
 int votes[N_CONTESTANTS][N_DAYS]; // table of contest votes
 ```
+
 <small>It can sometimes be useful to allow these constants to be _global_ in some cases (as we will see shortly).</small>
 
 
@@ -355,6 +359,7 @@ void print_matrix( int matrix[][4], int n_rows ){
     }
 }
 ```
+
 The number of _rows_ can still be a parameter, allowing it to vary.
 
 
