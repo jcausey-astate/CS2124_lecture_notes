@@ -187,11 +187,11 @@ STL The C++ Standard Template Library (Ch. 16.5)  The Standard Template Library 
     </item>
     
     <item>
-      <title>03_Arrays</title>
-      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/03_arrays/</link>
+      <title>03a_Arrays</title>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/03a_arrays/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/03_arrays/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/03a_arrays/</guid>
       <description>Arrays (Ch. 7)  The C++ Array Arrays allow programmers to store multiple related values of the same type.
  Values are stored sequentially in memory. Declaration syntax: type arrayname[ size_declarator ];  Example Declarations
 int a[100]; // Declares an array of 100 integers. double b[50]; // Declares an array of 50 doubles.  Array Memory Layout The declaration:
@@ -264,11 +264,11 @@ class Tool{ private: std::string name; double weight; public: [...] // interface
     </item>
     
     <item>
-      <title>09_LinkedLists</title>
-      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/09_linkedlists/</link>
+      <title>09a_LinkedLists</title>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/09a_linkedlists/</link>
       <pubDate>Fri, 02 Oct 2020 12:30:15 -0500</pubDate>
       
-      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/09_linkedlists/</guid>
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/09a_linkedlists/</guid>
       <description>Linked Lists (Ch. 18)  The Linked List ADT  Linked list: set of data structures (nodes) that contain references to other data structures  Relationship is linear: Each node references the next node (and sometimes the previous node).   References may be addresses (pointers) or array indices Data can be added/removed during execution.  .center[]
  Linked Lists  Can grow or shrink as needed (unlike arrays).  .</description>
     </item>
