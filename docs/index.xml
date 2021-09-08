@@ -7,6 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://jcausey-astate.github.io/CS2124_lecture_notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>03c_Parallel_&amp;_Multi-Dimensional_Arrays</title>
+      <link>https://jcausey-astate.github.io/CS2124_lecture_notes/03c_parallel_and_multi-dimensional_arrays/</link>
+      <pubDate>Wed, 08 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/03c_parallel_and_multi-dimensional_arrays/</guid>
+      <description>Parallel &amp;amp;Multi-DimensionalArrays (Ch. 7)  Parallel Arrays  Parallel Arrays: Two or more arrays containing related data such that the elements at corresponding indexes are related.  All elements at index i the parallel arrays make up a single record i.    Example
+const int N_CONTESTANTS = 5; std::string names[N_CONTESTANTS]; int votes[N_CONTESTANTS]; // Each contestant has a name and a vote count. for(int i = 0; i &amp;lt; N_CONTESTANTS; i++){ std::cout &amp;lt;&amp;lt; &amp;#34;Contestant &amp;#34; &amp;lt;&amp;lt; (i+1) &amp;lt;&amp;lt; &amp;#34; name: &amp;#34;; std::cin &amp;gt;&amp;gt; names[i]; std::cout &amp;lt;&amp;lt; &amp;#34;# of votes for &amp;#34; &amp;lt;&amp;lt; names[i] &amp;lt;&amp;lt; &amp;#34;: &amp;#34;; std::cin &amp;gt;&amp;gt; votes[i]; }  Parallel Arrays  Since the parallel arrays are separate, they may be of mixed type.</description>
+    </item>
+    
+    <item>
       <title>Supplement: Streams</title>
       <link>https://jcausey-astate.github.io/CS2124_lecture_notes/supplement_streams/</link>
       <pubDate>Sun, 04 Oct 2020 16:30:22 -0500</pubDate>
