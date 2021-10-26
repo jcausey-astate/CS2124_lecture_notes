@@ -53,7 +53,7 @@ Stack Operations: Primary stack operations are:
       <pubDate>Fri, 02 Oct 2020 12:30:16 -0500</pubDate>
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/11_trees/</guid>
-      <description>Trees Featuring: The Binary Search Tree (Ch. 20)  Trees In the computer science sense, trees are simply non-linear linked structures where each node may link to two or more other nodes, in a hierarchical fashion.
+      <description>Trees Featuring: The Binary Search Tree (Ch. 21)  Trees In the computer science sense, trees are simply non-linear linked structures where each node may link to two or more other nodes, in a hierarchical fashion.
  The entry point into a tree is called the root. Trees are (usually) drawn &amp;ldquo;upside down&amp;rdquo;, with the root at the top. Normally, we don’t draw the null pointers when we draw a tree&amp;hellip; but we must remember that they are there.</description>
     </item>
     

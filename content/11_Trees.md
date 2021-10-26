@@ -7,7 +7,7 @@ marp: true
 
 ## Trees
 ### Featuring: The Binary Search Tree
-#### (Ch. 20)
+#### (Ch. 21)
 
 ---
 
