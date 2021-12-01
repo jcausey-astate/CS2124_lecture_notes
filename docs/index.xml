@@ -116,8 +116,8 @@ A pivot element is chosen, then all elements greater than the pivot are moved to
       
       <guid>https://jcausey-astate.github.io/CS2124_lecture_notes/16b_heapsort/</guid>
       <description>Heaps and Heapsort (This material does not appear in the Gaddis textbook.)
- Heaps A heap is a kind of (usually binary) tree. They come in two varieties:
- Min-Heaps always maintain the smallest value at the root. Max-Heaps always maintain the largest value at the root.   Heaps In order to be a Heap, the following properties must hold (min heap used as an example; for a max heap just reverse the comparison operator).</description>
+ Heaps A heap is a kind of (usually binary) tree. They normally come in two varieties:
+ Min-Heaps always maintain the smallest value at the root. Max-Heaps always maintain the largest value at the root.  There is also a more exotic heap called a &amp;ldquo;min-max-heap&amp;rdquo; that allows you to find the smallest and largest values in constant time, but we won&amp;rsquo;t consider that variation here.</description>
     </item>
     
     <item>

@@ -13,10 +13,15 @@ draft: false
 
 ## Heaps
 
-A heap is a kind of (usually binary) tree.  They come in two varieties:
+A heap is a kind of (usually binary) tree.  They normally come in two varieties:
 
 - _Min-Heaps_ always maintain the smallest value at the root.
 - _Max-Heaps_ always maintain the largest value at the root.
+
+<br/><br/><br/>
+<small>_There is also a more exotic heap called a "min-max-heap" that allows you
+to find the smallest and largest values in constant time, but we won't consider
+that variation here._</small>
 
 
 ---
@@ -39,8 +44,8 @@ The _heap property_, for any node in a tree, states:
 
 - A node with no children satisfies the heap property.
 - A node with one or more children satisfies the heap property if and only if: 
-    -  (for a _min-heap_) A subtree rooted at node $R$ is a min-heap if each of $R$'s child subtrees are min-heaps and the values of each of $R$'s direct descendants (if they exist) are greater than or equal to the value at $R$. 
-    -  (for a _max-heap_) A subtree rooted at node $R$ is a max-heap if each of $R$'s child subtrees are max-heaps and the values of each of $R$'s direct descendants (if they exist) are less than or equal to the value at $R$. 
+    -  (for a _min-heap_) The subtree rooted at node $R$ is a min-heap if each of $R$'s child subtrees are min-heaps and the values of each of $R$'s direct descendants (if they exist) are greater than or equal to the value at $R$. 
+    -  (for a _max-heap_) The subtree rooted at node $R$ is a max-heap if each of $R$'s child subtrees are max-heaps and the values of each of $R$'s direct descendants (if they exist) are less than or equal to the value at $R$. 
 
 
 ---
