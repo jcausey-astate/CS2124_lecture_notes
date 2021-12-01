@@ -114,9 +114,9 @@ The idea is to create an "array-in-a-file" that can be accessed at any arbitrary
 
 ## Positioning
 
-**`seekg()`** : "seek get" – move the "read pointer"
+**`seekg()`** : "seek get" – move the "read cursor"
 
-**`seekp()`** : "seek put" – move the "write pointer".
+**`seekp()`** : "seek put" – move the "write cursor".
 
 * Can be used to go to any location in a file.
 * Math similar to pointer-based array access is used.
@@ -146,9 +146,9 @@ fin.seekg(25L, ios::beg);
 
 **_`stream`_`.clear()`** : clear _`stream`_'s _state flags_
 
-**_`stream`_`.tellg()`** : where is the "get" pointer?
+**_`stream`_`.tellg()`** : where is the "get" cursor?
 
-**_`stream`_`.tellp()`** : where is the "put" pointer?
+**_`stream`_`.tellp()`** : where is the "put" cursor?
 
 ---
 
