@@ -47,10 +47,10 @@ function quicksort(data[], n):
     if n > 1:
         choose pivot element;
         for each element in the array:
-            if element <= pivot:
-                place in left_sub_array;
-            else if element >= pivot:
-                place in right_sub_array;
+            if element < pivot:
+                place in left_subarray;
+            else:   // (element is >= pivot)
+                place in right_subarray;
             end if;
         end for;
         quicksort(left_subarray, size_of_left_subarray);
@@ -107,13 +107,13 @@ function quicksort(array[], left, right):
     // If the list has 2 or more items
     if left < right :
         // Choose a pivot (how you do this may vary):
-        choose any pivotIndex such that left <= pivotIndex <= right ;
+        pivotIndex := choose any i such that left <= i <= right;
         // Get subarrays and final position of pivot
-        pivotNewIndex := partition(array, left, right, pivotIndex);
+        splitLocation := partition(array, left, right, pivotIndex);
         // Recursively sort elements smaller than the pivot
-        quicksort(array, left, pivotNewIndex - 1);
+        quicksort(array, left, splitLocation - 1);
         // Recursively sort elements at least as big as the pivot
-        quicksort(array, pivotNewIndex + 1, right);
+        quicksort(array, splitLocation + 1, right);
     end if;
 end function quicksort;
 ```
@@ -133,13 +133,13 @@ function quicksort(array[], left, right):
     // If the list has 2 or more items
     if left < right :
         // Choose a pivot (how you do this may vary):
-        choose any pivotIndex such that left <= pivotIndex <= right ;
+        pivotIndex := choose any i such that left <= i <= right;
         // Get subarrays and final position of pivot
-        pivotNewIndex := partition(array, left, right, pivotIndex);
+        splitLocation := partition(array, left, right, pivotIndex);
         // Recursively sort elements smaller than the pivot
-        quicksort(array, left, pivotNewIndex - 1);
+        quicksort(array, left, splitLocation - 1);
         // Recursively sort elements at least as big as the pivot
-        quicksort(array, pivotNewIndex + 1, right);
+        quicksort(array, splitLocation + 1, right);
     end if;
 end function quicksort;
 ```
